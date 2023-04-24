@@ -4,4 +4,11 @@
         <item>DNI</item>
         <item>CARNET EXTRANJERIA</item>
     </string-array>
+
+    <string-array name="categoriaServicio">
+        <item>Electricidad</item>
+        <item>Gasfitero</item>
+        <item>Bellesa</item>
+        <item>Costrucción</item>
+    </string-array>
 </resources>

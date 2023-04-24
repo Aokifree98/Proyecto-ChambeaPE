@@ -12,10 +12,13 @@
         android:theme="@style/Theme.ChambeaPe"
         tools:targetApi="31">
         <activity
+            android:name=".Registrar"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Registrar"
+            android:name=".AnuncioOfertaTrabajo"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
