@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ayuda"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="405dp"
+        android:layout_height="707dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtAyuda"
+
+                android:layout_width="252dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
+                android:text="¿Podemos ayudarte?"
+                android:textColor="@color/ColorTexto1"
+                android:textSize="40sp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/txtSoprte"
+
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:drawablePadding="16dp"
+                android:padding="8dp"
+                android:text="¡Bienvenido al Centro de Soporte técnico
+                \n de Chambea.pe! Puedes contactarnos de
+                \n las siguientes maneras:"
+                android:textColor="@color/ColorTexto1"
+
+                />
+
+            <TextView
+                android:id="@+id/txtInformarError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:drawableStart="@drawable/ic_informarerror"
+                android:drawablePadding="16dp"
+                android:text="Informar un error"
+                android:padding="8dp"
+                android:textColor="@color/ColorTexto1" />
+
+            <TextView
+                android:id="@+id/txtPreguntas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:drawableStart="@drawable/ic_preguntas"
+                android:drawablePadding="16dp"
+                android:text="Otras preguntas"
+                android:padding="8dp"
+                android:textColor="@color/ColorTexto1" />
+
+            <View
+                android:id="@+id/Separador"
+
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                />
+
+
+            <TextView
+                android:id="@+id/txtContactanos"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="Contactanos"
+                android:textColor="@color/ColorTexto1"
+
+
+                ></TextView>
+
+            <TextView
+                android:id="@+id/txtEmailChambea"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="soporte@chambeape.com"
+                android:textColor="@color/ColorTexto1"
+
+
+                ></TextView>
+
+            <TextView
+                android:id="@+id/txtNumero"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="987654321"
+                android:textColor="@color/ColorTexto1"
+
+                ></TextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                app:srcCompat="@drawable/google"></ImageView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/wsp"
+                android:layout_margin="5dp"
+                ></ImageView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
