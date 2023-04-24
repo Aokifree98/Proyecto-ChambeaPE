@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".PerfilUsuario">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/btnBackgraund"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/btnBackgraund"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgPerfilUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28sp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_perfil" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/btnBackgraund"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtNombreUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Miguel Castillo Perez"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/txtProfUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Ténico electricista"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtDireccionUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="El Tambo, Huancayo"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/lyPuntuación"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/igEstrella1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_star" />
+
+                    <ImageView
+                        android:id="@+id/igEstrella2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_star" />
+
+                    <ImageView
+                        android:id="@+id/igEstrella3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_star" />
+
+                    <ImageView
+                        android:id="@+id/igEstrella4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_star" />
+
+                    <ImageView
+                        android:id="@+id/igEstrella5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_star" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/imgNotifUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="5dp"
+                android:background="@color/btnBackgraund"
+                android:src="@drawable/ic_notification_new_icon"
+                android:onClick="mostrarNotificaciones"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEditPerfi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btnbackgraund3"
+                android:drawableEnd="@drawable/ic_pencil_edit"
+                android:drawablePadding="5dp"
+                android:padding="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Editar" />
+
+            <Button
+                android:id="@+id/btnRedesSoci"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:layout_marginEnd="10dp"
+                android:drawableEnd="@drawable/ic_social_network"
+                android:background="@drawable/btnbackgraund3"
+                android:text="Mis redes" />
+            <Button
+                android:id="@+id/btnContactarUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:drawableEnd="@drawable/ic_whatsapp_icon"
+                android:background="@drawable/btnbackgraund3"
+                android:text="Contactar" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="545dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Mis Servicios"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Agregar Servicio"
+                android:background="@drawable/btnbackgraund1"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rclListaServicios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
