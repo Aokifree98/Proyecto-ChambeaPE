@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "432402319180",
+    "project_id": "chambeape-aaf69",
+    "storage_bucket": "chambeape-aaf69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432402319180:android:cd937000c8be2630fff1e9",
+        "android_client_info": {
+          "package_name": "com.example.chambeape"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432402319180-rua77h7abdpggmattlui7ca7o507ciq7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chambeape",
+            "certificate_hash": "72409fd5ca08437b8cce11e37879441adb6a57ab"
+          }
+        },
+        {
+          "client_id": "432402319180-rhvor1ldvkd8ivb8sim00p102do4at8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe9dmWYxnuLOtzjTPPd6vVNTTrTKnnlS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432402319180-rhvor1ldvkd8ivb8sim00p102do4at8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
