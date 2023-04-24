@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipo_ID" >
+        <item>DNI</item>
+        <item>CARNET EXTRANJERIA</item>
+    </string-array>
+</resources>
