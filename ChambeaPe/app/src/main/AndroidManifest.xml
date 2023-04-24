@@ -23,18 +23,44 @@
             android:theme="@style/ChambeaPetheme"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/ChambeaPetheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
+        <activity
+            android:name=".ui.VerAnuncioTrabajador"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme"/>
+        <activity
+            android:name=".ui.VerTrabajadoresCercanos"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme"/>
+        <activity
+            android:name=".ui.VerOfertasCercanas"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme"/>
+        <activity
+            android:name=".ui.ValidacionIdentidad"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme" />
+
+        <activity
+            android:name=".ui.Notificaciones"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme"/>
+        <activity
+            android:name=".ui.GestionarContactos"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme" />
     </application>
 
 </manifest>

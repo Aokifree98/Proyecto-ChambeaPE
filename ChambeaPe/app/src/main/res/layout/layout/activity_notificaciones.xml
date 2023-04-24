@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Notificaciones"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/txtNoti"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="NOTIFICACIONES"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="#2EA2BE"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="0dp"
+        ></TextView>
+    <ListView
+        android:id="@+id/lstViewNoti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="25dp"
+        ></ListView>
+
+</LinearLayout>

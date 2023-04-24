@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.VerTrabajadoresCercanos">
+    <TextView
+        android:id="@+id/txtVerTraCer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TRABAJADORES CERCANOS"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="#2EA2BE"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="0dp"
+        ></TextView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/ic_map"
+        ></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="50dp">
+        <ImageView
+            android:id="@+id/imgViewTra"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            tools:srcCompat="@tools:sample/avatars"
+            ></ImageView>
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtTraSel"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Nombre de trabajador seleccionado"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:background="#2EA2BE"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="0dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/txtTraSelDes"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Descripcion trabajador seleccionado"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="#2EA2BE"
+                android:layout_marginHorizontal="0dp"
+                ></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_star"
+                ></ImageView>
+            <TextView
+                android:id="@+id/txtPunTra"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="5"
+                android:textSize="32sp"
+                android:gravity="center"
+                ></TextView>
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnVerPerSel"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="VER TRABAJADOR"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/botonredondeado"
+        android:layout_marginVertical="10dp"
+        ></Button>
+</LinearLayout>
