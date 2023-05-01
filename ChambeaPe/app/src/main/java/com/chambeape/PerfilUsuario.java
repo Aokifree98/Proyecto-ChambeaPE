@@ -31,16 +31,6 @@ public class PerfilUsuario extends AppCompatActivity {
         actualizarRedesS = findViewById(R.id.btnRedesSoci);
         contactoDirecto = findViewById(R.id.btnContactarUser);
         notificacion = findViewById(R.id.imgNotifUser);
-        //init();
-    }
-   /* public void init() {
-        elemnts = new ArrayList<>();
-        elemnts.add(new ListaAnuncioServicio("Electricista", "Tengo 5 años de experiencia"));
-        elemnts.add(new ListaAnuncioServicio("Carpintero", "Tengo 15 años de experiencia"));
 
-        ListAdapter listAdapter = new ListAdapter(elemnts, this);
-        RecyclerView recyclerView = findViewById(R.id.crdvAnuncioServicio);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }*/
+    }
 }
