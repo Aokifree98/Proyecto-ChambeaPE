@@ -11,4 +11,14 @@
         <item>Bellesa</item>
         <item>Costrucción</item>
     </string-array>
+
+    <string-array name="Plataformas">
+        <item>Facebook</item>
+        <item>Instagram</item>
+        <item>LinkedIn</item>
+        <item>Bumeran</item>
+        <item>YouTube</item>
+        <item>Tiktok</item>
+    </string-array>
+
 </resources>

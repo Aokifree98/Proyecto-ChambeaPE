@@ -18,7 +18,7 @@ import android.widget.TextView;
 import java.util.Calendar;
 
 public class Registrar extends AppCompatActivity {
-    EditText nombre, apellidos, celular, fechaNac, tipoDocID;
+    EditText nombre, apellidos, celular, fechaNac, tipoDocID, edtCotraseña;
     Button  btnregistrar, btnregGoogle;
     ImageButton btnFecNac;
     RadioButton rbFemenino, rbMasculino, rbOtros;
@@ -35,6 +35,7 @@ public class Registrar extends AppCompatActivity {
         apellidos = findViewById(R.id.edtCCApellidos);
         fechaNac = findViewById(R.id.edtCCFechaNc);
         celular = findViewById(R.id.edtCCcelular);
+        edtCotraseña = findViewById(R.id.edtCostraseña);
         tipoDocID = findViewById(R.id.edtCCTipoID);
         btnFecNac = findViewById(R.id.btnCCCalendario);
         btnregistrar = findViewById(R.id.btnCCRegistrar);

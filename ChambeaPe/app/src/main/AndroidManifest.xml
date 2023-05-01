@@ -12,16 +12,27 @@
         android:theme="@style/Theme.ChambeaPe"
         tools:targetApi="31">
         <activity
+            android:name=".CrearPerfil"
+            android:exported="false" />
+        <activity
+            android:name=".CuentasVinculadas"
+            android:exported="false" />
+        <activity
+            android:name=".MenuDesplegable"
+            android:exported="false"
+            android:label="@string/title_activity_menu_desplegable"
+            android:theme="@style/Theme.ChambeaPe.NoActionBar" />
+        <activity
             android:name=".AnuncioOfertaTrabajo"
             android:exported="false" />
         <activity
-            android:name=".Registrar"
+            android:name=".PerfilUsuario"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".PerfilUsuario"
+            android:name=".Registrar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

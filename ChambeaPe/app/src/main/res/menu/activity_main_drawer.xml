@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navInicio"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_inicio" />
+        <item
+            android:id="@+id/navHistorial"
+            android:icon="@drawable/ic_history_time"
+            android:title="@string/menu_historial" />
+        <item
+            android:id="@+id/navContactos"
+            android:icon="@drawable/ic_contact"
+            android:title="@string/menu_contactos" />
+        <item
+            android:id="@+id/navConfiguracion"
+            android:icon="@drawable/ic_configuration"
+            android:title="@string/menu_configuracion" />
+
+        <item
+            android:id="@+id/navAyuda"
+            android:icon="@drawable/ic_help"
+            android:title="@string/menu_ayuda" />
+
+        <item
+            android:id="@+id/navCerrarSesion"
+            android:icon="@drawable/ic_close"
+            android:title="@string/menu_cerrarS" />
+
+    </group>
+</menu>
