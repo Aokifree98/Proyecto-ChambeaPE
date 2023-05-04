@@ -21,6 +21,18 @@
             android:background="#2EA2BE"
             android:textColor="@color/white"
             android:layout_marginHorizontal="0dp"
+            android:layout_marginBottom="50dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/txtValiIdent2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="SUBE UNA FOTO DE TU DNI"
+            android:textSize="20sp"
+            android:textColor="@color/primaryColor"
+            android:gravity="center"
+            android:layout_marginHorizontal="0dp"
+            android:layout_marginBottom="50dp"
             ></TextView>
         <ImageButton
             android:id="@+id/imgFoto"
@@ -42,26 +54,7 @@
             android:background="@drawable/btnredondeado"
             android:layout_marginVertical="10dp"
             ></Button>
-        <ImageButton
-            android:id="@+id/imgDNI"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginHorizontal="50dp"
-            android:layout_gravity="center"
-            android:scaleType="fitCenter"
-            android:layout_marginVertical="20dp"
-            android:background="@drawable/ic_dni"
-            ></ImageButton>
-        <Button
-            android:id="@+id/btnSubirDNI"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="SUBIR DNI"
-            android:textColor="@color/white"
-            android:layout_marginHorizontal="50dp"
-            android:background="@drawable/btnredondeado"
-            android:layout_marginVertical="10dp"
-            ></Button>
+
         <Button
             android:id="@+id/btnRegistrar"
             android:layout_width="match_parent"

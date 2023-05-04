@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.EditarPerfilUsuario">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+
+
+                <View
+                    android:id="@+id/imgPortada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:background="@drawable/portadaeditarperfilusuario"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtEditPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Editar perfil"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgPortada" />
+
+                <ImageView
+                    android:id="@+id/imgPerfil"
+                    android:layout_width="189dp"
+                    android:layout_height="192dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgPortada"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    tools:srcCompat="@tools:sample/avatars"
+                    />
+
+                <ImageView
+                    android:id="@+id/imgedtFotoPerfil"
+                    android:layout_width="52dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgPortada"
+                    app:layout_constraintEnd_toEndOf="@+id/imgPerfil"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/imgPerfil"
+                    app:layout_constraintTop_toTopOf="@+id/imgPerfil"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_photo" />
+
+                <TextView
+                    android:id="@+id/txtEPNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="Nombre"
+                    android:textColor="#1C1A1A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.044"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgPortada" />
+
+                <EditText
+                    android:id="@+id/edtEPNombre"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/btnredondeado2"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.39"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPNombre" />
+
+                <TextView
+                    android:id="@+id/txtEPApellido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Apellido"
+                    android:textColor="#1C1A1A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.044"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPNombre" />
+                <EditText
+                    android:id="@+id/edtEPApellido"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/btnredondeado2"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.39"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPApellido" />
+
+                <TextView
+                    android:id="@+id/txtEPPais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="País"
+                    android:textColor="#1C1A1A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.044"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPApellido" />
+
+
+
+                <EditText
+                    android:id="@+id/edtEPPais"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/btnredondeado2"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.39"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPUbicacion" />
+
+                <TextView
+                    android:id="@+id/txtEPUbicacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="UBICACIÓN"
+                    android:textColor="#1C1A1A"
+                    app:layout_constraintEnd_toStartOf="@+id/radioButtonUbicacion"
+                    app:layout_constraintHorizontal_bias="0.07"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPPais" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonUbicacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:buttonTint="@color/primaryColor"
+                    android:text="Mi ubicación"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.922"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPPais" />
+
+                <TextView
+                    android:id="@+id/txtEPOcupacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Ocupación"
+                    android:textColor="#1C1A1A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.044"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPPais" />
+
+                <EditText
+                    android:id="@+id/edtEPOcupacion"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/btnredondeado2"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.365"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPOcupacion" />
+
+                <TextView
+                    android:id="@+id/txtEPDescripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Descripción"
+                    android:textColor="#1C1A1A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.05"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPOcupacion" />
+
+                <EditText
+                    android:id="@+id/edtEPDescripcion"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/btnredondeado2"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.365"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPDescripcion"
+                    android:layout_marginBottom="25dp"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

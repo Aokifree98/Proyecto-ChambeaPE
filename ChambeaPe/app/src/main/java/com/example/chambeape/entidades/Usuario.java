@@ -4,14 +4,14 @@ import android.graphics.Bitmap;
 
 public class Usuario {
 
-    private String idUsuario,nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,vidUsuario,fotUsuario,calUsuario;
+    private String idUsuario,nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,vidUsuario,fotUsuario,calUsuario,fotValidacion,verTelefono;
 
 
     public Usuario(){
 
     }
 
-    public Usuario(String idUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String vidUsuario, String fotUsuario, String calUsuario) {
+    public Usuario(String idUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String vidUsuario, String fotUsuario, String calUsuario, String fotValidacion, String verTelefono) {
         this.idUsuario = idUsuario;
         this.nomUsuario = nomUsuario;
         this.passUsuario = passUsuario;
@@ -24,6 +24,8 @@ public class Usuario {
         this.vidUsuario = vidUsuario;
         this.fotUsuario = fotUsuario;
         this.calUsuario = calUsuario;
+        this.fotValidacion = fotValidacion;
+        this.verTelefono = verTelefono;
     }
 
     public String getIdUsuario() {
@@ -122,6 +124,22 @@ public class Usuario {
         this.calUsuario = calUsuario;
     }
 
+    public String getFotValidacion() {
+        return fotValidacion;
+    }
+
+    public void setFotValidacion(String fotValidacion) {
+        this.fotValidacion = fotValidacion;
+    }
+
+    public String getVerTelefono() {
+        return verTelefono;
+    }
+
+    public void setVerTelefono(String verTelefono) {
+        this.verTelefono = verTelefono;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -137,6 +155,8 @@ public class Usuario {
                 ", vidUsuario='" + vidUsuario + '\'' +
                 ", fotUsuario='" + fotUsuario + '\'' +
                 ", calUsuario='" + calUsuario + '\'' +
+                ", fotValidacion='" + fotValidacion + '\'' +
+                ", verTelefono='" + verTelefono + '\'' +
                 '}';
     }
 }

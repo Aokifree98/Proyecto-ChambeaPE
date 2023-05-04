@@ -33,6 +33,7 @@ import java.util.Locale;
 public class ValidacionIdentidad extends AppCompatActivity {
     Button btnSubirFoto,btnSubirDNI,btnRegistrar;
     ImageView imgFoto,imgDNI;
+
     Uri imagenUri;
     StorageReference miStorageRef;
     DatabaseReference miDatabaseRef;
@@ -42,9 +43,7 @@ public class ValidacionIdentidad extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_validacion_identidad);
         imgFoto = findViewById(R.id.imgFoto);
-        imgDNI = findViewById(R.id.imgDNI);
         btnSubirFoto = findViewById(R.id.btnSubirFoto);
-        btnSubirDNI=findViewById(R.id.btnSubirDNI);
         btnRegistrar= findViewById(R.id.btnRegistrar);
 
         FirebaseApp.initializeApp(this);
@@ -60,13 +59,14 @@ public class ValidacionIdentidad extends AppCompatActivity {
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrar();
+                registrarFoto();
             }
         });
     }
 
-    private void registrar() {
+    private void registrarFoto() {
         //String id = miDatabaseRef.push().getKey();
+
         String id = "7777777";
         if(imagenUri !=null)
         {
@@ -76,9 +76,9 @@ public class ValidacionIdentidad extends AppCompatActivity {
 
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
             Date now = new Date();
-            String fileName = formatter.format(now);
-            miStorageRef = FirebaseStorage.getInstance().getReference(fileName);
+            String fileName = "valFot_"+id+"_"+formatter.format(now);
 
+            miStorageRef = FirebaseStorage.getInstance().getReference(fileName);
             miStorageRef.putFile(imagenUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -86,8 +86,8 @@ public class ValidacionIdentidad extends AppCompatActivity {
                             miStorageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
-                                    Usuario usuario = new Usuario(id,"Test","Test","999999999","Test","Test","Test","Test","Test","link",uri.toString(),"0");
-                                    miDatabaseRef.child("Usuarios").child(id).setValue(usuario);
+                                    //Usuario usuario = new Usuario(id,"Test","Test","Test","Test","Test","Test","Test","Test","link","0","0",uri.toString(),"0");
+                                    miDatabaseRef.child("Usuarios").child(id).child("fotValidacion").setValue(uri.toString());
                                     Toast.makeText(ValidacionIdentidad.this,"Subido Correctamente",Toast.LENGTH_SHORT).show();
                                     if (progressDialog.isShowing())
                                         progressDialog.dismiss();
@@ -104,12 +104,13 @@ public class ValidacionIdentidad extends AppCompatActivity {
                             Toast.makeText(ValidacionIdentidad.this,"Falla al subir",Toast.LENGTH_SHORT).show();
                         }
                     });
+
+
         }else{
             Toast.makeText(ValidacionIdentidad.this,"No ha seleccionado una imagen",Toast.LENGTH_SHORT).show();
         }
 
     }
-
     private void seleccionFoto() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -119,7 +120,6 @@ public class ValidacionIdentidad extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == 100 && data != null && data.getData() != null){
             imagenUri = data.getData();
             imgFoto.setImageURI(imagenUri);
