@@ -9,21 +9,56 @@
     >
 
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/buscadorB"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:background="@drawable/btnestilo1"
-        app:iconifiedByDefault="false">
+        android:layout_height="match_parent">
 
-    </androidx.appcompat.widget.SearchView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lstBuscados"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:background="@drawable/btnestilo2" />
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/buscadorB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:background="@drawable/btnestilo1"
+                app:iconifiedByDefault="false">
+
+            </androidx.appcompat.widget.SearchView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lstBuscados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:background="@drawable/btnestilo2" >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/txtTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:background="@drawable/btnestilo2"
+                android:padding="5dp"
+                android:text="Los más TOP"
+                android:textColor="@color/ColorTexto1" />
+
+            <ListView
+                android:id="@+id/listToptTrabajadores"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="25dp"></ListView>
+
+            <ListView
+                android:id="@+id/listTopTrabajos"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="25dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ItemMostrarTopTrabajador"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="234dp"
+        android:layout_height="138dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:background="@drawable/btnestilo1">
+
+
+        <TextView
+            android:id="@+id/txtBTTrabajo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Electricista"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtbBTDescricionTrabajo"
+            android:layout_width="204dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Busco instalador de sistemas eléctricos. "
+            android:textColor="@color/white"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBTTrabajo" />
+
+        <TextView
+            android:id="@+id/txtVPUbicaciónServicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Huancayo, Perú."
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.783"
+            app:layout_constraintStart_toEndOf="@+id/imgBTCalificacion"
+            app:layout_constraintTop_toBottomOf="@+id/txtbBTDescricionTrabajo"
+            app:layout_constraintVertical_bias="0.769" />
+
+        <ImageView
+            android:id="@+id/imgBTFotoPerfil"
+            android:layout_width="39dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtbBTDescricionTrabajo"
+            app:srcCompat="@drawable/profile" />
+
+        <ImageView
+            android:id="@+id/imgBTCalificacion"
+            android:layout_width="31dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgBTFotoPerfil"
+            app:layout_constraintTop_toBottomOf="@+id/txtbBTDescricionTrabajo"
+            app:srcCompat="@drawable/ic_estrella" />
+
+        <TextView
+            android:id="@+id/txtBTNombreTrabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Omar C."
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/txtVPUbicaciónServicio"
+            app:layout_constraintHorizontal_bias="0.075"
+            app:layout_constraintStart_toEndOf="@+id/imgBTFotoPerfil"
+            app:layout_constraintTop_toBottomOf="@+id/imgBTCalificacion" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
