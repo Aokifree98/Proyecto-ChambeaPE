@@ -70,7 +70,8 @@
         <activity
             android:name=".ui.ValidacionIdentidad"
             android:exported="true"
-            android:theme="@style/ChambeaPetheme"></activity>
+            android:theme="@style/ChambeaPetheme">
+        </activity>
         <activity
             android:name=".ui.Notificaciones"
             android:exported="true"

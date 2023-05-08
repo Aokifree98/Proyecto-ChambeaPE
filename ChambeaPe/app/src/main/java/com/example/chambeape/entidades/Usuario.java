@@ -4,15 +4,16 @@ import android.graphics.Bitmap;
 
 public class Usuario {
 
-    private String idUsuario,nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,vidUsuario,fotUsuario,calUsuario,fotValidacion,verTelefono;
+    private String idUsuario,dniUsuario, nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,vidUsuario,fotUsuario,calUsuario,fotValidacion,verTelefono;
 
 
     public Usuario(){
 
     }
 
-    public Usuario(String idUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String vidUsuario, String fotUsuario, String calUsuario, String fotValidacion, String verTelefono) {
+    public Usuario(String idUsuario, String dniUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String vidUsuario, String fotUsuario, String calUsuario, String fotValidacion, String verTelefono) {
         this.idUsuario = idUsuario;
+        this.dniUsuario = dniUsuario;
         this.nomUsuario = nomUsuario;
         this.passUsuario = passUsuario;
         this.telUsuario = telUsuario;
@@ -34,6 +35,14 @@ public class Usuario {
 
     public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public String getDniUsuario() {
+        return dniUsuario;
+    }
+
+    public void setDniUsuario(String dniUsuario) {
+        this.dniUsuario = dniUsuario;
     }
 
     public String getNomUsuario() {
@@ -144,6 +153,7 @@ public class Usuario {
     public String toString() {
         return "Usuario{" +
                 "idUsuario='" + idUsuario + '\'' +
+                ", dniUsuario='" + dniUsuario + '\'' +
                 ", nomUsuario='" + nomUsuario + '\'' +
                 ", passUsuario='" + passUsuario + '\'' +
                 ", telUsuario='" + telUsuario + '\'' +
