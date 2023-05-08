@@ -12,7 +12,7 @@ import com.example.chambeape.R;
 
 public class Login extends AppCompatActivity {
     EditText edtUsuario, edtPass;
-    Button btnIniciar;
+    Button btnIniciarSesion,btnCrearUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,16 @@ public class Login extends AppCompatActivity {
 
         edtUsuario = findViewById(R.id.edtDni);
         edtPass = findViewById(R.id.edtPassword);
-        btnIniciar = findViewById(R.id.btnIngresar);
+        btnIniciarSesion = findViewById(R.id.btnIngresar);
+        btnCrearUsuario= findViewById(R.id.btnCrearCuenta);
+
+        btnCrearUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),CrearUsuario.class);
+                startActivity(intent);
+            }
+        });
     }
     public void llamarOlvidePass(View view) {
         //Intent i = new Intent(this, OlvidePass.class);

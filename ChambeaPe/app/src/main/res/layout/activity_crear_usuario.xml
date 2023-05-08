@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.CrearUsusario">
+    tools:context=".ui.CrearUsuario">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,7 +31,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edtCCNombres"
+                android:id="@+id/edtCUNombres"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -46,7 +46,7 @@
                 android:textColorHint="@color/primaryColor" />
 
             <EditText
-                android:id="@+id/edtCCApellidos"
+                android:id="@+id/edtCUApellidoPat"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -55,7 +55,21 @@
                 android:drawableStart="@drawable/ic_user"
                 android:drawablePadding="16dp"
                 android:ems="10"
-                android:hint="Apellidos"
+                android:hint="Apellido paterno"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:textColorHint="@color/primaryColor" />
+            <EditText
+                android:id="@+id/edtCUApellidoMat"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="32dp"
+                android:drawableStart="@drawable/ic_user"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:hint="Apellido materno"
                 android:inputType="textPersonName"
                 android:padding="8dp"
                 android:textColorHint="@color/primaryColor" />
@@ -87,76 +101,52 @@
                         android:layout_marginEnd="25dp"
                         android:orientation="horizontal">
 
-                        <EditText
-                            android:id="@+id/edtCCFechaNc"
+                        <TextView
+                            android:id="@+id/txtCUFechaNacimiento"
                             android:layout_width="120dp"
                             android:layout_height="50dp"
                             android:layout_weight="1"
                             android:ems="10"
                             android:hint="yyyy/mm/dd"
-                            android:inputType="date"
+                            android:inputType="datetime"
+                            android:gravity="center"
                             android:textColor="@color/primaryDarkColor"
                             android:textColorHint="@color/primaryDarkColor" />
 
                         <ImageButton
-                            android:id="@+id/btnCCCalendario"
+                            android:id="@+id/btnCUCalendario"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="#FFFFFF"
                             android:contentDescription="Ingresar para elegir fecha"
-                            android:onClick="llamar_Calendario"
-                            app:srcCompat="@drawable/ic_calendar" />
-
+                            android:onClick="openDatePicker"
+                            app:srcCompat="@drawable/ic_calendar"
+                            />
                     </LinearLayout>
-
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
-                    <RadioGroup
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:clickable="true">
-
-                        <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="130dp"
-                            android:layout_height="wrap_content"
-                            android:text="Genero"
-                            android:textColor="@color/primaryColor" />
-
-                        <RadioButton
-                            android:id="@+id/rbCCFemenino"
-                            android:layout_width="130dp"
-                            android:layout_height="30dp"
-                            android:text="Femenino"
-                            android:buttonTint ="@color/primaryColor"
-                            android:textColor="@color/primaryColor" />
-
-                        <RadioButton
-                            android:id="@+id/rbCCMasculino"
-                            android:layout_width="130dp"
-                            android:layout_height="21dp"
-                            android:buttonTint="@color/primaryColor"
-                            android:text="Masculino"
-                            android:textColor="@color/primaryColor" />
-
-                        <RadioButton
-                            android:id="@+id/rbCCOtro"
-                            android:layout_width="130dp"
-                            android:layout_height="30dp"
-                            android:buttonTint ="@color/primaryColor"
-                            android:textColor="@color/primaryColor"
-                            android:text="Otro"/>
-                    </RadioGroup>
-
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:text="Género"
+                        android:textColor="@color/primaryColor" />
+                    <Spinner
+                        android:id="@+id/spCUGenero"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_margin="10dp"
+                        android:entries="@array/genero"
+                        android:textAlignment="center"
+                        android:padding="5dp"
+                        android:textColor="@color/primaryColor"
+                        />
                 </LinearLayout>
-
             </LinearLayout>
 
             <TextView
@@ -177,29 +167,30 @@
                 android:orientation="horizontal">
 
                 <Spinner
-                    android:id="@+id/spCCTipoID"
+                    android:id="@+id/spCUTipoID"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:contentDescription="Seleccionar Tipo de ID"
                     android:textColor="@color/primaryColor"
+                    android:entries="@array/tipoDocumento"
                     android:backgroundTint ="@color/primaryColor" />
 
                 <EditText
-                    android:id="@+id/edtCCTipoID"
+                    android:id="@+id/edtCUTipoID"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="Documento de identidad"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textColor="@color/primaryDarkColor"
                     android:textColorHint="@color/primaryDarkColor" />
 
             </LinearLayout>
 
             <EditText
-                android:id="@+id/edtCostraseña"
+                android:id="@+id/edtCUClave"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -215,7 +206,7 @@
                 android:textColorHint="@color/primaryDarkColor"/>
 
             <EditText
-                android:id="@+id/edtCCcelular"
+                android:id="@+id/edtCUCelular"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -229,10 +220,39 @@
                 android:textColor="@color/primaryDarkColor"
                 android:padding="8dp"
                 android:textColorHint="@color/primaryColor"/>
+            <EditText
+                android:id="@+id/edtCUMail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="32dp"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:hint="Correo electronico"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/primaryDarkColor"
+                android:padding="8dp"
+                android:textColorHint="@color/primaryColor"/>
+
+            <EditText
+                android:id="@+id/edtCUDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="32dp"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:hint="Domicilio"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/primaryDarkColor"
+                android:padding="8dp"
+                android:textColorHint="@color/primaryColor"/>
 
 
             <Button
-                android:id="@+id/btnCCRegistrar"
+                android:id="@+id/btnCURegistrar"
                 android:layout_width="150dp"
                 android:layout_height="55dp"
                 android:layout_gravity="center"
@@ -241,10 +261,10 @@
                 android:textColor="@color/white"
                 android:background="@drawable/btnredondeado"
                 android:text="Registrar"
-                android:onClick="registrar_usuario"/>
+                />
 
             <Button
-                android:id="@+id/btnCCRegGoogle"
+                android:id="@+id/btnCURegGoogle"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
@@ -262,7 +282,7 @@
                 android:onClick="registrar_google"/>
 
             <TextView
-                android:id="@+id/txtCCIngresar"
+                android:id="@+id/txtCUIngresar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -272,5 +292,4 @@
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

@@ -57,6 +57,7 @@ public class RegistrarUsuario extends AppCompatActivity {
         edtfecUsuario= tilfecUsuario.getEditText().findViewById(R.id.edtfecUsuario);
     }
     private void registrarUsuario() {
+        //String id = miDatabase.push().getKey();
         String id = miDatabase.push().getKey();
         String nom = edtnomUsuario.getText().toString();
         String apep = edtapepatUsuario.getText().toString();

@@ -15,17 +15,26 @@
         android:theme="@style/ChambeaPetheme"
         tools:targetApi="31">
         <activity
-            android:name=".CrearUsusario"
+            android:name=".ui.CrearUsuario"
             android:exported="false" />
         <activity
-            android:name=".EditarPerfilUsuario"
-            android:exported="false" />
+            android:name=".ui.EditarPerfilUsuario"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme" />
         <activity
-            android:name=".PerfilUsuario"
-            android:exported="false" />
+            android:name=".ui.PerfilUsuario"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme" />
         <activity
-            android:name=".Login"
-            android:exported="false" />
+            android:name=".ui.Login"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.RegistrarUsuario"
             android:exported="true"
@@ -61,13 +70,7 @@
         <activity
             android:name=".ui.ValidacionIdentidad"
             android:exported="true"
-            android:theme="@style/ChambeaPetheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/ChambeaPetheme"></activity>
         <activity
             android:name=".ui.Notificaciones"
             android:exported="true"
