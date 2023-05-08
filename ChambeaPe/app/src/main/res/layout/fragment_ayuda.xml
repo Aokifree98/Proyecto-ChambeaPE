@@ -33,29 +33,41 @@
         android:id="@+id/btnPF1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/btnbackgraund2"
-        android:text="Button" />
+        android:textColor="@color/textColor"
+        android:text="¿Cómo crear una oferta de trabajo?" />
 
     <Button
         android:id="@+id/btnPF2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btnbackgraund2"
+        android:textColor="@color/textColor"
+        android:text="¿Cómo crear mi perfil como trabajador?" />
 
     <Button
         android:id="@+id/btnPF3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btnbackgraund2"
+        android:textColor="@color/textColor"
+        android:text="¿Cómo editar mi oferta de trabajo?"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:text="Servicio Técnico"
         android:textColor="@color/textColor"
         android:textSize="20sp"/>
