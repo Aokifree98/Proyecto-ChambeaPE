@@ -7,11 +7,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 
 public class PerfilUsuario extends AppCompatActivity {
 
     ImageView imgEdit, imgLlamar;
+    ListView listaMisServicios, listaMisOfertas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,9 @@ public class PerfilUsuario extends AppCompatActivity {
 
         imgEdit = findViewById(R.id.imgPEditaPerfil);
         imgLlamar = findViewById(R.id.imgPLlamar);
+        listaMisServicios = findViewById(R.id.listaMisServicios);
+        listaMisOfertas = findViewById(R.id.listaMisOfertas);
+
 
     }
 

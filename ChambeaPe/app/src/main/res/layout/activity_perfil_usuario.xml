@@ -15,37 +15,131 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            >
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="600dp"
+                android:background="">
+
+                <View
+                    android:id="@+id/imgPortada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:background="@drawable/editarportadatop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imgVPFotoPerfil"
+                    android:layout_width="144dp"
+                    android:layout_height="135dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgPortada"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/profile" />
+
+                <TextView
+                    android:id="@+id/txtVPNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Julian Hinostroza"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgVPFotoPerfil" />
+
+                <TextView
+                    android:id="@+id/txtVPProfesion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Electrisista"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtVPNombre" />
 
                 <ImageView
                     android:id="@+id/imgPEditaPerfil"
-                    android:layout_width="67dp"
-                    android:layout_height="56dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.958"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="49dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="84dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="Llamar_editar"
+                    app:layout_constraintEnd_toEndOf="@+id/imgPortada"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toEndOf="@+id/imgVPFotoPerfil"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_editperfil"
-                    android:onClick="Llamar_editar"/>
+                    app:srcCompat="@drawable/ic_editperfil" />
 
                 <ImageView
                     android:id="@+id/imgPLlamar"
-                    android:layout_width="62dp"
-                    android:layout_height="51dp"
-                    android:layout_marginTop="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.955"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imgPEditaPerfil"
+                    android:layout_width="53dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="28dp"
+                    android:onClick="Llamar_hacerLlamada"
+                    app:layout_constraintEnd_toEndOf="@+id/imgPortada"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/txtVPProfesion"
                     app:srcCompat="@drawable/ic_llamaruser"
-                    android:onClick="Llamar_hacerLlamada"/>
+                    tools:layout_editor_absoluteY="149dp" />
+
+                <ListView
+                    android:id="@+id/listaMisServicios"
+                    android:layout_width="366dp"
+                    android:layout_height="96dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.488"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtVPBuscoEmpleo" />
+
+                <TextView
+                    android:id="@+id/txtVPBuscoEmpleo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="Busco empleo"
+                    android:textColor="@color/ColorTexto1"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgPortada" />
+
+                <TextView
+                    android:id="@+id/txtVPBuscoTranajador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:text="Busco trabajador"
+                    android:textColor="@color/ColorTexto1"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/listaMisServicios" />
+
+                <ListView
+                    android:layout_width="366dp"
+                    android:layout_height="96dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="501dp"
+                    android:id="@+id/listaMisOfertas"/>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
 
     </ScrollView>

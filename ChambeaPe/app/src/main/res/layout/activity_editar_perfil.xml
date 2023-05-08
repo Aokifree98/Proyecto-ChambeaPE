@@ -19,8 +19,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
+                android:layout_height="836dp">
 
 
                 <View
@@ -108,6 +107,7 @@
                     app:layout_constraintHorizontal_bias="0.044"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtEPNombre" />
+
                 <EditText
                     android:id="@+id/edtEPApellido"
                     android:layout_width="370dp"
@@ -133,7 +133,6 @@
                     app:layout_constraintHorizontal_bias="0.044"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtEPApellido" />
-
 
 
                 <EditText
@@ -216,14 +215,14 @@
                     android:layout_width="370dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="24dp"
+                    android:layout_marginBottom="25dp"
                     android:background="@drawable/edittextestilo"
                     android:ems="10"
                     android:inputType="textPersonName"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.365"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEPDescripcion"
-                    android:layout_marginBottom="25dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPDescripcion" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
