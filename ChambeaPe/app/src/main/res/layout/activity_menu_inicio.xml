@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.MenuInicio">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryDarkColor"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgMIPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                tools:srcCompat="@tools:sample/avatars"/>
+
+            <ImageButton
+                android:id="@+id/imgBtnNotificaciones"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/primaryDarkColor"
+                android:src="@drawable/ic_bell" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtMINombreUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:text="Miguel Catillo Perez" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textColor="@color/primaryColor"
+        android:textSize="20sp"
+        android:text="Buscar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMIBuscarTra"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btnredondeado"
+            android:text="Trabajadores" />
+
+        <Button
+            android:id="@+id/btnMIBuscarOfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/btnredondeado"
+            android:text="Ofertas" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/primaryColor"
+        android:textSize="20sp"
+        android:text="Crear Anuncio" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMICreATrab"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btnredondeado"
+            android:text="Trabajadores" />
+
+        <Button
+            android:id="@+id/btnMICreaAOfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="32dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btnredondeado"
+            android:text="Ofertas" />
+    </LinearLayout>
+</LinearLayout>

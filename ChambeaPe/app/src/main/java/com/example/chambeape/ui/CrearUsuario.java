@@ -119,7 +119,7 @@ public class CrearUsuario extends AppCompatActivity {
         datePickerDialog.show();
     }
     private void registrarUsuario() {
-        String id = miDatabase.push().getKey();
+        //String id = miDatabase.push().getKey();
         String dni = edtCUTipoID.getText().toString();
         String nom = edtCUNombres.getText().toString();
         String apep = edtCUApellidoPat.getText().toString();
@@ -129,8 +129,8 @@ public class CrearUsuario extends AppCompatActivity {
         String fecha = txtCUFechaNacimiento.getText().toString();
         String pass = edtCUClave.getText().toString();
         String tel = edtCUCelular.getText().toString();
-        Usuario usuario = new Usuario(id,dni,nom,pass,tel,apep,apem,mail,dire,fecha,"","","0","","");
-        miDatabase.child("Usuarios").child(id).setValue(usuario);
+        Usuario usuario = new Usuario(dni,nom,pass,tel,apep,apem,mail,dire,fecha,"","","0","","");
+        miDatabase.child("Usuarios").child(dni).setValue(usuario);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
 
     }

@@ -4,15 +4,14 @@ import android.graphics.Bitmap;
 
 public class Usuario {
 
-    private String idUsuario,dniUsuario, nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,vidUsuario,fotUsuario,calUsuario,fotValidacion,verTelefono;
+    private String dniUsuario, nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,vidUsuario,fotUsuario,calUsuario,fotValidacion,verTelefono;
 
 
     public Usuario(){
 
     }
 
-    public Usuario(String idUsuario, String dniUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String vidUsuario, String fotUsuario, String calUsuario, String fotValidacion, String verTelefono) {
-        this.idUsuario = idUsuario;
+    public Usuario(String dniUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String vidUsuario, String fotUsuario, String calUsuario, String fotValidacion, String verTelefono) {
         this.dniUsuario = dniUsuario;
         this.nomUsuario = nomUsuario;
         this.passUsuario = passUsuario;
@@ -27,14 +26,6 @@ public class Usuario {
         this.calUsuario = calUsuario;
         this.fotValidacion = fotValidacion;
         this.verTelefono = verTelefono;
-    }
-
-    public String getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
     }
 
     public String getDniUsuario() {
@@ -152,8 +143,7 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" +
-                "idUsuario='" + idUsuario + '\'' +
-                ", dniUsuario='" + dniUsuario + '\'' +
+                "dniUsuario='" + dniUsuario + '\'' +
                 ", nomUsuario='" + nomUsuario + '\'' +
                 ", passUsuario='" + passUsuario + '\'' +
                 ", telUsuario='" + telUsuario + '\'' +
@@ -170,3 +160,4 @@ public class Usuario {
                 '}';
     }
 }
+
