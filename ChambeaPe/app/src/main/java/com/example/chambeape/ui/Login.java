@@ -82,34 +82,19 @@ public class Login extends AppCompatActivity {
                         }
                     });
                 }
+
             }
         });
     }
+
+
+
     public void llamarOlvidePass(View view) {
         //Intent i = new Intent(this, OlvidePass.class);
         //startActivity(i);
     }
 
-    public void llamarPerfil(View view) {
 
-        String uname= edtUsuario.getText().toString();
-        String pas=edtPass.getText().toString();
-        boolean verificado=false;
-
-        if(uname.isEmpty() | uname.length()<8){
-            edtUsuario.setError("Verifique su DNI");
-        }
-        else
-            verificado = true;
-
-        if(pas.isEmpty() | pas.length()<8){
-            edtPass.setError("Formato password incorrecto");
-            verificado = false;
-        }
-
-        if(verificado) ingresar();
-
-    }
 
     private void ingresar() {
         Intent i = new Intent(this, PerfilUsuario.class);

@@ -16,21 +16,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingLeft="100dp">
 
             <ImageView
                 android:id="@+id/imgMIPerfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars"/>
+                android:layout_marginEnd="70dp"
+                android:layout_marginLeft="250dp"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_photo"/>
 
             <ImageButton
                 android:id="@+id/imgBtnNotificaciones"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:background="@color/primaryDarkColor"
