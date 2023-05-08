@@ -21,8 +21,9 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="600dp"
-                android:background="">
+                android:layout_height="800dp"
+
+                >
 
                 <View
                     android:id="@+id/imgPortada"
@@ -86,13 +87,14 @@
                     android:id="@+id/imgPLlamar"
                     android:layout_width="53dp"
                     android:layout_height="45dp"
+                    android:layout_marginTop="108dp"
                     android:layout_marginEnd="28dp"
                     android:onClick="Llamar_hacerLlamada"
                     app:layout_constraintEnd_toEndOf="@+id/imgPortada"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/txtVPProfesion"
-                    app:srcCompat="@drawable/ic_llamaruser"
-                    tools:layout_editor_absoluteY="149dp" />
+                    app:layout_constraintTop_toBottomOf="@+id/imgPEditaPerfil"
+                    app:srcCompat="@drawable/ic_llamaruser" />
 
                 <ListView
                     android:id="@+id/listaMisServicios"
@@ -118,25 +120,40 @@
                     app:layout_constraintTop_toBottomOf="@+id/imgPortada" />
 
                 <TextView
-                    android:id="@+id/txtVPBuscoTranajador"
+                    android:id="@+id/txtVPBuscoTrabajador"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="44dp"
+                    android:layout_marginTop="36dp"
                     android:text="Busco trabajador"
                     android:textColor="@color/ColorTexto1"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintHorizontal_bias="0.072"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/listaMisServicios" />
 
                 <ListView
+                    android:id="@+id/listaMisOfertas"
                     android:layout_width="366dp"
                     android:layout_height="96dp"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.466"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="501dp"
-                    android:id="@+id/listaMisOfertas"/>
+                    app:layout_constraintTop_toBottomOf="@+id/txtVPBuscoTrabajador" />
+
+                <TextView
+                    android:id="@+id/txtSobreExperiencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Sobre mi experiencia"
+                    android:textColor="@color/ColorTexto1"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.079"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/listaMisOfertas" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
