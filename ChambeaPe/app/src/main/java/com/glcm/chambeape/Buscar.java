@@ -3,39 +3,28 @@ package com.glcm.chambeape;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.SearchView;
 
 public class Buscar extends AppCompatActivity {
-    SearchView buscador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar);
-        buscador = findViewById(R.id.buscadorB);
+
     }
 
-    public void searchView() {
-        buscador.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+    public void llamarItemTopEmpleo(View view) {
+        Intent i = new Intent(this, ItemMostrarTopTrabajos.class);
+        startActivity(i);
 
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                textSearch(s);
-                return false;
-            }
-
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                textSearch(s);
-                return false;
-            }
-
-        });
     }
+    public void llamarItemTopTrabajos(View view) {
+        Intent i = new Intent(this, ItemMostrarTopTrabajador.class);
+        startActivity(i);
 
-        public void textSearch(String s) {
-        //Hacer un query
-        }
     }
+}

@@ -39,4 +39,18 @@ public class PerfilUsuario extends AppCompatActivity {
         intent.setData(Uri.parse(phoneNumber));
         startActivity(intent);
     }
+
+    public void llamarItemTrabajador(View view) {
+        Intent i = new Intent(this, ItemBuscoTrabajador.class);
+        startActivity(i);
+    }
+    public void llamarItemEmpleo(View view) {
+        Intent i = new Intent(this, ItemBuscoTrabajador.class);
+        startActivity(i);
+    }
+
+    public void llamarBusqueda(View view) {
+        Intent i = new Intent(this, Buscar.class);
+        startActivity(i);
+    }
 }

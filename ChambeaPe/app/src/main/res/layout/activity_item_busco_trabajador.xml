@@ -56,5 +56,11 @@
             app:layout_constraintTop_toBottomOf="@+id/txtVPDescriciónServicio"
             app:layout_constraintVertical_bias="0.666" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="volver"
+        android:onClick="llamarVolver"/>
 
 </LinearLayout>

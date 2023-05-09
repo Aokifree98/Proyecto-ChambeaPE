@@ -104,7 +104,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.488"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtVPBuscoEmpleo" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtVPBuscoEmpleo"
+                    />
 
                 <TextView
                     android:id="@+id/txtVPBuscoEmpleo"
@@ -117,7 +118,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.068"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imgPortada" />
+                    app:layout_constraintTop_toBottomOf="@+id/imgPortada"
+                    android:onClick="llamarItemEmpleo"/>
 
                 <TextView
                     android:id="@+id/txtVPBuscoTrabajador"
@@ -130,7 +132,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.072"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/listaMisServicios" />
+                    app:layout_constraintTop_toBottomOf="@+id/listaMisServicios"
+                    android:onClick="llamarItemTrabajador"/>
 
                 <ListView
                     android:id="@+id/listaMisOfertas"
@@ -140,7 +143,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.466"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtVPBuscoTrabajador" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtVPBuscoTrabajador"
+
+                    />
 
                 <TextView
                     android:id="@+id/txtSobreExperiencia"
@@ -154,6 +159,18 @@
                     app:layout_constraintHorizontal_bias="0.079"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/listaMisOfertas" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="68dp"
+                    android:text="Buscar Provisional"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.464"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtSobreExperiencia"
+                    android:onClick="llamarBusqueda"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
