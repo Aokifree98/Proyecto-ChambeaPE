@@ -160,17 +160,30 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/listaMisOfertas" />
 
+
                 <Button
                     android:id="@+id/button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="68dp"
+                    android:layout_marginTop="24dp"
+                    android:onClick="llamarBusqueda"
                     android:text="Buscar Provisional"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.464"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/txtSobreExperiencia"
-                    android:onClick="llamarBusqueda"/>
+                    app:layout_constraintTop_toBottomOf="@+id/txtDescripcion" />
+
+                <TextView
+                    android:id="@+id/txtDescripcion"
+                    android:layout_width="362dp"
+                    android:layout_height="37dp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="@color/ColorTexto1"
+                    android:text="5 Años en el rubro de instalaciones."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.489"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtSobreExperiencia" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
