@@ -43,7 +43,8 @@
                 android:hint="Nombres"
                 android:inputType="textPersonName"
                 android:padding="8dp"
-                android:textColorHint="@color/textColor" />
+                android:textColorHint="@color/textColor"
+                android:textColor="@color/edtColorgris"/>
 
             <EditText
                 android:id="@+id/edtCCAppPaterno"
@@ -58,7 +59,8 @@
                 android:hint="Apellido Paterno"
                 android:inputType="textPersonName"
                 android:padding="8dp"
-                android:textColorHint="@color/textColor" />
+                android:textColorHint="@color/textColor"
+                android:textColor="@color/edtColorgris"/>
             <EditText
                 android:id="@+id/edtCCAppMaterno"
                 android:layout_width="match_parent"
@@ -72,7 +74,8 @@
                 android:hint="Apellido Materno"
                 android:inputType="textPersonName"
                 android:padding="8dp"
-                android:textColorHint="@color/textColor" />
+                android:textColorHint="@color/textColor"
+                android:textColor="@color/edtColorgris"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -178,6 +181,7 @@
                     android:layout_weight="1"
                     android:entries="@array/tipoID"
                     android:padding="5dp"
+                    android:textSize="20sp"
                     android:textColor="@color/textColor"
                     android:backgroundTint ="@color/textColor" />
 
@@ -208,7 +212,7 @@
                 android:inputType="textPassword"
                 android:textColor="@color/edtColorgris"
                 android:padding="8dp"
-                android:textColorHint="@color/textColor" />
+                android:textColorHint="@color/textColor"/>
 
             <EditText
                 android:id="@+id/edtCCcelular"
@@ -234,9 +238,9 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="32dp"
                 android:hint="Correo electrónico"
-                android:inputType="phone"
-                android:textColor="@color/edtColorgris"
+                android:inputType="textEmailAddress"
                 android:padding="8dp"
+                android:textColor="@color/edtColorgris"
                 android:textColorHint="@color/textColor" />
 
             <EditText
@@ -247,10 +251,10 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="32dp"
                 android:hint="Direccion"
-                android:inputType="phone"
+                android:inputType="textPersonName"
                 android:textColor="@color/edtColorgris"
                 android:padding="8dp"
-                android:textColorHint="@color/textColor" />
+                android:textColorHint="@color/textColor"/>
 
 
             <Button
