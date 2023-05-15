@@ -21,13 +21,14 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imgFHPerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_perfil" />
+                android:src="@drawable/ic_perfil"
+                android:onClick="llamarPerfilUsuario"/>
 
             <ImageButton
                 android:id="@+id/imageButton"

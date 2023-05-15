@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="tipo_ID" >
+    <string-array name="tipoID" >
         <item>DNI</item>
         <item>CARNET EXTRANJERIA</item>
+    </string-array>
+
+    <string-array name="generoUser" >
+        <item>Otros</item>
+        <item>Femenenino</item>
+        <item>Masculino</item>
     </string-array>
 
     <string-array name="categoriaServicio">

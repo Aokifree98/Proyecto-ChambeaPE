@@ -46,7 +46,7 @@
                 android:textColorHint="@color/textColor" />
 
             <EditText
-                android:id="@+id/edtCCApellidos"
+                android:id="@+id/edtCCAppPaterno"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -55,7 +55,21 @@
                 android:drawableStart="@drawable/ic_usuario"
                 android:drawablePadding="16dp"
                 android:ems="10"
-                android:hint="Apellidos"
+                android:hint="Apellido Paterno"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:textColorHint="@color/textColor" />
+            <EditText
+                android:id="@+id/edtCCAppMaterno"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="32dp"
+                android:drawableStart="@drawable/ic_usuario"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:hint="Apellido Materno"
                 android:inputType="textPersonName"
                 android:padding="8dp"
                 android:textColorHint="@color/textColor" />
@@ -116,51 +130,32 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RadioGroup
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:clickable="true">
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="25dp"
+                        android:text="Genero"
+                        android:textColor="@color/textColor" />
 
-                        <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="130dp"
-                            android:layout_height="wrap_content"
-                            android:text="Genero"
-                            android:textColor="@color/textColor" />
+                    <Spinner
+                        android:id="@+id/spCCGenero"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:entries="@array/generoUser"
+                        android:textAlignment="center"
+                        android:textColor="@color/textColor"
+                        android:backgroundTint ="@color/textColor" />
 
-                        <RadioButton
-                            android:id="@+id/rbCCFemenino"
-                            android:layout_width="130dp"
-                            android:layout_height="30dp"
-                            android:text="Femenino"
-                            android:buttonTint ="@color/textColor"
-                            android:textColor="@color/textColor" />
-
-                        <RadioButton
-                            android:id="@+id/rbCCMasculino"
-                            android:layout_width="130dp"
-                            android:layout_height="21dp"
-                            android:buttonTint="@color/textColor"
-                            android:text="Masculino"
-                            android:textColor="@color/textColor" />
-
-                        <RadioButton
-                            android:id="@+id/rbCCOtro"
-                            android:layout_width="130dp"
-                            android:layout_height="30dp"
-                            android:buttonTint ="@color/textColor"
-                            android:textColor="@color/textColor"
-                            android:text="Otro"/>
-                    </RadioGroup>
 
                 </LinearLayout>
 
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/txtTipoDocumento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -181,7 +176,8 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:contentDescription="Seleccionar Tipo de ID"
+                    android:entries="@array/tipoID"
+                    android:padding="5dp"
                     android:textColor="@color/textColor"
                     android:backgroundTint ="@color/textColor" />
 
@@ -230,6 +226,32 @@
                 android:padding="8dp"
                 android:textColorHint="@color/textColor" />
 
+            <EditText
+                android:id="@+id/edtCCCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Correo electrónico"
+                android:inputType="phone"
+                android:textColor="@color/edtColorgris"
+                android:padding="8dp"
+                android:textColorHint="@color/textColor" />
+
+            <EditText
+                android:id="@+id/edtCCDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Direccion"
+                android:inputType="phone"
+                android:textColor="@color/edtColorgris"
+                android:padding="8dp"
+                android:textColorHint="@color/textColor" />
+
 
             <Button
                 android:id="@+id/btnCCRegistrar"
@@ -240,7 +262,7 @@
                 android:textSize="16sp"
                 android:background="@drawable/btnbackgraund1"
                 android:text="Registrar"
-                android:onClick="registrar_usuario"/>
+                android:onClick="registrarUsuario"/>
 
             <Button
                 android:id="@+id/btnCCRegGoogle"
@@ -258,7 +280,7 @@
                 android:textColor="@color/textColor"
                 android:textSize="19sp"
                 android:textStyle="bold"
-                android:onClick="registrar_google"/>
+                android:onClick="registrarGoogle"/>
 
             <TextView
                 android:id="@+id/txtCCIngresar"

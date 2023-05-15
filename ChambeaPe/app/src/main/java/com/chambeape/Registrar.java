@@ -14,25 +14,34 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.chambeape.entidades.Usuario;
+import com.chambeape.ui.Perfil.PerfilFragment;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
 public class Registrar extends AppCompatActivity {
-    EditText nombre, apellidos, celular, fechaNac, tipoDocID, edtCotraseña;
+    EditText nombre, appParterno, appMaterno, celular, fechaNac, tipoDocID, edtCotraseña, correo, direccion;
     Button  btnregistrar, btnregGoogle;
     ImageButton btnFecNac;
-    RadioButton rbFemenino, rbMasculino, rbOtros;
-    Spinner tipoID;
+    Spinner tipoID, genero;
     TextView txtIngresar;
 
     private int dia, mes, año;
+
+    private DatabaseReference miDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
         nombre = findViewById(R.id.edtCCNombres);
-        apellidos = findViewById(R.id.edtCCApellidos);
+        appParterno = findViewById(R.id.edtCCAppPaterno);
+        appMaterno = findViewById(R.id.edtCCAppMaterno);
         fechaNac = findViewById(R.id.edtCCFechaNc);
         celular = findViewById(R.id.edtCCcelular);
         edtCotraseña = findViewById(R.id.edtCostraseña);
@@ -40,15 +49,15 @@ public class Registrar extends AppCompatActivity {
         btnFecNac = findViewById(R.id.btnCCCalendario);
         btnregistrar = findViewById(R.id.btnCCRegistrar);
         btnregGoogle = findViewById(R.id.btnCCRegGoogle);
-        rbFemenino = findViewById(R.id.rbCCFemenino);
-        rbMasculino = findViewById(R.id.rbCCMasculino);
-        rbOtros = findViewById(R.id.rbCCOtro);
+        correo = findViewById(R.id.edtCCCorreo);
+        direccion = findViewById(R.id.edtCCDireccion);
+        genero = findViewById(R.id.spCCGenero);
         tipoID = findViewById(R.id.spCCTipoID);
         txtIngresar = findViewById(R.id.txtCCIngresar);
 
-        ArrayAdapter<CharSequence> adapter =
-                ArrayAdapter.createFromResource(this, R.array.tipo_ID, android.R.layout.simple_spinner_item);
-        tipoID.setAdapter(adapter);
+        FirebaseApp.initializeApp(this);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        miDatabase = database.getReference();
     }
 
     public void llamar_Calendario(View view) {
@@ -67,12 +76,28 @@ public class Registrar extends AppCompatActivity {
         d.show();
     }
 
-    public void registrar_usuario(View view) {
-        Intent r = new Intent(this,MainActivity.class);
+    public void registrarUsuario(View view) {
+        registrar();
+        Intent r = new Intent(this, MenuDesplegable.class);
         startActivity(r);
 
     }
 
-    public void registrar_google(View view) {
+    private void registrar() {
+        String dni = tipoDocID.getText().toString();
+        String nom = nombre.getText().toString();
+        String apep = appParterno.getText().toString();
+        String apem = appMaterno.getText().toString();
+        String mail = correo.getText().toString();
+        String dire = direccion.getText().toString();
+        String fecha = fechaNac.getText().toString();
+        String pass = edtCotraseña.getText().toString();
+        String tel = celular.getText().toString();
+        Usuario usuario = new Usuario(dni,nom,pass,tel,apep,apem,mail,dire,fecha,"","","","0","0","","");
+        miDatabase.child("Usuarios").child(dni).setValue(usuario);
+        Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
+    }
+
+    public void registrarGoogle(View view) {
     }
 }
