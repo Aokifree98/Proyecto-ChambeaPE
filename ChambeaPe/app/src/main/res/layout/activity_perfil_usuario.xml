@@ -185,6 +185,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtSobreExperiencia" />
 
+                <Button
+                    android:id="@+id/btnNuevoAnuncio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Crear anuncio"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

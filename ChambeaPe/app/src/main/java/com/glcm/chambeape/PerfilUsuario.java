@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -14,6 +15,8 @@ public class PerfilUsuario extends AppCompatActivity {
 
     ImageView imgEdit, imgLlamar;
     ListView listaMisServicios, listaMisOfertas;
+
+    Button btnAñadirAnuncio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,16 @@ public class PerfilUsuario extends AppCompatActivity {
         imgLlamar = findViewById(R.id.imgPLlamar);
         listaMisServicios = findViewById(R.id.listaMisServicios);
         listaMisOfertas = findViewById(R.id.listaMisOfertas);
+
+
+        btnAñadirAnuncio=findViewById(R.id.btnNuevoAnuncio);
+        btnAñadirAnuncio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PerfilUsuario.this, AnuncioProvisional.class));
+
+            }
+        });
 
 
     }
