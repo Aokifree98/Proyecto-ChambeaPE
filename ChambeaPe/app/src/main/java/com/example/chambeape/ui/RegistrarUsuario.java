@@ -65,7 +65,7 @@ public class RegistrarUsuario extends AppCompatActivity {
         String mail = edtmailUsuario.getText().toString();
         String dire = edtdirUsuario.getText().toString();
         String fecha =edtfecUsuario.getText().toString();
-        Usuario usuario = new Usuario("001",nom,"12345","999999999",apep,apem,mail,dire,fecha,"link","link","0","","");
+        Usuario usuario = new Usuario("001",nom,"12345","999999999",apep,apem,mail,dire,fecha,"link","link","0","","","","");
         miDatabase.child("Usuarios").child(id).setValue(usuario);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
 

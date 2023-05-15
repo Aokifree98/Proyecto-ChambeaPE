@@ -3,7 +3,9 @@ package com.example.chambeape.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -69,6 +71,16 @@ public class PerfilUsuario extends AppCompatActivity {
 
             }
 
+        });
+        btnEditPerfi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PerfilUsuario.this, EditarPerfilUsuario.class);
+                String id = dni;
+                i.putExtra("dni", id);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
         });
     }
 }

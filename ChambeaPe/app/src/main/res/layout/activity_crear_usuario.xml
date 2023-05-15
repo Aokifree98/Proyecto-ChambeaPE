@@ -247,7 +247,7 @@
                 android:layout_marginEnd="32dp"
                 android:drawablePadding="16dp"
                 android:ems="10"
-                android:hint="Domicilio"
+                android:hint="Distrito"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textColor="@color/primaryDarkColor"

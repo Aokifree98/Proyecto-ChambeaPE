@@ -72,9 +72,10 @@ public class SubirFotoUsusario extends AppCompatActivity {
             progressDialog.setTitle("Cargando imagen....");
             progressDialog.show();
 
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
-            Date now = new Date();
-            String fileName = "fotUsuario_"+id+"_"+formatter.format(now);
+            //SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
+            //Date now = new Date();
+            //String fileName = "fotUsuario_"+id+"_"+formatter.format(now);
+            String fileName = "fotUsuario_"+id;
 
             miStorageRef = FirebaseStorage.getInstance().getReference(fileName);
             miStorageRef.putFile(imagenUri)
@@ -91,6 +92,11 @@ public class SubirFotoUsusario extends AppCompatActivity {
                                         progressDialog.dismiss();
                                     imagenUri=null;
                                     imgFotoPU.setImageURI(null);
+                                    Intent i = new Intent(SubirFotoUsusario.this, EditarPerfilUsuario.class);
+                                    String id = dni;
+                                    i.putExtra("dni", id);
+                                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(i);
                                 }
                             });
                         }

@@ -4,14 +4,14 @@ import android.graphics.Bitmap;
 
 public class Usuario {
 
-    private String dniUsuario, nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,vidUsuario,fotUsuario,calUsuario,fotValidacion,verTelefono;
+    private String dniUsuario, nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,desUsuario,vidUsuario,fotUsuario,calUsuarioTra,calUsuarioEmp,fotValidacion,verTelefono;
 
 
     public Usuario(){
 
     }
 
-    public Usuario(String dniUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String vidUsuario, String fotUsuario, String calUsuario, String fotValidacion, String verTelefono) {
+    public Usuario(String dniUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String desUsuario, String vidUsuario, String fotUsuario, String calUsuarioTra, String calUsuarioEmp, String fotValidacion, String verTelefono) {
         this.dniUsuario = dniUsuario;
         this.nomUsuario = nomUsuario;
         this.passUsuario = passUsuario;
@@ -21,9 +21,11 @@ public class Usuario {
         this.mailUsuario = mailUsuario;
         this.dirUsuario = dirUsuario;
         this.fecUsuario = fecUsuario;
+        this.desUsuario = desUsuario;
         this.vidUsuario = vidUsuario;
         this.fotUsuario = fotUsuario;
-        this.calUsuario = calUsuario;
+        this.calUsuarioTra = calUsuarioTra;
+        this.calUsuarioEmp = calUsuarioEmp;
         this.fotValidacion = fotValidacion;
         this.verTelefono = verTelefono;
     }
@@ -100,6 +102,14 @@ public class Usuario {
         this.fecUsuario = fecUsuario;
     }
 
+    public String getDesUsuario() {
+        return desUsuario;
+    }
+
+    public void setDesUsuario(String desUsuario) {
+        this.desUsuario = desUsuario;
+    }
+
     public String getVidUsuario() {
         return vidUsuario;
     }
@@ -116,12 +126,20 @@ public class Usuario {
         this.fotUsuario = fotUsuario;
     }
 
-    public String getCalUsuario() {
-        return calUsuario;
+    public String getCalUsuarioTra() {
+        return calUsuarioTra;
     }
 
-    public void setCalUsuario(String calUsuario) {
-        this.calUsuario = calUsuario;
+    public void setCalUsuarioTra(String calUsuarioTra) {
+        this.calUsuarioTra = calUsuarioTra;
+    }
+
+    public String getCalUsuarioEmp() {
+        return calUsuarioEmp;
+    }
+
+    public void setCalUsuarioEmp(String calUsuarioEmp) {
+        this.calUsuarioEmp = calUsuarioEmp;
     }
 
     public String getFotValidacion() {
@@ -152,9 +170,11 @@ public class Usuario {
                 ", mailUsuario='" + mailUsuario + '\'' +
                 ", dirUsuario='" + dirUsuario + '\'' +
                 ", fecUsuario='" + fecUsuario + '\'' +
+                ", desUsuario='" + desUsuario + '\'' +
                 ", vidUsuario='" + vidUsuario + '\'' +
                 ", fotUsuario='" + fotUsuario + '\'' +
-                ", calUsuario='" + calUsuario + '\'' +
+                ", calUsuarioTra='" + calUsuarioTra + '\'' +
+                ", calUsuarioEmp='" + calUsuarioEmp + '\'' +
                 ", fotValidacion='" + fotValidacion + '\'' +
                 ", verTelefono='" + verTelefono + '\'' +
                 '}';

@@ -18,8 +18,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
-
-
                 <View
                     android:id="@+id/imgPortada"
                     android:layout_width="wrap_content"
@@ -45,7 +43,7 @@
                     app:layout_constraintTop_toTopOf="@+id/imgPortada" />
 
                 <ImageView
-                    android:id="@+id/imgPerfil"
+                    android:id="@+id/imgEPFoto"
                     android:layout_width="189dp"
                     android:layout_height="192dp"
                     app:layout_constraintBottom_toBottomOf="@+id/imgPortada"
@@ -62,10 +60,10 @@
                     android:layout_height="36dp"
                     android:layout_marginTop="28dp"
                     app:layout_constraintBottom_toBottomOf="@+id/imgPortada"
-                    app:layout_constraintEnd_toEndOf="@+id/imgPerfil"
+                    app:layout_constraintEnd_toEndOf="@+id/imgEPFoto"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@+id/imgPerfil"
-                    app:layout_constraintTop_toTopOf="@+id/imgPerfil"
+                    app:layout_constraintStart_toStartOf="@+id/imgEPFoto"
+                    app:layout_constraintTop_toTopOf="@+id/imgEPFoto"
                     app:layout_constraintVertical_bias="0.0"
                     app:srcCompat="@drawable/ic_photo" />
 
@@ -89,106 +87,105 @@
                     android:background="@drawable/btnredondeado2"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.39"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtEPNombre" />
 
                 <TextView
-                    android:id="@+id/txtEPApellido"
+                    android:id="@+id/txtEPApellidoPat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="Apellido"
+                    android:layout_marginTop="8dp"
+                    android:text="Apellido Paterno"
                     android:textColor="#1C1A1A"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.044"
+                    app:layout_constraintHorizontal_bias="0.045"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtEPNombre" />
+
                 <EditText
-                    android:id="@+id/edtEPApellido"
+                    android:id="@+id/edtEPApellidoPat"
                     android:layout_width="370dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="12dp"
                     android:background="@drawable/btnredondeado2"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.39"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEPApellido" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPApellidoPat" />
 
                 <TextView
-                    android:id="@+id/txtEPPais"
+                    android:id="@+id/txtEPApellidoMat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="País"
+                    android:layout_marginTop="12dp"
+                    android:text="Apellido Materno"
                     android:textColor="#1C1A1A"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.044"
+                    app:layout_constraintHorizontal_bias="0.045"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edtEPApellido" />
-
-
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPApellidoPat" />
 
                 <EditText
-                    android:id="@+id/edtEPPais"
+                    android:id="@+id/edtEPApellidoMat"
                     android:layout_width="370dp"
                     android:layout_height="35dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="12dp"
                     android:background="@drawable/btnredondeado2"
                     android:ems="10"
                     android:inputType="textPersonName"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.39"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEPUbicacion" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPApellidoMat" />
+
 
                 <TextView
-                    android:id="@+id/txtEPUbicacion"
+                    android:id="@+id/txtEPDistrito"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="UBICACIÓN"
+                    android:layout_marginTop="8dp"
+                    android:text="Distrito"
                     android:textColor="#1C1A1A"
-                    app:layout_constraintEnd_toStartOf="@+id/radioButtonUbicacion"
-                    app:layout_constraintHorizontal_bias="0.07"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEPPais" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonUbicacion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:buttonTint="@color/primaryColor"
-                    android:text="Mi ubicación"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="10sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.922"
+                    app:layout_constraintHorizontal_bias="0.046"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEPPais" />
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPApellidoMat" />
+
+
+                <EditText
+                    android:id="@+id/edtEPDistrito"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/btnredondeado2"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.414"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPDistrito" />
 
                 <TextView
                     android:id="@+id/txtEPOcupacion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="12dp"
                     android:text="Ocupación"
                     android:textColor="#1C1A1A"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.044"
+                    app:layout_constraintHorizontal_bias="0.043"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edtEPPais" />
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPDistrito" />
 
                 <EditText
                     android:id="@+id/edtEPOcupacion"
                     android:layout_width="370dp"
                     android:layout_height="35dp"
+                    android:layout_marginTop="12dp"
                     android:background="@drawable/btnredondeado2"
                     android:ems="10"
                     android:inputType="textPersonName"
@@ -201,7 +198,7 @@
                     android:id="@+id/txtEPDescripcion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="12dp"
                     android:text="Descripción"
                     android:textColor="#1C1A1A"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -213,15 +210,16 @@
                     android:id="@+id/edtEPDescripcion"
                     android:layout_width="370dp"
                     android:layout_height="35dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/btnredondeado2"
                     android:ems="10"
+                    android:hint="Coloca una oracion corta que te describa"
+                    android:maxLength="30"
                     android:inputType="textPersonName"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.365"
+                    app:layout_constraintHorizontal_bias="0.414"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEPDescripcion"
-                    android:layout_marginBottom="25dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPDescripcion" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
