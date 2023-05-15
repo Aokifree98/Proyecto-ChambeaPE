@@ -22,9 +22,11 @@ public class Buscar extends AppCompatActivity {
         startActivity(i);
 
     }
-    public void llamarItemTopTrabajos(View view) {
-        Intent i = new Intent(this, ItemMostrarTopTrabajador.class);
+    public void llamarItemTopTrabajadores(View view) {
+        Intent i = new Intent(this, ItemMostrarTopTrabajos.class);
         startActivity(i);
 
     }
+
+
 }

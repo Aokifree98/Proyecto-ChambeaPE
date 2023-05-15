@@ -73,7 +73,7 @@
                 android:padding="5dp"
                 android:text="Trabajadores"
                 android:textColor="@color/ColorTexto1"
-                android:onClick="llamarItemTopTrabajos"/>
+                android:onClick="llamarItemTopTrabajadores"/>
 
             <ListView
                 android:id="@+id/listTopTrabajos"
