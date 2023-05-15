@@ -170,11 +170,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/txtEPDistrito" />
 
                 <TextView
-                    android:id="@+id/txtEPOcupacion"
+                    android:id="@+id/txtEPTelefono"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Ocupación"
+                    android:text="Telefono"
                     android:textColor="#1C1A1A"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.043"
@@ -182,7 +182,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/edtEPDistrito" />
 
                 <EditText
-                    android:id="@+id/edtEPOcupacion"
+                    android:id="@+id/edtEPTelefono"
                     android:layout_width="370dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="12dp"
@@ -192,7 +192,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.365"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEPOcupacion" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPTelefono" />
 
                 <TextView
                     android:id="@+id/txtEPDescripcion"
@@ -204,7 +204,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.05"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edtEPOcupacion" />
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPTelefono" />
 
                 <EditText
                     android:id="@+id/edtEPDescripcion"
@@ -221,7 +221,36 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtEPDescripcion" />
 
-
+                <Button
+                    android:id="@+id/btnEPVerificarNumero"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/btnredondeado"
+                    android:ems="10"
+                    android:hint="Verificar numero"
+                    android:inputType="textPersonName"
+                    android:maxLength="30"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.411"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPDescripcion"></Button>
+                <Button
+                    android:id="@+id/btnEPActualizar"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/btnredondeado"
+                    android:ems="10"
+                    android:hint="Actualizar datos"
+                    android:inputType="textPersonName"
+                    android:maxLength="30"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.411"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnEPVerificarNumero"></Button>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

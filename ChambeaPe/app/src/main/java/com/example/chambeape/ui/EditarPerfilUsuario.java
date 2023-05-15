@@ -21,7 +21,7 @@ import com.squareup.picasso.Picasso;
 public class EditarPerfilUsuario extends AppCompatActivity {
 
     ImageView imgEPFoto, imgedtFotoPerfil;
-    EditText edtEPNombre, edtEPApellidoMat,edtEPApellidoPat,edtEPDistrito,edtEPDescripcion;
+    EditText edtEPNombre, edtEPApellidoMat,edtEPApellidoPat,edtEPDistrito,edtEPDescripcion, edtEPTelefono;
 
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     @Override
@@ -35,6 +35,7 @@ public class EditarPerfilUsuario extends AppCompatActivity {
         edtEPApellidoPat = findViewById(R.id.edtEPApellidoPat);
         edtEPDistrito = findViewById(R.id.edtEPDistrito);
         edtEPDescripcion = findViewById(R.id.edtEPDescripcion);
+        edtEPTelefono = findViewById(R.id.edtEPTelefono);
 
         String dni = getIntent().getExtras().getString("dni");
         mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -45,10 +46,17 @@ public class EditarPerfilUsuario extends AppCompatActivity {
                     String getapepat = snapshot.child(dni).child("apepatUsuario").getValue(String.class);
                     String getapemat = snapshot.child(dni).child("apematUsuario").getValue(String.class);
                     String getdirec = snapshot.child(dni).child("dirUsuario").getValue(String.class);
+                    String gettele = snapshot.child(dni).child("telUsuario").getValue(String.class);
+                    String descrip = snapshot.child(dni).child("desUsuario").getValue(String.class);
                     String url = snapshot.child(dni).child("fotUsuario").getValue(String.class);
-                    String nombresperfil = getnombre+" "+getapepat+" "+getapemat;
-                    edtEPNombre.setText(nombresperfil);
+
+                    edtEPNombre.setText(getnombre);
+                    edtEPApellidoPat.setText(getapepat);
+                    edtEPApellidoMat.setText(getapemat);
                     edtEPDistrito.setText(getdirec);
+                    edtEPDescripcion.setText(descrip);
+                    edtEPTelefono.setText(gettele);
+
                     if(url.isEmpty())
                     {
                         Toast.makeText(EditarPerfilUsuario.this,"No se encontro una foto de perfil",Toast.LENGTH_SHORT).show();
