@@ -93,7 +93,8 @@ public class Registrar extends AppCompatActivity {
         String fecha = fechaNac.getText().toString();
         String pass = edtCotraseña.getText().toString();
         String tel = celular.getText().toString();
-        Usuario usuario = new Usuario(dni,nom,pass,tel,apep,apem,mail,dire,fecha,"","","","0","0","","");
+        Usuario usuario = new Usuario(dni,pass, nom,tel,apep,apem,mail,dire,fecha,"","",
+                "","0","0","","");
         miDatabase.child("Usuarios").child(dni).setValue(usuario);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
     }

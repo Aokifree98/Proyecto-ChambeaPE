@@ -150,7 +150,7 @@
                         android:entries="@array/generoUser"
                         android:textAlignment="center"
                         android:textColor="@color/textColor"
-                        android:backgroundTint ="@color/textColor" />
+                        android:backgroundTint ="@color/textColor"/>
 
 
                 </LinearLayout>

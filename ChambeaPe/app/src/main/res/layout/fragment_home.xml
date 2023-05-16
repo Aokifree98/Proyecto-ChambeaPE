@@ -117,6 +117,7 @@
             android:layout_gravity="center"
             android:layout_marginEnd="32dp"
             android:background="@drawable/btnbackgraund1"
+            android:onClick="llamarAnuncioOferta"
             android:text="Ofertas" />
     </LinearLayout>
 

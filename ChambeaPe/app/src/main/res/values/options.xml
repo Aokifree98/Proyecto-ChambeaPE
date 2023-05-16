@@ -27,4 +27,11 @@
         <item>Tiktok</item>
     </string-array>
 
+    <string-array name="Habilidades">
+        <item>Resiliencia</item>
+        <item>Trabajo bajo presión</item>
+        <item>Flexibilidad</item>
+        <item>Multitarea</item>
+    </string-array>
+
 </resources>
