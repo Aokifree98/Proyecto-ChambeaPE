@@ -162,7 +162,7 @@
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="545dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -176,26 +176,57 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="Mis Servicios"
+                android:text="Mis Anuncios de trabajo"
                 android:textStyle="bold"
                 android:textColor="@color/primaryColor"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
             <Button
-                android:id="@+id/btnAgregarServicio"
+                android:id="@+id/btnAgregarOferta"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Agregar Servicio"
+                android:text="Agregar oferta de trabajo"
                 android:textColor="@color/white"
                 android:background="@drawable/btnredondeado"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rclListaServicios"
+            <ScrollView
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rclListaOfertas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+            </ScrollView>
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"/>
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Mis Anuncios como trabajador"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"
+                android:textSize="25sp" />
+            <Button
+                android:id="@+id/btnAgregarTrabajador"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Agregar perfil como trabajador"
+                android:textColor="@color/white"
+                android:background="@drawable/btnredondeado"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rclListaTrabajador"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+            </ScrollView>
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>

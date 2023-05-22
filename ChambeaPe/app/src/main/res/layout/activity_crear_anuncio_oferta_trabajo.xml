@@ -43,7 +43,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:backgroundTint="@color/primaryColor"
-                android:entries="@array/categoriaServicio"
+                android:entries="@array/CategoriaServicio"
                 android:textColor="@color/primaryColor" />
 
             <EditText

@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chambeape.R;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -94,7 +93,7 @@ public class EditarPerfilUsuario extends AppCompatActivity {
         imgedtFotoPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(EditarPerfilUsuario.this, SubirFotoUsusario.class);
+                Intent i = new Intent(EditarPerfilUsuario.this, SubirFotoUsuario.class);
                 String id = dni;
                 i.putExtra("dni", id);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -22,7 +22,7 @@ import com.squareup.picasso.Picasso;
 public class PerfilUsuario extends AppCompatActivity {
     ImageView imgPerfilUser, imgNotiUser;
     TextView txtNombreUser,txtDireccionUser;
-    Button btnEditPerfi, btnRedesSoci,btnContactarUser,btnAgregarServicio;
+    Button btnEditPerfi, btnRedesSoci,btnContactarUser,btnAgregarOferta;
 
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     @Override
@@ -37,7 +37,7 @@ public class PerfilUsuario extends AppCompatActivity {
         btnEditPerfi=findViewById(R.id.btnEditPerfi);
         btnRedesSoci=findViewById(R.id.btnRedesSoci);
         btnContactarUser=findViewById(R.id.btnContactarUser);
-        btnAgregarServicio=findViewById(R.id.btnAgregarServicio);
+        btnAgregarOferta=findViewById(R.id.btnAgregarOferta);
 
         String dni = getIntent().getExtras().getString("dni");
         mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {

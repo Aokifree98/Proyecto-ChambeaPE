@@ -23,39 +23,33 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-public class SubirFotoUsusario extends AppCompatActivity {
-    Button btnSubirFotoPU,btnRegistrarPU;
-    ImageView imgFotoPU;
+public class SubirFotoAnuncio extends AppCompatActivity {
+    Button btnSubirFotoCA,btnRegistrarCA;
+    ImageView imgFotoCA;
     Uri imagenUri;
     StorageReference miStorageRef;
     DatabaseReference miDatabaseRef;
     ProgressDialog progressDialog;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subir_foto_ususario);
-
-        imgFotoPU = findViewById(R.id.imgFotoPU);
-        btnSubirFotoPU = findViewById(R.id.btnSubirFotoPU);
-        btnRegistrarPU = findViewById(R.id.btnRegistrarPU);
+        setContentView(R.layout.activity_subir_foto_anuncio);
+        imgFotoCA = findViewById(R.id.imgFotoCA);
+        btnSubirFotoCA = findViewById(R.id.btnSubirFotoCA);
+        btnRegistrarCA = findViewById(R.id.btnRegistrarCA);
 
         FirebaseApp.initializeApp(this);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         miDatabaseRef =database.getReference();
 
-        btnSubirFotoPU.setOnClickListener(new View.OnClickListener() {
+        btnSubirFotoCA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 seleccionFoto();
             }
         });
-        btnRegistrarPU.setOnClickListener(new View.OnClickListener() {
+        btnRegistrarCA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registrarFoto();
@@ -64,8 +58,9 @@ public class SubirFotoUsusario extends AppCompatActivity {
     }
     private void registrarFoto() {
         //String id = miDatabaseRef.push().getKey();
-        String dni = getIntent().getExtras().getString("dni");
-        String id = dni;
+        String idAnuncio = getIntent().getExtras().getString("idanun");
+        String idUser = getIntent().getExtras().getString("dniuser");
+
         if(imagenUri !=null)
         {
             progressDialog = new ProgressDialog(this);
@@ -75,7 +70,7 @@ public class SubirFotoUsusario extends AppCompatActivity {
             //SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
             //Date now = new Date();
             //String fileName = "fotUsuario_"+id+"_"+formatter.format(now);
-            String fileName = "fotUsuario_"+id;
+            String fileName = "fotAnuncio_"+idUser+"_"+idAnuncio;
 
             miStorageRef = FirebaseStorage.getInstance().getReference(fileName);
             miStorageRef.putFile(imagenUri)
@@ -86,14 +81,14 @@ public class SubirFotoUsusario extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     //Usuario usuario = new Usuario(id,"Test","Test","Test","Test","Test","Test","Test","Test","link","0","0",uri.toString(),"0");
-                                    miDatabaseRef.child("Usuarios").child(id).child("fotUsuario").setValue(uri.toString());
-                                    Toast.makeText(SubirFotoUsusario.this,"Subido Correctamente",Toast.LENGTH_SHORT).show();
+                                    miDatabaseRef.child("DetalleAnuncio").child(idAnuncio).child("idFotoAnuncio").setValue(uri.toString());
+                                    Toast.makeText(SubirFotoAnuncio.this,"Subido Correctamente",Toast.LENGTH_SHORT).show();
                                     if (progressDialog.isShowing())
                                         progressDialog.dismiss();
                                     imagenUri=null;
-                                    imgFotoPU.setImageURI(null);
-                                    Intent i = new Intent(SubirFotoUsusario.this, EditarPerfilUsuario.class);
-                                    String id = dni;
+                                    imgFotoCA.setImageURI(null);
+                                    Intent i = new Intent(SubirFotoAnuncio.this, MenuInicio.class);
+                                    String id = idUser;
                                     i.putExtra("dni", id);
                                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(i);
@@ -105,13 +100,13 @@ public class SubirFotoUsusario extends AppCompatActivity {
                         public void onFailure(@NonNull Exception e) {
                             if (progressDialog.isShowing())
                                 progressDialog.dismiss();
-                            Toast.makeText(SubirFotoUsusario.this,"Falla al subir",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SubirFotoAnuncio.this,"Falla al subir",Toast.LENGTH_SHORT).show();
                         }
                     });
 
 
         }else{
-            Toast.makeText(SubirFotoUsusario.this,"No ha seleccionado una imagen",Toast.LENGTH_SHORT).show();
+            Toast.makeText(SubirFotoAnuncio.this,"No ha seleccionado una imagen",Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -126,7 +121,7 @@ public class SubirFotoUsusario extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && data != null && data.getData() != null){
             imagenUri = data.getData();
-            imgFotoPU.setImageURI(imagenUri);
+            imgFotoCA.setImageURI(imagenUri);
         }
     }
 }

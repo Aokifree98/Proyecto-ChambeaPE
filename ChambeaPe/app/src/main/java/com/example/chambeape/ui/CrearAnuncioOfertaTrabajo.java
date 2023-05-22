@@ -46,8 +46,7 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
     }
     public void crearAOT(View view) {
         crearAnuncioOfertar();
-        Intent c = new Intent(this, MenuInicio.class);
-        startActivity(c);
+
     }
 
     private void crearAnuncioOfertar() {
@@ -69,5 +68,12 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
 
         miDatabase.child("DetalleAnuncio").child(id).setValue(detalleAnuncio);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(this, SubirFotoAnuncio.class);
+        String iduser = dni;
+        String idanu = id;
+        i.putExtra("dniuser", iduser);
+        i.putExtra("idanun", idanu);
+        startActivity(i);
     }
+
 }

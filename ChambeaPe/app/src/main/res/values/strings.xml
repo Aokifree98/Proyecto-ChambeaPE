@@ -9,11 +9,13 @@
         <item>DNI</item>
         <item>CARNET EXTRANJERIA</item>
     </string-array>
-    <string-array name="categoriaServicio">
+    <string-array name="CategoriaServicio">
+        <item>Seleccione el tipo de servicio</item>
         <item>Electricidad</item>
-        <item>Gasfitero</item>
-        <item>Bellesa</item>
+        <item>Gasfiterria</item>
+        <item>Belleza y Salud</item>
         <item>Costrucción</item>
+        <item>Alimentos</item>
     </string-array>
 
     <string-array name="Plataformas">
@@ -26,6 +28,7 @@
     </string-array>
 
     <string-array name="Habilidades">
+        <item>Seleccione una habilidad</item>
         <item>Resiliencia</item>
         <item>Trabajo bajo presión</item>
         <item>Flexibilidad</item>
