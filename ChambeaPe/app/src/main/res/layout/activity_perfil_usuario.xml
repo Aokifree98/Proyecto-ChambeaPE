@@ -13,12 +13,11 @@
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
 
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
+            android:orientation="horizontal">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgPerfilUser"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -31,6 +30,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:paddingLeft="10dp"
 
                 android:orientation="vertical">
 
@@ -41,6 +41,7 @@
                     android:layout_gravity="center"
                     android:text="Miguel Castillo Perez"
                     android:textSize="25sp"
+                    android:textColor="@color/white"
                     />
 
                 <TextView
@@ -49,6 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="El Tambo, Huancayo"
+                    android:textColor="@color/white"
                     android:textSize="18sp" />
 
                 <LinearLayout
@@ -113,7 +115,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp">
 
         <Button
             android:id="@+id/btnEditPerfi"
@@ -126,7 +129,8 @@
             android:drawablePadding="5dp"
             android:padding="10dp"
             android:layout_marginEnd="10dp"
-            android:text="Editar" />
+            android:text="Editar"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/btnRedesSoci"
@@ -139,7 +143,8 @@
             android:layout_marginEnd="10dp"
             android:drawableEnd="@drawable/ic_social_networks"
             android:background="@drawable/btnredondeado"
-            android:text="Mis redes" />
+            android:text="Mis redes"
+            android:textColor="@color/white"/>
         <Button
             android:id="@+id/btnContactarUser"
             android:layout_width="wrap_content"
@@ -150,7 +155,7 @@
             android:padding="10dp"
             android:drawableEnd="@drawable/ic_phone"
             android:background="@drawable/btnredondeado"
-
+            android:textColor="@color/white"
             android:text="Contactar" />
 
 
@@ -182,6 +187,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:text="Agregar Servicio"
+                android:textColor="@color/white"
                 android:background="@drawable/btnredondeado"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rclListaServicios"

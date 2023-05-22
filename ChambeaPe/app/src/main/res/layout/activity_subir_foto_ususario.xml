@@ -31,16 +31,12 @@
             android:layout_marginHorizontal="0dp"
             android:layout_marginBottom="50dp"
             ></TextView>
-        <ImageButton
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgFotoPU"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginHorizontal="50dp"
-            android:layout_gravity="center"
-            tools:srcCompat="@tools:sample/avatars"
-            android:scaleType="fitCenter"
-            android:layout_marginVertical="20dp"
-            ></ImageButton>
+            android:src="@drawable/ic_photo"
+            ></de.hdodenhof.circleimageview.CircleImageView>
         <Button
             android:id="@+id/btnSubirFotoPU"
             android:layout_width="match_parent"

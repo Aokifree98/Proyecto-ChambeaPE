@@ -42,17 +42,17 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/imgPortada" />
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imgEPFoto"
-                    android:layout_width="189dp"
-                    android:layout_height="192dp"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:src="@drawable/ic_user"
                     app:layout_constraintBottom_toBottomOf="@+id/imgPortada"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.502"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0"
-                    tools:srcCompat="@tools:sample/avatars"
-                    />
+                    app:layout_constraintVertical_bias="0.8" />
 
                 <ImageView
                     android:id="@+id/imgedtFotoPerfil"
@@ -65,7 +65,7 @@
                     app:layout_constraintStart_toStartOf="@+id/imgEPFoto"
                     app:layout_constraintTop_toTopOf="@+id/imgEPFoto"
                     app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/ic_photo" />
+                    android:src="@drawable/ic_photo" />
 
                 <TextView
                     android:id="@+id/txtEPNombre"
@@ -112,6 +112,7 @@
                     android:layout_marginTop="12dp"
                     android:background="@drawable/btnredondeado2"
                     android:ems="10"
+                    android:textAlignment="center"
                     android:inputType="textPersonName"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.39"
@@ -165,6 +166,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/btnredondeado2"
                     android:ems="10"
+                    android:textAlignment="center"
                     android:inputType="textPersonName"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.414"
@@ -224,6 +226,32 @@
                     app:layout_constraintHorizontal_bias="0.414"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtEPDescripcion" />
+                <TextView
+                    android:id="@+id/txtEPEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Correo electronico"
+                    android:textColor="#1C1A1A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.05"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPDescripcion" />
+
+                <EditText
+                    android:id="@+id/edtEPEmail"
+                    android:layout_width="370dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/btnredondeado2"
+                    android:ems="10"
+                    android:maxLength="30"
+                    android:textAlignment="center"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.414"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEPEmail" />
 
                 <Button
                     android:id="@+id/btnEPVerificarNumero"
@@ -232,14 +260,14 @@
                     android:layout_marginTop="16dp"
                     android:background="@drawable/btnredondeado"
                     android:ems="10"
-                    android:hint="Verificar numero"
-                    android:inputType="textPersonName"
+                    android:text="Verificar numero"
+
                     android:maxLength="30"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.411"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edtEPDescripcion"></Button>
+                    app:layout_constraintTop_toBottomOf="@+id/edtEPEmail"></Button>
                 <Button
                     android:id="@+id/btnEPActualizar"
                     android:layout_width="370dp"
@@ -247,8 +275,8 @@
                     android:layout_marginTop="16dp"
                     android:background="@drawable/btnredondeado"
                     android:ems="10"
-                    android:hint="Actualizar datos"
-                    android:inputType="textPersonName"
+                    android:text="Actualizar datos"
+
                     android:maxLength="30"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
