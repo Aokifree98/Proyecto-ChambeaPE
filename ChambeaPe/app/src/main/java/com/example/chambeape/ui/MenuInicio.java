@@ -102,6 +102,16 @@ public class MenuInicio extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        btnMICreAOfer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MenuInicio.this, CrearAnuncioOfertaTrabajo.class);
+                String id = dni;
+                i.putExtra("dni", id);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        });
 
     }
 }

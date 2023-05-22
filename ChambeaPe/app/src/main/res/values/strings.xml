@@ -9,4 +9,26 @@
         <item>DNI</item>
         <item>CARNET EXTRANJERIA</item>
     </string-array>
+    <string-array name="categoriaServicio">
+        <item>Electricidad</item>
+        <item>Gasfitero</item>
+        <item>Bellesa</item>
+        <item>Costrucción</item>
+    </string-array>
+
+    <string-array name="Plataformas">
+        <item>Facebook</item>
+        <item>Instagram</item>
+        <item>LinkedIn</item>
+        <item>Bumeran</item>
+        <item>YouTube</item>
+        <item>Tiktok</item>
+    </string-array>
+
+    <string-array name="Habilidades">
+        <item>Resiliencia</item>
+        <item>Trabajo bajo presión</item>
+        <item>Flexibilidad</item>
+        <item>Multitarea</item>
+    </string-array>
 </resources>
