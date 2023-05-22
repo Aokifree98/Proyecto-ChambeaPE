@@ -8,43 +8,6 @@
     android:orientation="vertical"
     tools:context=".VistaDetalleOfertaTrabajo">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/ColorBotones1"
-        android:scrollbarSize="5dp"
-        >
-
-        <ImageView
-            android:id="@+id/icnVolver"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            app:srcCompat="@drawable/ic_volver"
-            android:onClick="llamarVolver"/>
-
-        <TextView
-            android:id="@+id/txtOfertaTrabajo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Oferta de empleo"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            />
-
-        <ImageView
-            android:id="@+id/icnMasOpciones"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:layout_gravity="end"
-            app:srcCompat="@drawable/ic_masopciones"
-
-            />
-
-
-    </androidx.appcompat.widget.Toolbar>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -70,7 +33,7 @@
                 android:id="@+id/txtNomAnunciante"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ANUNCIANTE"
+                android:text="Canuto Perez"
                 android:textColor="@color/ColorTexto1"
                 android:textSize="20sp"
                 android:textStyle="bold"

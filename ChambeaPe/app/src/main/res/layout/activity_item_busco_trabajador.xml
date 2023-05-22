@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ItemBuscoEmpleo"
-    android:orientation="vertical"
-    android:background="@color/white">
+    app:cardElevation="12dp"
+    app:cardCornerRadius="12dp"
+    android:layout_marginTop="8dp"
+    app:cardBackgroundColor="@color/ColorBotones1"
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="234dp"
-        android:layout_height="130dp"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="@drawable/btnestilo1"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
 
         <TextView
             android:id="@+id/txtVPProfesionServicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="Electricista"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,11 +36,13 @@
 
         <TextView
             android:id="@+id/txtVPDescriciónServicio"
-            android:layout_width="204dp"
-            android:layout_height="53dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
+            android:textSize="20sp"
             android:text="Realizo instalación y mantenimiento de sistemas eléctricos. "
             android:textColor="@color/white"
 
@@ -49,18 +56,13 @@
             android:text="Huancayo, Perú."
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.108"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtVPDescriciónServicio"
             app:layout_constraintVertical_bias="0.666" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="volver"
-        android:onClick="llamarVolver"/>
+    </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

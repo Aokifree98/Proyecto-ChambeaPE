@@ -96,17 +96,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/imgPEditaPerfil"
                     app:srcCompat="@drawable/ic_llamaruser" />
 
-                <ListView
-                    android:id="@+id/listaMisServicios"
-                    android:layout_width="366dp"
-                    android:layout_height="96dp"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.488"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtVPBuscoEmpleo"
-                    />
-
                 <TextView
                     android:id="@+id/txtVPBuscoEmpleo"
                     android:layout_width="wrap_content"
@@ -125,20 +114,20 @@
                     android:id="@+id/txtVPBuscoTrabajador"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="llamarItemTrabajador"
                     android:text="Busco trabajador"
                     android:textColor="@color/ColorTexto1"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.072"
+                    app:layout_constraintHorizontal_bias="0.069"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/listaMisServicios"
-                    android:onClick="llamarItemTrabajador"/>
+                    app:layout_constraintTop_toBottomOf="@+id/listatrabajos" />
 
-                <ListView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listaMisOfertas"
-                    android:layout_width="366dp"
-                    android:layout_height="96dp"
+                    android:layout_width="373dp"
+                    android:layout_height="202dp"
                     android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.466"
@@ -193,6 +182,15 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/button" />
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listatrabajos"
+                    android:layout_width="361dp"
+                    android:layout_height="212dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.403"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtVPBuscoEmpleo" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
