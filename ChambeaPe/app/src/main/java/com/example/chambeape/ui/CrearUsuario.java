@@ -122,6 +122,7 @@ public class CrearUsuario extends AppCompatActivity {
         //String id = miDatabase.push().getKey();
         String dni = edtCUTipoID.getText().toString();
         String nom = edtCUNombres.getText().toString();
+        String gen = spCUGenero.getSelectedItem().toString();
         String apep = edtCUApellidoPat.getText().toString();
         String apem = edtCUApellidoMat.getText().toString();
         String mail = edtCUMail.getText().toString();
@@ -129,7 +130,7 @@ public class CrearUsuario extends AppCompatActivity {
         String fecha = txtCUFechaNacimiento.getText().toString();
         String pass = edtCUClave.getText().toString();
         String tel = edtCUCelular.getText().toString();
-        Usuario usuario = new Usuario(dni,nom,pass,tel,apep,apem,mail,dire,fecha,"","","","0","0","","Sin verificar");
+        Usuario usuario = new Usuario(dni,nom,pass,tel,apep,apem,mail,dire,fecha,"","","","0","0","","Sin verificar",gen);
         miDatabase.child("Usuarios").child(dni).setValue(usuario);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
 

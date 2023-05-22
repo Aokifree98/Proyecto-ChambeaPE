@@ -4,14 +4,12 @@ import android.graphics.Bitmap;
 
 public class Usuario {
 
-    private String dniUsuario, nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,desUsuario,vidUsuario,fotUsuario,calUsuarioTra,calUsuarioEmp,fotValidacion,verTelefono;
-
-
+    private String dniUsuario, nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,desUsuario,vidUsuario,fotUsuario,calUsuarioTra,calUsuarioEmp,fotValidacion,verTelefono,genUsuario;
     public Usuario(){
 
     }
 
-    public Usuario(String dniUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String desUsuario, String vidUsuario, String fotUsuario, String calUsuarioTra, String calUsuarioEmp, String fotValidacion, String verTelefono) {
+    public Usuario(String dniUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String desUsuario, String vidUsuario, String fotUsuario, String calUsuarioTra, String calUsuarioEmp, String fotValidacion, String verTelefono, String genUsuario) {
         this.dniUsuario = dniUsuario;
         this.nomUsuario = nomUsuario;
         this.passUsuario = passUsuario;
@@ -28,6 +26,7 @@ public class Usuario {
         this.calUsuarioEmp = calUsuarioEmp;
         this.fotValidacion = fotValidacion;
         this.verTelefono = verTelefono;
+        this.genUsuario = genUsuario;
     }
 
     public String getDniUsuario() {
@@ -158,6 +157,14 @@ public class Usuario {
         this.verTelefono = verTelefono;
     }
 
+    public String getGenUsuario() {
+        return genUsuario;
+    }
+
+    public void setGenUsuario(String genUsuario) {
+        this.genUsuario = genUsuario;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -177,6 +184,7 @@ public class Usuario {
                 ", calUsuarioEmp='" + calUsuarioEmp + '\'' +
                 ", fotValidacion='" + fotValidacion + '\'' +
                 ", verTelefono='" + verTelefono + '\'' +
+                ", genUsuario='" + genUsuario + '\'' +
                 '}';
     }
 }
