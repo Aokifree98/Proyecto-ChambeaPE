@@ -1,16 +1,15 @@
 package com.example.chambeape.entidades;
 
 public class Anuncio {
-    private String id, Habilidad1, Habilidad2, Habilidad3, idUsuario, descrAnuncio, estadoAnuncio,
+    private String idAnuncio, Habilidad1, Habilidad2, Habilidad3, idUsuario, descrAnuncio, estadoAnuncio,
             ubiAnuncio, fecAnuncio, longitudAnuncio, latitudAnincio, idServicio,
-            idRespoAnuncio, idFotoAnuncio, idVideoAnuncio, idAnuncio, puntEmpleAnuncio, puntTrabAnuncio;
+            idRespoAnuncio, idFotoAnuncio, idVideoAnuncio, puntEmpleAnuncio, puntTrabAnuncio;
 
     public Anuncio() {
     }
 
-
-    public Anuncio(String id, String habilidad1, String habilidad2, String habilidad3, String idUsuario, String descrAnuncio, String estadoAnuncio, String ubiAnuncio, String fecAnuncio, String longitudAnuncio, String latitudAnincio, String idServicio, String idRespoAnuncio, String idFotoAnuncio, String idVideoAnuncio, String idAnuncio, String puntEmpleAnuncio, String puntTrabAnuncio) {
-        this.id = id;
+    public Anuncio(String idAnuncio, String habilidad1, String habilidad2, String habilidad3, String idUsuario, String descrAnuncio, String estadoAnuncio, String ubiAnuncio, String fecAnuncio, String longitudAnuncio, String latitudAnincio, String idServicio, String idRespoAnuncio, String idFotoAnuncio, String idVideoAnuncio, String puntEmpleAnuncio, String puntTrabAnuncio) {
+        this.idAnuncio = idAnuncio;
         Habilidad1 = habilidad1;
         Habilidad2 = habilidad2;
         Habilidad3 = habilidad3;
@@ -25,17 +24,16 @@ public class Anuncio {
         this.idRespoAnuncio = idRespoAnuncio;
         this.idFotoAnuncio = idFotoAnuncio;
         this.idVideoAnuncio = idVideoAnuncio;
-        this.idAnuncio = idAnuncio;
         this.puntEmpleAnuncio = puntEmpleAnuncio;
         this.puntTrabAnuncio = puntTrabAnuncio;
     }
 
-    public String getId() {
-        return id;
+    public String getIdAnuncio() {
+        return idAnuncio;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdAnuncio(String idAnuncio) {
+        this.idAnuncio = idAnuncio;
     }
 
     public String getHabilidad1() {
@@ -150,14 +148,6 @@ public class Anuncio {
         this.idVideoAnuncio = idVideoAnuncio;
     }
 
-    public String getIdAnuncio() {
-        return idAnuncio;
-    }
-
-    public void setIdAnuncio(String idAnuncio) {
-        this.idAnuncio = idAnuncio;
-    }
-
     public String getPuntEmpleAnuncio() {
         return puntEmpleAnuncio;
     }
@@ -176,8 +166,8 @@ public class Anuncio {
 
     @Override
     public String toString() {
-        return "DetalleAnuncio{" +
-                "id='" + id + '\'' +
+        return "Anuncio{" +
+                "idAnuncio='" + idAnuncio + '\'' +
                 ", Habilidad1='" + Habilidad1 + '\'' +
                 ", Habilidad2='" + Habilidad2 + '\'' +
                 ", Habilidad3='" + Habilidad3 + '\'' +
@@ -192,7 +182,6 @@ public class Anuncio {
                 ", idRespoAnuncio='" + idRespoAnuncio + '\'' +
                 ", idFotoAnuncio='" + idFotoAnuncio + '\'' +
                 ", idVideoAnuncio='" + idVideoAnuncio + '\'' +
-                ", idAnuncio='" + idAnuncio + '\'' +
                 ", puntEmpleAnuncio='" + puntEmpleAnuncio + '\'' +
                 ", puntTrabAnuncio='" + puntTrabAnuncio + '\'' +
                 '}';

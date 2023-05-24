@@ -18,12 +18,6 @@
             android:name=".ui.SubirVideoAnuncio"
             android:theme="@style/ChambeaPetheme"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.SubirFotoAnuncio"
@@ -56,7 +50,12 @@
             android:name=".ui.Login"
             android:exported="true"
             android:theme="@style/ChambeaPetheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.RegistrarUsuario"

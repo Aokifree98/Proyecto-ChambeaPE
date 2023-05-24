@@ -72,7 +72,7 @@ public class SubirFotoAnuncio extends AppCompatActivity {
             //String fileName = "fotUsuario_"+id+"_"+formatter.format(now);
             String fileName = "fotAnuncio_"+idUser+"_"+idAnuncio;
 
-            miStorageRef = FirebaseStorage.getInstance().getReference(fileName);
+            miStorageRef = FirebaseStorage.getInstance().getReference("Fotos/" +fileName);
             miStorageRef.putFile(imagenUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -87,9 +87,11 @@ public class SubirFotoAnuncio extends AppCompatActivity {
                                         progressDialog.dismiss();
                                     imagenUri=null;
                                     imgFotoCA.setImageURI(null);
-                                    Intent i = new Intent(SubirFotoAnuncio.this, MenuInicio.class);
-                                    String id = idUser;
-                                    i.putExtra("dni", id);
+                                    Intent i = new Intent(SubirFotoAnuncio.this, SubirVideoAnuncio.class);
+                                    String iduser = idUser;
+                                    String idanu = idAnuncio;
+                                    i.putExtra("dniuser", iduser);
+                                    i.putExtra("idanun", idanu);
                                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(i);
                                 }

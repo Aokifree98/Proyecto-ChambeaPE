@@ -17,6 +17,10 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
     Spinner servicio, habilidad1, habilidad2, habilidad3;
     EditText tituloServ, direccion;
@@ -50,6 +54,10 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
     }
 
     private void crearAnuncioOfertar() {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd", Locale.CANADA);
+        Date now = new Date();
+        String fechaActual = formatter.format(now);
+
         String id = miDatabase.push().getKey();
         String Habilidad1 = habilidad1.getSelectedItem().toString();
         String Habilidad2 = habilidad2.getSelectedItem().toString();
@@ -62,8 +70,8 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
 
 
         Anuncio detalleAnuncio = new Anuncio(id,Habilidad1, Habilidad2, Habilidad3,
-                idUsuario, descrAnuncio, "", ubiAnuncio, "","",
-                "",idServicio,"","","",
+                idUsuario, descrAnuncio, "Activo", ubiAnuncio, fechaActual,"",
+                "",idServicio,"","",
                 "","","");
 
         miDatabase.child("DetalleAnuncio").child(id).setValue(detalleAnuncio);

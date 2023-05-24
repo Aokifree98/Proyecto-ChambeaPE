@@ -73,9 +73,13 @@ public class SubirVideoAnuncio extends AppCompatActivity {
     }
 
     private void uploadvideo() {
+        String idAnuncio = getIntent().getExtras().getString("idanun");
+        String idUser = getIntent().getExtras().getString("dniuser");
+
         if (videouri != null) {
             // save the selected video in Firebase storage
-            final StorageReference reference = FirebaseStorage.getInstance().getReference("Files/" + System.currentTimeMillis() + "." + getfiletype(videouri));
+            //final StorageReference reference = FirebaseStorage.getInstance().getReference("Videos/" + System.currentTimeMillis() + "." + getfiletype(videouri));
+            final StorageReference reference = FirebaseStorage.getInstance().getReference("Videos/vidAnuncio_"+idUser+"_" + idAnuncio + "." + getfiletype(videouri));
             reference.putFile(videouri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -83,14 +87,20 @@ public class SubirVideoAnuncio extends AppCompatActivity {
                     while (!uriTask.isSuccessful()) ;
                     // get the link of video
                     String downloadUri = uriTask.getResult().toString();
-                    DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Video");
-                    HashMap<String, String> map = new HashMap<>();
-                    map.put("videolink", downloadUri);
-                    reference1.child("" + System.currentTimeMillis()).setValue(map);
+                    //DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("DetalleAnuncio").child("-NW3vE99MJV3iNyXeS0a").child("idVideoAnuncio");
+                    DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference();
+                    //HashMap<String, String> map = new HashMap<>();
+                    //map.put("videolink", downloadUri);
+                    reference1.child("DetalleAnuncio").child(idAnuncio).child("idVideoAnuncio").setValue(downloadUri);
                     // Video uploaded successfully
                     // Dismiss dialog
                     progressDialog.dismiss();
                     Toast.makeText(SubirVideoAnuncio.this, "Video Uploaded!!", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(SubirVideoAnuncio.this, MenuInicio.class);
+                    String id = idUser;
+                    i.putExtra("dni", id);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(i);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
