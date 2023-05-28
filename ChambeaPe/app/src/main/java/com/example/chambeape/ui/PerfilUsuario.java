@@ -6,20 +6,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chambeape.R;
+import com.example.chambeape.entidades.Anuncio;
+import com.example.chambeape.entidades.AnuncioAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class PerfilUsuario extends AppCompatActivity {
+    ListView lstAnunciosOferta;
+    List<Anuncio> listAnuncio = new ArrayList<Anuncio>();
+    ArrayAdapter<Anuncio> arrayAdapterAnuncios;
+    AnuncioAdapter anuncioAdapter;
     ImageView imgPerfilUser, imgNotiUser;
     TextView txtNombreUser,txtDireccionUser;
     Button btnEditPerfi, btnRedesSoci,btnContactarUser,btnAgregarOferta;
@@ -38,8 +52,9 @@ public class PerfilUsuario extends AppCompatActivity {
         btnRedesSoci=findViewById(R.id.btnRedesSoci);
         btnContactarUser=findViewById(R.id.btnContactarUser);
         btnAgregarOferta=findViewById(R.id.btnAgregarOferta);
-
+        lstAnunciosOferta=findViewById(R.id.lstAnunciosOferta);
         String dniuser = getIntent().getExtras().getString("dniuser");
+
         mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -64,6 +79,30 @@ public class PerfilUsuario extends AppCompatActivity {
                 else {
                     Toast.makeText(PerfilUsuario.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
                 }
+
+                //Query productosxestado = reference.orderByChild("tipo").equalTo(tipo);
+                Query productosxestado = mDatabase.child("DetalleAnuncio");
+                listAnuncio.clear();
+                productosxestado.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot resultados) {
+                        for(DataSnapshot itemsdata: resultados.getChildren()){
+                            Anuncio a = itemsdata.getValue(Anuncio.class);
+                            if(a.getIdUsuario().equals(dniuser)){
+                                listAnuncio.add(a);
+                                anuncioAdapter = new AnuncioAdapter(PerfilUsuario.this, R.layout.itemanuncio,listAnuncio);
+                            }
+                        }
+                        arrayAdapterAnuncios = new ArrayAdapter<Anuncio>
+                                (PerfilUsuario.this, android.R.layout.simple_list_item_1,listAnuncio);
+                        lstAnunciosOferta.setAdapter(anuncioAdapter);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+                    }
+                });
             }
 
             @Override
