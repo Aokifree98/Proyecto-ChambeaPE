@@ -35,12 +35,12 @@ public class EnviarCodigoSMS extends AppCompatActivity {
         Button buttonGetSMS = findViewById(R.id.btnObtenerSMS);
 
         final ProgressBar progressBar = findViewById(R.id.progressBar);
-        String dni = getIntent().getExtras().getString("dni");
+        String dniuser = getIntent().getExtras().getString("dniuser");
         mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChild(dni)){
-                    String gettele = snapshot.child(dni).child("telUsuario").getValue(String.class);
+                if(snapshot.hasChild(dniuser)){
+                    String gettele = snapshot.child(dniuser).child("telUsuario").getValue(String.class);
                     inputMobile.setText(gettele);
 
                 }
@@ -87,10 +87,11 @@ public class EnviarCodigoSMS extends AppCompatActivity {
                             public void onCodeSent(@NonNull String verificacionId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 progressBar.setVisibility(View.GONE);
                                 buttonGetSMS.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(getApplicationContext(),ValidarCodigoSMS.class);
-                                intent.putExtra("mobile", inputMobile.getText().toString());
-                                intent.putExtra("verificacionId", verificacionId);
-                                startActivity(intent);
+                                Intent i = new Intent(getApplicationContext(),ValidarCodigoSMS.class);
+                                i.putExtra("mobile", inputMobile.getText().toString());
+                                i.putExtra("verificacionId", verificacionId);
+                                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(i);
                             }
                         }
                 );

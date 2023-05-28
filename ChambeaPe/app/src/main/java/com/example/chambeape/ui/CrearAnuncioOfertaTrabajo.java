@@ -65,22 +65,23 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
         String descrAnuncio = tituloServ.getText().toString();
         String ubiAnuncio = direccion.getText().toString();
         String idServicio = servicio.getSelectedItem().toString();
-        String dni = getIntent().getExtras().getString("dni");
-        String idUsuario = dni;
+        String dniuser = getIntent().getExtras().getString("dniuser");
+        //String iduser = dniuser;
 
 
         Anuncio detalleAnuncio = new Anuncio(id,Habilidad1, Habilidad2, Habilidad3,
-                idUsuario, descrAnuncio, "Activo", ubiAnuncio, fechaActual,"",
+                dniuser, descrAnuncio, "Activo", ubiAnuncio, fechaActual,"",
                 "",idServicio,"","",
                 "","","");
 
         miDatabase.child("DetalleAnuncio").child(id).setValue(detalleAnuncio);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(this, SubirFotoAnuncio.class);
-        String iduser = dni;
-        String idanu = id;
+        String iduser = dniuser;
+        String idanun = id;
         i.putExtra("dniuser", iduser);
-        i.putExtra("idanun", idanu);
+        i.putExtra("idanun", idanun);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
 

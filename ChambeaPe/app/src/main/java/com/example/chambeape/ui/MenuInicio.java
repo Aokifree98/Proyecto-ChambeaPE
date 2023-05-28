@@ -44,15 +44,15 @@ public class MenuInicio extends AppCompatActivity {
 
         //Toast.makeText(this,dni,Toast.LENGTH_SHORT).show();
 
-        String dni = getIntent().getExtras().getString("dni");
+        String dniuser = getIntent().getExtras().getString("dniuser");
         mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChild(dni)){
-                    String getnombre = snapshot.child(dni).child("nomUsuario").getValue(String.class);
-                    String getapepat = snapshot.child(dni).child("apepatUsuario").getValue(String.class);
-                    String getapemat = snapshot.child(dni).child("apematUsuario").getValue(String.class);
-                    String url = snapshot.child(dni).child("fotUsuario").getValue(String.class);
+                if(snapshot.hasChild(dniuser)){
+                    String getnombre = snapshot.child(dniuser).child("nomUsuario").getValue(String.class);
+                    String getapepat = snapshot.child(dniuser).child("apepatUsuario").getValue(String.class);
+                    String getapemat = snapshot.child(dniuser).child("apematUsuario").getValue(String.class);
+                    String url = snapshot.child(dniuser).child("fotUsuario").getValue(String.class);
                     String nombresperfil = getnombre+" "+getapepat+" "+getapemat;
                     txtMINombreUsuario.setText(nombresperfil);
                     if(url.isEmpty())
@@ -86,8 +86,8 @@ public class MenuInicio extends AppCompatActivity {
                 startActivity(i);
                 */
                 Intent i = new Intent(MenuInicio.this, PerfilUsuario.class);
-                String id = dni;
-                i.putExtra("dni", id);
+                String iduser = dniuser;
+                i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
             }
@@ -96,8 +96,8 @@ public class MenuInicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MenuInicio.this, PerfilUsuario.class);
-                String id = dni;
-                i.putExtra("dni", id);
+                String iduser = dniuser;
+                i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
             }
@@ -106,8 +106,8 @@ public class MenuInicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MenuInicio.this, CrearAnuncioOfertaTrabajo.class);
-                String id = dni;
-                i.putExtra("dni", id);
+                String iduser = dniuser;
+                i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
             }

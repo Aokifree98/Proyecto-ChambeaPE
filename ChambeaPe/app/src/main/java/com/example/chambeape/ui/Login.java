@@ -58,12 +58,13 @@ public class Login extends AppCompatActivity {
                                 String getPassword=snapshot.child(dni).child("passUsuario").getValue(String.class);
                                 if(getPassword.equals(pass)){
                                     Intent i = new Intent(Login.this, MenuInicio.class);
-                                    String id = dni;
-                                    i.putExtra("dni", id);
+                                    String iduser = dni;
+                                    i.putExtra("dniuser", iduser);
                                     Toast.makeText(Login.this,"Exito al ingresar.",Toast.LENGTH_SHORT).show();
                                     //startActivity(new Intent(Login.this,MenuInicio.class));
+                                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(i);
-                                    finish();
+                                    //finish();
                                 }
 
 
@@ -98,6 +99,7 @@ public class Login extends AppCompatActivity {
 
     private void ingresar() {
         Intent i = new Intent(this, PerfilUsuario.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
 }

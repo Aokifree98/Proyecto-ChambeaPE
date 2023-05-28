@@ -58,8 +58,8 @@ public class SubirFotoAnuncio extends AppCompatActivity {
     }
     private void registrarFoto() {
         //String id = miDatabaseRef.push().getKey();
-        String idAnuncio = getIntent().getExtras().getString("idanun");
-        String idUser = getIntent().getExtras().getString("dniuser");
+        String idanun = getIntent().getExtras().getString("idanun");
+        String dniuser = getIntent().getExtras().getString("dniuser");
 
         if(imagenUri !=null)
         {
@@ -70,7 +70,7 @@ public class SubirFotoAnuncio extends AppCompatActivity {
             //SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
             //Date now = new Date();
             //String fileName = "fotUsuario_"+id+"_"+formatter.format(now);
-            String fileName = "fotAnuncio_"+idUser+"_"+idAnuncio;
+            String fileName = "fotAnuncio_"+dniuser+"_"+idanun;
 
             miStorageRef = FirebaseStorage.getInstance().getReference("Fotos/" +fileName);
             miStorageRef.putFile(imagenUri)
@@ -81,17 +81,17 @@ public class SubirFotoAnuncio extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     //Usuario usuario = new Usuario(id,"Test","Test","Test","Test","Test","Test","Test","Test","link","0","0",uri.toString(),"0");
-                                    miDatabaseRef.child("DetalleAnuncio").child(idAnuncio).child("idFotoAnuncio").setValue(uri.toString());
+                                    miDatabaseRef.child("DetalleAnuncio").child(idanun).child("idFotoAnuncio").setValue(uri.toString());
                                     Toast.makeText(SubirFotoAnuncio.this,"Subido Correctamente",Toast.LENGTH_SHORT).show();
                                     if (progressDialog.isShowing())
                                         progressDialog.dismiss();
                                     imagenUri=null;
                                     imgFotoCA.setImageURI(null);
                                     Intent i = new Intent(SubirFotoAnuncio.this, SubirVideoAnuncio.class);
-                                    String iduser = idUser;
-                                    String idanu = idAnuncio;
+                                    String iduser = dniuser;
+                                    String idanun1 = idanun;
                                     i.putExtra("dniuser", iduser);
-                                    i.putExtra("idanun", idanu);
+                                    i.putExtra("idanun", idanun1);
                                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(i);
                                 }

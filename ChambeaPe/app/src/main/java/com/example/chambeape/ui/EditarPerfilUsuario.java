@@ -46,20 +46,20 @@ public class EditarPerfilUsuario extends AppCompatActivity {
         btnEPActualizar = findViewById(R.id.btnEPActualizar);
 
 
-        String dni = getIntent().getExtras().getString("dni");
+        String dniuser = getIntent().getExtras().getString("dniuser");
         mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChild(dni)){
-                    String getnombre = snapshot.child(dni).child("nomUsuario").getValue(String.class);
-                    String getapepat = snapshot.child(dni).child("apepatUsuario").getValue(String.class);
-                    String getapemat = snapshot.child(dni).child("apematUsuario").getValue(String.class);
-                    String getdirec = snapshot.child(dni).child("dirUsuario").getValue(String.class);
-                    String gettele = snapshot.child(dni).child("telUsuario").getValue(String.class);
-                    String getdescrip = snapshot.child(dni).child("desUsuario").getValue(String.class);
-                    String getmail = snapshot.child(dni).child("mailUsuario").getValue(String.class);
-                    String getVerTel = snapshot.child(dni).child("verTelefono").getValue(String.class);
-                    String url = snapshot.child(dni).child("fotUsuario").getValue(String.class);
+                if(snapshot.hasChild(dniuser)){
+                    String getnombre = snapshot.child(dniuser).child("nomUsuario").getValue(String.class);
+                    String getapepat = snapshot.child(dniuser).child("apepatUsuario").getValue(String.class);
+                    String getapemat = snapshot.child(dniuser).child("apematUsuario").getValue(String.class);
+                    String getdirec = snapshot.child(dniuser).child("dirUsuario").getValue(String.class);
+                    String gettele = snapshot.child(dniuser).child("telUsuario").getValue(String.class);
+                    String getdescrip = snapshot.child(dniuser).child("desUsuario").getValue(String.class);
+                    String getmail = snapshot.child(dniuser).child("mailUsuario").getValue(String.class);
+                    String getVerTel = snapshot.child(dniuser).child("verTelefono").getValue(String.class);
+                    String url = snapshot.child(dniuser).child("fotUsuario").getValue(String.class);
 
                     edtEPNombre.setText(getnombre);
                     edtEPApellidoPat.setText(getapepat);
@@ -94,8 +94,8 @@ public class EditarPerfilUsuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EditarPerfilUsuario.this, SubirFotoUsuario.class);
-                String id = dni;
-                i.putExtra("dni", id);
+                String iduser = dniuser;
+                i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
             }
@@ -103,15 +103,15 @@ public class EditarPerfilUsuario extends AppCompatActivity {
         btnEPActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actualizarFoto(dni);
+                actualizarFoto(dniuser);
             }
         });
         btnEPVerificarnumero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EditarPerfilUsuario.this, EnviarCodigoSMS.class);
-                String id = dni;
-                i.putExtra("dni", id);
+                String iduser = dniuser;
+                i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
             }
@@ -120,7 +120,7 @@ public class EditarPerfilUsuario extends AppCompatActivity {
 
 
 
-    private void actualizarFoto(String dni) {
+    private void actualizarFoto(String dniuser) {
         String nom = edtEPNombre.getText().toString();
         String apepat = edtEPApellidoPat.getText().toString();
         String apemat = edtEPApellidoMat.getText().toString();
@@ -128,13 +128,13 @@ public class EditarPerfilUsuario extends AppCompatActivity {
         String tel = edtEPTelefono.getText().toString();
         String des = edtEPDescripcion.getText().toString();
         String mail = edtEPEmail.getText().toString();
-        mDatabase.child("Usuarios").child(dni).child("nomUsuario").setValue(nom.toString());
-        mDatabase.child("Usuarios").child(dni).child("apepatUsuario").setValue(apepat.toString());
-        mDatabase.child("Usuarios").child(dni).child("apematUsuario").setValue(apemat.toString());
-        mDatabase.child("Usuarios").child(dni).child("dirUsuario").setValue(dis.toString());
-        mDatabase.child("Usuarios").child(dni).child("telUsuario").setValue(tel.toString());
-        mDatabase.child("Usuarios").child(dni).child("desUsuario").setValue(des.toString());
-        mDatabase.child("Usuarios").child(dni).child("mailUsuario").setValue(mail.toString());
+        mDatabase.child("Usuarios").child(dniuser).child("nomUsuario").setValue(nom.toString());
+        mDatabase.child("Usuarios").child(dniuser).child("apepatUsuario").setValue(apepat.toString());
+        mDatabase.child("Usuarios").child(dniuser).child("apematUsuario").setValue(apemat.toString());
+        mDatabase.child("Usuarios").child(dniuser).child("dirUsuario").setValue(dis.toString());
+        mDatabase.child("Usuarios").child(dniuser).child("telUsuario").setValue(tel.toString());
+        mDatabase.child("Usuarios").child(dniuser).child("desUsuario").setValue(des.toString());
+        mDatabase.child("Usuarios").child(dniuser).child("mailUsuario").setValue(mail.toString());
         Toast.makeText(EditarPerfilUsuario.this,"Datos Actualizados Correctamente",Toast.LENGTH_SHORT).show();
     }
 

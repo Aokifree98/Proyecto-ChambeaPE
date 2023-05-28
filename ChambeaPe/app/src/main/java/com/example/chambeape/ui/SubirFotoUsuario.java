@@ -60,8 +60,8 @@ public class SubirFotoUsuario extends AppCompatActivity {
     }
     private void registrarFoto() {
         //String id = miDatabaseRef.push().getKey();
-        String dni = getIntent().getExtras().getString("dni");
-        String id = dni;
+        String dniuser = getIntent().getExtras().getString("dniuser");
+
         if(imagenUri !=null)
         {
             progressDialog = new ProgressDialog(this);
@@ -71,7 +71,7 @@ public class SubirFotoUsuario extends AppCompatActivity {
             //SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
             //Date now = new Date();
             //String fileName = "fotUsuario_"+id+"_"+formatter.format(now);
-            String fileName = "fotUsuario_"+id;
+            String fileName = "fotUsuario_"+dniuser;
 
             miStorageRef = FirebaseStorage.getInstance().getReference(fileName);
             miStorageRef.putFile(imagenUri)
@@ -82,15 +82,15 @@ public class SubirFotoUsuario extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     //Usuario usuario = new Usuario(id,"Test","Test","Test","Test","Test","Test","Test","Test","link","0","0",uri.toString(),"0");
-                                    miDatabaseRef.child("Usuarios").child(id).child("fotUsuario").setValue(uri.toString());
+                                    miDatabaseRef.child("Usuarios").child(dniuser).child("fotUsuario").setValue(uri.toString());
                                     Toast.makeText(SubirFotoUsuario.this,"Subido Correctamente",Toast.LENGTH_SHORT).show();
                                     if (progressDialog.isShowing())
                                         progressDialog.dismiss();
                                     imagenUri=null;
                                     imgFotoPU.setImageURI(null);
                                     Intent i = new Intent(SubirFotoUsuario.this, EditarPerfilUsuario.class);
-                                    String id = dni;
-                                    i.putExtra("dni", id);
+                                    String iduser = dniuser;
+                                    i.putExtra("dniuser", iduser);
                                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(i);
                                 }

@@ -73,13 +73,13 @@ public class SubirVideoAnuncio extends AppCompatActivity {
     }
 
     private void uploadvideo() {
-        String idAnuncio = getIntent().getExtras().getString("idanun");
-        String idUser = getIntent().getExtras().getString("dniuser");
+        String idanun = getIntent().getExtras().getString("idanun");
+        String dniuser= getIntent().getExtras().getString("dniuser");
 
         if (videouri != null) {
             // save the selected video in Firebase storage
             //final StorageReference reference = FirebaseStorage.getInstance().getReference("Videos/" + System.currentTimeMillis() + "." + getfiletype(videouri));
-            final StorageReference reference = FirebaseStorage.getInstance().getReference("Videos/vidAnuncio_"+idUser+"_" + idAnuncio + "." + getfiletype(videouri));
+            final StorageReference reference = FirebaseStorage.getInstance().getReference("Videos/vidAnuncio_"+dniuser+"_" + idanun + "." + getfiletype(videouri));
             reference.putFile(videouri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -91,14 +91,14 @@ public class SubirVideoAnuncio extends AppCompatActivity {
                     DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference();
                     //HashMap<String, String> map = new HashMap<>();
                     //map.put("videolink", downloadUri);
-                    reference1.child("DetalleAnuncio").child(idAnuncio).child("idVideoAnuncio").setValue(downloadUri);
+                    reference1.child("DetalleAnuncio").child(idanun).child("idVideoAnuncio").setValue(downloadUri);
                     // Video uploaded successfully
                     // Dismiss dialog
                     progressDialog.dismiss();
                     Toast.makeText(SubirVideoAnuncio.this, "Video Uploaded!!", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(SubirVideoAnuncio.this, MenuInicio.class);
-                    String id = idUser;
-                    i.putExtra("dni", id);
+                    String iduser = dniuser;
+                    i.putExtra("dniuser", iduser);
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
                 }

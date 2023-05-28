@@ -59,7 +59,7 @@
                 android:drawableStart="@drawable/ic_password"
                 android:drawablePadding="16dp"
                 android:hint="Contraseña"
-                android:inputType="textPassword"
+                android:inputType="numberPassword"
                 android:padding="8dp"
                 android:textColor="@color/primaryColor"
                 android:textColorHint="@color/primaryColor" />
