@@ -29,14 +29,14 @@ import com.google.firebase.storage.UploadTask;
 import java.util.HashMap;
 
 public class SubirVideoAnuncio extends AppCompatActivity {
-    Button uploadv;
+    Button btnSubirVideoCA;
     ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subir_video_anuncio);
-        uploadv = findViewById(R.id.uploadv);
-        uploadv.setOnClickListener(new View.OnClickListener() {
+        btnSubirVideoCA = findViewById(R.id.btnSubirVideoCA);
+        btnSubirVideoCA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Code for showing progressDialog while uploading

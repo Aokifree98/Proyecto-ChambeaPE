@@ -15,14 +15,17 @@
         android:theme="@style/ChambeaPetheme"
         tools:targetApi="31">
         <activity
+            android:name=".ui.VerAnuncioOfertaTrabajo"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme"/>
+        <activity
             android:name=".ui.SubirVideoAnuncio"
-            android:theme="@style/ChambeaPetheme"
-            android:exported="true" >
-        </activity>
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme"></activity>
         <activity
             android:name=".ui.SubirFotoAnuncio"
-            android:theme="@style/ChambeaPetheme"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme" />
         <activity
             android:name=".ui.CrearAnuncioOfertaTrabajo"
             android:exported="true"
@@ -54,7 +57,6 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
         <activity

@@ -1,16 +1,21 @@
 package com.example.chambeape.entidades;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.chambeape.R;
+import com.example.chambeape.ui.VerAnuncioOfertaTrabajo;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -36,6 +41,8 @@ public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
 
         Anuncio anuncio = listAnuncio.get(position);
 
+        ImageView imgItem;
+        VideoView vidItem;
         TextView txtIdAnun,txtDescripcionAnun,txtHabilidad1,txtHabilidad2,txtHabilidad3,txtEstadoAnun,txtFechaAnun;
 
         txtIdAnun = view.findViewById(R.id.txtIdAnun);
@@ -45,6 +52,8 @@ public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
         txtHabilidad3 = view.findViewById(R.id.txtHabilidad3);
         txtEstadoAnun = view.findViewById(R.id.txtEstadoAnun);
         txtFechaAnun = view.findViewById(R.id.txtFechaAnun);
+        //imgItem = view.findViewById(R.id.imgItem);
+        //vidItem = view.findViewById(R.id.vidItem);
 
         txtIdAnun.setText(anuncio.getIdAnuncio());
         txtDescripcionAnun.setText(anuncio.getDescrAnuncio());
@@ -53,19 +62,18 @@ public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
         txtHabilidad3.setText(anuncio.getHabilidad3());
         txtEstadoAnun.setText(anuncio.getEstadoAnuncio());
         txtFechaAnun.setText(anuncio.getFecAnuncio());
+        //String url = anuncio.getIdFotoAnuncio().toString();
+        //Picasso.get().load(url).fit().centerCrop().into(imgItem);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
-                Intent i = new Intent(view.getContext(), LugarEntrega.class);
-                i.putExtra("d1",txtLatLista.getText().toString());
-                i.putExtra("d2",txtLongLista.getText().toString());
-                i.putExtra("d3",txtTipo.getText().toString());
-                i.putExtra("d4",txtDescripcion.getText().toString());
-                i.putExtra("d5",txtDestinatario.getText().toString());
+                Intent i = new Intent(view.getContext(), VerAnuncioOfertaTrabajo.class);
+                String dniuser = anuncio.getIdUsuario().toString();
+                i.putExtra("idanun",txtIdAnun.getText().toString());
+                i.putExtra("dniuser",dniuser);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 view.getContext().startActivity(i);
-                 */
             }
         });
         return view;

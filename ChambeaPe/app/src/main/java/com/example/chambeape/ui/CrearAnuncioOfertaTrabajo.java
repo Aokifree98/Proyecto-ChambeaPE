@@ -24,7 +24,6 @@ import java.util.Locale;
 public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
     Spinner servicio, habilidad1, habilidad2, habilidad3;
     EditText tituloServ, direccion;
-    ImageButton fotoServicio, videoServicio;
     Button crear;
 
     private DatabaseReference miDatabase;
@@ -35,8 +34,6 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
         servicio = findViewById(R.id.spAOTServicio);
         tituloServ = findViewById(R.id.edtAOTTituloOferta);
         direccion = findViewById(R.id.edtAOTDireccion);
-        fotoServicio = findViewById(R.id.imgbAOTFoto);
-        videoServicio = findViewById(R.id.imgbAOTVideo);
         habilidad1 = findViewById(R.id.spAOTHabilidaad1);
         habilidad2 = findViewById(R.id.spAOTHabilidaad2);
         habilidad3 = findViewById(R.id.spAOTHabilidaad3);

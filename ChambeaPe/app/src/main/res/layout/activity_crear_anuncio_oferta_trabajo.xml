@@ -123,46 +123,6 @@
                 android:backgroundTint="@color/primaryColor"
                 android:textColor="@color/primaryColor" />
 
-            <TextView
-                android:id="@+id/txtMultimedia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:text="MULTIMEDIA"
-                android:textColor="@color/primaryColor"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:orientation="horizontal">
-
-
-                <ImageButton
-                    android:id="@+id/imgbAOTFoto"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_photo"
-                    />
-
-                <ImageButton
-                    android:id="@+id/imgbAOTVideo"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="20dp"
-
-                    android:src="@drawable/ic_video_anuncio_oferta"/>
-            </LinearLayout>
-
             <Button
                 android:id="@+id/btnAOTCrear"
                 android:layout_width="wrap_content"
@@ -171,10 +131,11 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
+                android:paddingHorizontal="20dp"
                 android:background="@drawable/btnredondeado"
                 android:textColor="@color/white"
                 android:onClick="crearAOT"
-                android:text="CREAR" />
+                android:text="CONTINUAR" />
         </LinearLayout>
     </ScrollView>
 

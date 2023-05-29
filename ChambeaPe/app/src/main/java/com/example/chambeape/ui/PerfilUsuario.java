@@ -81,9 +81,9 @@ public class PerfilUsuario extends AppCompatActivity {
                 }
 
                 //Query productosxestado = reference.orderByChild("tipo").equalTo(tipo);
-                Query productosxestado = mDatabase.child("DetalleAnuncio");
+                Query anunciossxdni = mDatabase.child("DetalleAnuncio");
                 listAnuncio.clear();
-                productosxestado.addValueEventListener(new ValueEventListener() {
+                anunciossxdni.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull @NotNull DataSnapshot resultados) {
                         for(DataSnapshot itemsdata: resultados.getChildren()){
