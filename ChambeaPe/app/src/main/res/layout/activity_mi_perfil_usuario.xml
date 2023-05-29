@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.PerfilUsuario">
+    tools:context=".ui.MiPerfilUsuario">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -189,15 +190,11 @@
                 android:text="Agregar oferta de trabajo"
                 android:textColor="@color/white"
                 android:background="@drawable/btnredondeado"/>
-            <ScrollView
+            <ListView
+                android:id="@+id/lstAnunciosOferta"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ListView
-                    android:id="@+id/lstAnunciosOferta"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
-            </ScrollView>
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"/>
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
@@ -217,16 +214,13 @@
                 android:text="Agregar perfil como trabajador"
                 android:textColor="@color/white"
                 android:background="@drawable/btnredondeado"/>
-            <ScrollView
+            <ListView
+                android:id="@+id/rclListaTrabajador"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ListView
-                    android:id="@+id/rclListaTrabajador"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
-            </ScrollView>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
         </LinearLayout>
     </LinearLayout>
+
 
 </LinearLayout>

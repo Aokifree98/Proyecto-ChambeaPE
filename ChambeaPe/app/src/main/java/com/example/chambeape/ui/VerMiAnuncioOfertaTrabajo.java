@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.MediaController;
@@ -14,19 +13,14 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.chambeape.R;
-import com.example.chambeape.entidades.Anuncio;
-import com.example.chambeape.entidades.AnuncioAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import org.jetbrains.annotations.NotNull;
-
-public class VerAnuncioOfertaTrabajo extends AppCompatActivity {
+public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
 
     TextView txtUsuarioOferta,txtTipoOferta,txtTituloOferta,txtHabilidadOferta1,txtHabilidadOferta2,txtHabilidadOferta3;
     ImageView imgFotoOferta;
@@ -38,7 +32,7 @@ public class VerAnuncioOfertaTrabajo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ver_anuncio_oferta_trabajo);
+        setContentView(R.layout.activity_ver_mi_anuncio_oferta_trabajo);
 
         txtUsuarioOferta= findViewById(R.id.txtUsuarioOferta);
         txtTipoOferta= findViewById(R.id.txtTipoOferta);
@@ -51,8 +45,8 @@ public class VerAnuncioOfertaTrabajo extends AppCompatActivity {
         btnContactarOferta= findViewById(R.id.btnContactarOferta);
         String idanun = getIntent().getExtras().getString("idanun");
         String dniuser = getIntent().getExtras().getString("dniuser");
-        Toast.makeText(VerAnuncioOfertaTrabajo.this,dniuser,Toast.LENGTH_SHORT).show();
-        Toast.makeText(VerAnuncioOfertaTrabajo.this,idanun,Toast.LENGTH_SHORT).show();
+        Toast.makeText(VerMiAnuncioOfertaTrabajo.this,dniuser,Toast.LENGTH_SHORT).show();
+        Toast.makeText(VerMiAnuncioOfertaTrabajo.this,idanun,Toast.LENGTH_SHORT).show();
 
         mDatabaseanu.child("DetalleAnuncio").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -75,13 +69,13 @@ public class VerAnuncioOfertaTrabajo extends AppCompatActivity {
                     String videoUrl = urlvideo;
                     Uri videoUri = Uri.parse(videoUrl);
                     vidVideoOferta.setVideoURI(videoUri);
-                    MediaController mediaController = new MediaController(VerAnuncioOfertaTrabajo.this);
+                    MediaController mediaController = new MediaController(VerMiAnuncioOfertaTrabajo.this);
                     vidVideoOferta.setMediaController(mediaController);
                     mediaController.setAnchorView(vidVideoOferta);
                     //vidVideoOferta.start();
                     if(urlfoto.isEmpty())
                     {
-                        Toast.makeText(VerAnuncioOfertaTrabajo.this,"No se encontro una foto de perfil",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"No se encontro una foto de perfil",Toast.LENGTH_SHORT).show();
                     }
                     else {
                         Picasso.get().load(urlfoto).fit().centerCrop().into(imgFotoOferta);
@@ -96,7 +90,7 @@ public class VerAnuncioOfertaTrabajo extends AppCompatActivity {
                                 txtUsuarioOferta.setText(nomuser+" "+apepatuser+" "+apematuser);
                             }
                             else {
-                                Toast.makeText(VerAnuncioOfertaTrabajo.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
                             }
                         }
 
@@ -109,7 +103,7 @@ public class VerAnuncioOfertaTrabajo extends AppCompatActivity {
 
                 }
                 else {
-                    Toast.makeText(VerAnuncioOfertaTrabajo.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
                 }
             }
 

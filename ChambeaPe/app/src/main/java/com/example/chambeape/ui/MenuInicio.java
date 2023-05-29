@@ -85,7 +85,7 @@ public class MenuInicio extends AppCompatActivity {
                 i.putExtra("dni", id);
                 startActivity(i);
                 */
-                Intent i = new Intent(MenuInicio.this, PerfilUsuario.class);
+                Intent i = new Intent(MenuInicio.this, MiPerfilUsuario.class);
                 String iduser = dniuser;
                 i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -95,7 +95,7 @@ public class MenuInicio extends AppCompatActivity {
         txtMINombreUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MenuInicio.this, PerfilUsuario.class);
+                Intent i = new Intent(MenuInicio.this, MiPerfilUsuario.class);
                 String iduser = dniuser;
                 i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -106,6 +106,16 @@ public class MenuInicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MenuInicio.this, CrearAnuncioOfertaTrabajo.class);
+                String iduser = dniuser;
+                i.putExtra("dniuser", iduser);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        });
+        btnMIBuscarOfer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MenuInicio.this, ListaOfertasTrabajo.class);
                 String iduser = dniuser;
                 i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

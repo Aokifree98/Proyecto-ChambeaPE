@@ -98,7 +98,7 @@ public class Login extends AppCompatActivity {
 
 
     private void ingresar() {
-        Intent i = new Intent(this, PerfilUsuario.class);
+        Intent i = new Intent(this, MiPerfilUsuario.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }

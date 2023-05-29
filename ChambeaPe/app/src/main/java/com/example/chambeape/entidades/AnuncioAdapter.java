@@ -14,8 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.chambeape.R;
-import com.example.chambeape.ui.VerAnuncioOfertaTrabajo;
-import com.squareup.picasso.Picasso;
+import com.example.chambeape.ui.VerMiAnuncioOfertaTrabajo;
 
 import java.util.List;
 
@@ -68,7 +67,7 @@ public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(view.getContext(), VerAnuncioOfertaTrabajo.class);
+                Intent i = new Intent(view.getContext(), VerMiAnuncioOfertaTrabajo.class);
                 String dniuser = anuncio.getIdUsuario().toString();
                 i.putExtra("idanun",txtIdAnun.getText().toString());
                 i.putExtra("dniuser",dniuser);

@@ -12,9 +12,9 @@
     <string-array name="CategoriaServicio">
         <item>Seleccione el tipo de servicio</item>
         <item>Electricidad</item>
-        <item>Gasfiterria</item>
+        <item>Gasfiteria</item>
         <item>Belleza y Salud</item>
-        <item>Costrucción</item>
+        <item>Construcción</item>
         <item>Alimentos</item>
     </string-array>
 
@@ -33,5 +33,12 @@
         <item>Trabajo bajo presión</item>
         <item>Flexibilidad</item>
         <item>Multitarea</item>
+    </string-array>
+    <string-array name="Distritos">
+        <item>Seleccione un distrito</item>
+        <item>Huancayo</item>
+        <item>El Tambo</item>
+        <item>Chilca</item>
+        <item>Otro</item>
     </string-array>
 </resources>

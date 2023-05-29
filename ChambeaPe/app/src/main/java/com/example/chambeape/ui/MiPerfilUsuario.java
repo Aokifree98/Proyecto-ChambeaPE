@@ -29,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PerfilUsuario extends AppCompatActivity {
+public class MiPerfilUsuario extends AppCompatActivity {
     ListView lstAnunciosOferta;
     List<Anuncio> listAnuncio = new ArrayList<Anuncio>();
     ArrayAdapter<Anuncio> arrayAdapterAnuncios;
@@ -42,7 +42,7 @@ public class PerfilUsuario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil_usuario);
+        setContentView(R.layout.activity_mi_perfil_usuario);
 
         imgNotiUser=findViewById(R.id.imgNotifUser);
         imgPerfilUser=findViewById(R.id.imgPerfilUser);
@@ -69,7 +69,7 @@ public class PerfilUsuario extends AppCompatActivity {
                     txtDireccionUser.setText(getdirec);
                     if(url.isEmpty())
                     {
-                        Toast.makeText(PerfilUsuario.this,"No se encontro una foto de perfil",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MiPerfilUsuario.this,"No se encontro una foto de perfil",Toast.LENGTH_SHORT).show();
                     }
                     else {
                         Picasso.get().load(url).fit().centerCrop().into(imgPerfilUser);
@@ -77,7 +77,7 @@ public class PerfilUsuario extends AppCompatActivity {
 
                 }
                 else {
-                    Toast.makeText(PerfilUsuario.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MiPerfilUsuario.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
                 }
 
                 //Query productosxestado = reference.orderByChild("tipo").equalTo(tipo);
@@ -90,11 +90,11 @@ public class PerfilUsuario extends AppCompatActivity {
                             Anuncio a = itemsdata.getValue(Anuncio.class);
                             if(a.getIdUsuario().equals(dniuser)){
                                 listAnuncio.add(a);
-                                anuncioAdapter = new AnuncioAdapter(PerfilUsuario.this, R.layout.itemanuncio,listAnuncio);
+                                anuncioAdapter = new AnuncioAdapter(MiPerfilUsuario.this, R.layout.itemanuncio,listAnuncio);
                             }
                         }
                         arrayAdapterAnuncios = new ArrayAdapter<Anuncio>
-                                (PerfilUsuario.this, android.R.layout.simple_list_item_1,listAnuncio);
+                                (MiPerfilUsuario.this, android.R.layout.simple_list_item_1,listAnuncio);
                         lstAnunciosOferta.setAdapter(anuncioAdapter);
                     }
 
@@ -114,7 +114,7 @@ public class PerfilUsuario extends AppCompatActivity {
         btnEditPerfi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(PerfilUsuario.this, EditarPerfilUsuario.class);
+                Intent i = new Intent(MiPerfilUsuario.this, EditarPerfilUsuario.class);
                 String iduser = dniuser;
                 i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
