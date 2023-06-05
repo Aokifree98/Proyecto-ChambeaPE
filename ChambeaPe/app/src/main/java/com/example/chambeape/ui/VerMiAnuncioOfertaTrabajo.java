@@ -3,8 +3,10 @@ package com.example.chambeape.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.MediaController;
@@ -44,6 +46,7 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
         vidVideoOferta= findViewById(R.id.vidVideoOferta);
         btnContactarOferta= findViewById(R.id.btnContactarOferta);
         String idanun = getIntent().getExtras().getString("idanun");
+
         String dniuser = getIntent().getExtras().getString("dniuser");
         Toast.makeText(VerMiAnuncioOfertaTrabajo.this,dniuser,Toast.LENGTH_SHORT).show();
         Toast.makeText(VerMiAnuncioOfertaTrabajo.this,idanun,Toast.LENGTH_SHORT).show();
@@ -112,6 +115,32 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
 
             }
 
+        });
+        btnContactarOferta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String idpubanun1 = getIntent().getExtras().getString("idpubanun");
+                String dniuser1 = getIntent().getExtras().getString("dniuser");
+                int x1 = Integer.parseInt(idpubanun1);
+                int x2 = Integer.parseInt((dniuser1));
+                Toast.makeText(VerMiAnuncioOfertaTrabajo.this,idpubanun1+"=="+dniuser1,Toast.LENGTH_SHORT).show();
+                if(x1==x2){
+                    Intent j = new Intent(VerMiAnuncioOfertaTrabajo.this, MiPerfilUsuario.class);
+                    j.putExtra("dniuser", dniuser1);
+                    j.putExtra("idpubanun", idpubanun1);
+                    j.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Vista mi perfil",Toast.LENGTH_SHORT).show();
+                    startActivity(j);
+                } else {
+                    Intent i = new Intent(VerMiAnuncioOfertaTrabajo.this, VerPerfilUsuario.class);
+                    i.putExtra("dniuser", dniuser1);
+                    i.putExtra("idpubanun", idpubanun1);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Vista otro perfil",Toast.LENGTH_SHORT).show();
+                    startActivity(i);
+                }
+
+            }
         });
     }
 }

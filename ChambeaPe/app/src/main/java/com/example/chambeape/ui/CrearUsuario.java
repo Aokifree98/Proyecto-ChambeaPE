@@ -133,6 +133,7 @@ public class CrearUsuario extends AppCompatActivity {
         miDatabase.child("Usuarios").child(dni).setValue(usuario);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
 
+
     }
 
 }

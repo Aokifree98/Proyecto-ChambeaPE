@@ -35,8 +35,8 @@ public class MiPerfilUsuario extends AppCompatActivity {
     ArrayAdapter<Anuncio> arrayAdapterAnuncios;
     AnuncioAdapter anuncioAdapter;
     ImageView imgPerfilUser, imgNotiUser;
-    TextView txtNombreUser,txtDireccionUser;
-    Button btnEditPerfi, btnRedesSoci,btnContactarUser,btnAgregarOferta;
+    TextView txtNombreUser,txtDescripcionUser;
+    Button btnEditPerfi, btnRedesSoci,btnAgregarOferta;
 
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     @Override
@@ -45,14 +45,13 @@ public class MiPerfilUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_mi_perfil_usuario);
 
         imgNotiUser=findViewById(R.id.imgNotifUser);
-        imgPerfilUser=findViewById(R.id.imgPerfilUser);
-        txtNombreUser=findViewById(R.id.txtNombreUser);
-        txtDireccionUser=findViewById(R.id.txtDireccionUser);
-        btnEditPerfi=findViewById(R.id.btnEditPerfi);
-        btnRedesSoci=findViewById(R.id.btnRedesSoci);
-        btnContactarUser=findViewById(R.id.btnContactarUser);
-        btnAgregarOferta=findViewById(R.id.btnAgregarOferta);
-        lstAnunciosOferta=findViewById(R.id.lstAnunciosOferta);
+        imgPerfilUser=findViewById(R.id.imgFotoMPU);
+        txtNombreUser=findViewById(R.id.txtNombreMPU);
+        txtDescripcionUser=findViewById(R.id.txtDescripcionMPU);
+        btnEditPerfi=findViewById(R.id.btnEditarMPU);
+        btnRedesSoci=findViewById(R.id.btnRedesSociMPU);
+        btnAgregarOferta=findViewById(R.id.btnAgregarOfertaMPU);
+        lstAnunciosOferta=findViewById(R.id.lstAnunciosOfertaMPU);
         String dniuser = getIntent().getExtras().getString("dniuser");
 
         mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -62,11 +61,11 @@ public class MiPerfilUsuario extends AppCompatActivity {
                     String getnombre = snapshot.child(dniuser).child("nomUsuario").getValue(String.class);
                     String getapepat = snapshot.child(dniuser).child("apepatUsuario").getValue(String.class);
                     String getapemat = snapshot.child(dniuser).child("apematUsuario").getValue(String.class);
-                    String getdirec = snapshot.child(dniuser).child("dirUsuario").getValue(String.class);
+                    String getdesc = snapshot.child(dniuser).child("desUsuario").getValue(String.class);
                     String url = snapshot.child(dniuser).child("fotUsuario").getValue(String.class);
                     String nombresperfil = getnombre+" "+getapepat+" "+getapemat;
                     txtNombreUser.setText(nombresperfil);
-                    txtDireccionUser.setText(getdirec);
+                    txtDescripcionUser.setText(getdesc);
                     if(url.isEmpty())
                     {
                         Toast.makeText(MiPerfilUsuario.this,"No se encontro una foto de perfil",Toast.LENGTH_SHORT).show();
@@ -88,9 +87,10 @@ public class MiPerfilUsuario extends AppCompatActivity {
                     public void onDataChange(@NonNull @NotNull DataSnapshot resultados) {
                         for(DataSnapshot itemsdata: resultados.getChildren()){
                             Anuncio a = itemsdata.getValue(Anuncio.class);
-                            if(a.getIdResponsableAnuncio().equals(dniuser)){
+                            if(a.getIdPublicadorAnuncio().equals(dniuser)){
                                 listAnuncio.add(a);
                                 anuncioAdapter = new AnuncioAdapter(MiPerfilUsuario.this, R.layout.itemanuncio,listAnuncio);
+                                anuncioAdapter.setActiveUser(dniuser);
                             }
                         }
                         arrayAdapterAnuncios = new ArrayAdapter<Anuncio>

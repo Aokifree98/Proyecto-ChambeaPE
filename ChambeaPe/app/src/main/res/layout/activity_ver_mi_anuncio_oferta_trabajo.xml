@@ -193,7 +193,7 @@
                 android:paddingHorizontal="20dp"
                 android:background="@drawable/btnredondeado"
                 android:textColor="@color/white"
-                android:text="CONTACTAR" />
+                android:text="IR AL PERFIL DEL ANUNCIANTE" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

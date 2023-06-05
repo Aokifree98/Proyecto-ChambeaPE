@@ -49,7 +49,7 @@ public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
 
         ImageView imgItem;
         VideoView vidItem;
-        TextView txtIdAnun,txtDescripcionAnun,txtHabilidad1,txtHabilidad2,txtHabilidad3,txtEstadoAnun,txtFechaAnun;
+        TextView txtIdAnun,txtDescripcionAnun,txtHabilidad1,txtHabilidad2,txtHabilidad3,txtEstadoAnun,txtFechaAnun,txtIdPubAnun;
 
         txtIdAnun = view.findViewById(R.id.txtIdAnun);
         txtDescripcionAnun = view.findViewById(R.id.txtDescripcionAnun);
@@ -58,6 +58,7 @@ public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
         txtHabilidad3 = view.findViewById(R.id.txtHabilidad3);
         txtEstadoAnun = view.findViewById(R.id.txtEstadoAnun);
         txtFechaAnun = view.findViewById(R.id.txtFechaAnun);
+        txtIdPubAnun = view.findViewById(R.id.txtIdPubAnun);
         //imgItem = view.findViewById(R.id.imgItem);
         //vidItem = view.findViewById(R.id.vidItem);
 
@@ -68,6 +69,7 @@ public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
         txtHabilidad3.setText(anuncio.getHabilidad3Anuncio());
         txtEstadoAnun.setText(anuncio.getEstadoAnuncio());
         txtFechaAnun.setText(anuncio.getFecchaPublicacionAnuncio());
+        txtIdPubAnun.setText((anuncio.getIdPublicadorAnuncio()));
         //String url = anuncio.getIdFotoAnuncio().toString();
         //Picasso.get().load(url).fit().centerCrop().into(imgItem);
 
@@ -79,6 +81,7 @@ public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
                 //String dniuser = anuncio.getIdPublicadorAnuncio().toString();
                 //String dniuser = i.getStringExtra("dniuser");
                 i.putExtra("idanun",txtIdAnun.getText().toString());
+                i.putExtra("idpubanun",txtIdPubAnun.getText().toString());
                 i.putExtra("dniuser",dniActiveUser);
                 //i.putExtra("dniuser",dniuser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

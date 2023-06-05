@@ -19,7 +19,7 @@
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgPerfilUser"
+                android:id="@+id/imgFotoMPU"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="10sp"
@@ -36,7 +36,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtNombreUser"
+                    android:id="@+id/txtNombreMPU"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -46,11 +46,11 @@
                     />
 
                 <TextView
-                    android:id="@+id/txtDireccionUser"
+                    android:id="@+id/txtDescripcionMPU"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="El Tambo, Huancayo"
+                    android:text="Especialista"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
@@ -120,7 +120,7 @@
         android:paddingHorizontal="10dp">
 
         <Button
-            android:id="@+id/btnEditPerfi"
+            android:id="@+id/btnEditarMPU"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -134,7 +134,7 @@
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/btnRedesSoci"
+            android:id="@+id/btnRedesSociMPU"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -146,18 +146,6 @@
             android:background="@drawable/btnredondeado"
             android:text="Mis redes"
             android:textColor="@color/white"/>
-        <Button
-            android:id="@+id/btnContactarUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawablePadding="5dp"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:drawableEnd="@drawable/ic_phone"
-            android:background="@drawable/btnredondeado"
-            android:textColor="@color/white"
-            android:text="Contactar" />
 
 
     </LinearLayout>
@@ -182,7 +170,7 @@
                 android:textColor="@color/primaryColor"
                 android:textSize="25sp" />
             <Button
-                android:id="@+id/btnAgregarOferta"
+                android:id="@+id/btnAgregarOfertaMPU"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -191,7 +179,7 @@
                 android:textColor="@color/white"
                 android:background="@drawable/btnredondeado"/>
             <ListView
-                android:id="@+id/lstAnunciosOferta"
+                android:id="@+id/lstAnunciosOfertaMPU"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"/>
@@ -206,7 +194,7 @@
                 android:textColor="@color/primaryColor"
                 android:textSize="25sp" />
             <Button
-                android:id="@+id/btnAgregarTrabajador"
+                android:id="@+id/btnAgregarTrabajadorMPU"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -215,7 +203,7 @@
                 android:textColor="@color/white"
                 android:background="@drawable/btnredondeado"/>
             <ListView
-                android:id="@+id/rclListaTrabajador"
+                android:id="@+id/rclListaTrabajadorMPU"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"/>
