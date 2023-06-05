@@ -27,7 +27,7 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
     TextView txtUsuarioOferta,txtTipoOferta,txtTituloOferta,txtHabilidadOferta1,txtHabilidadOferta2,txtHabilidadOferta3;
     ImageView imgFotoOferta;
     VideoView vidVideoOferta;
-    Button btnContactarOferta;
+    Button btnContactarOferta,btnEditarOferta;
 
     DatabaseReference mDatabaseanu = FirebaseDatabase.getInstance().getReference();
     DatabaseReference mDatabaseusu = FirebaseDatabase.getInstance().getReference();
@@ -45,9 +45,12 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
         imgFotoOferta= findViewById(R.id.imgFotoOferta);
         vidVideoOferta= findViewById(R.id.vidVideoOferta);
         btnContactarOferta= findViewById(R.id.btnContactarOferta);
+        btnEditarOferta= findViewById(R.id.btnEditarOferta);
+
         String idanun = getIntent().getExtras().getString("idanun");
 
         String dniuser = getIntent().getExtras().getString("dniuser");
+        String idpub;
         Toast.makeText(VerMiAnuncioOfertaTrabajo.this,dniuser,Toast.LENGTH_SHORT).show();
         Toast.makeText(VerMiAnuncioOfertaTrabajo.this,idanun,Toast.LENGTH_SHORT).show();
 
@@ -68,7 +71,7 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
                     txtHabilidadOferta1.setText(gethab1);
                     txtHabilidadOferta2.setText(gethab2);
                     txtHabilidadOferta3.setText(gethab3);
-
+                    idpub = getusuario;
                     String videoUrl = urlvideo;
                     Uri videoUri = Uri.parse(videoUrl);
                     vidVideoOferta.setVideoURI(videoUri);
@@ -116,13 +119,20 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
             }
 
         });
+        int y1 = Integer.parseInt(idpub);
+        int y2 = Integer.parseInt(dniuser);
+        if(y1!=y2)
+        {
+            btnEditarOferta.setVisibility(View.INVISIBLE);
+        }
+
         btnContactarOferta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String idpubanun1 = getIntent().getExtras().getString("idpubanun");
                 String dniuser1 = getIntent().getExtras().getString("dniuser");
                 int x1 = Integer.parseInt(idpubanun1);
-                int x2 = Integer.parseInt((dniuser1));
+                int x2 = Integer.parseInt(dniuser1);
                 Toast.makeText(VerMiAnuncioOfertaTrabajo.this,idpubanun1+"=="+dniuser1,Toast.LENGTH_SHORT).show();
                 if(x1==x2){
                     Intent j = new Intent(VerMiAnuncioOfertaTrabajo.this, MiPerfilUsuario.class);

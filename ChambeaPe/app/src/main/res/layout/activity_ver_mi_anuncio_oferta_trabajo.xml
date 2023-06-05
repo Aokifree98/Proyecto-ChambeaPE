@@ -194,6 +194,18 @@
                 android:background="@drawable/btnredondeado"
                 android:textColor="@color/white"
                 android:text="IR AL PERFIL DEL ANUNCIANTE" />
+            <Button
+                android:id="@+id/btnEditarOferta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:paddingHorizontal="20dp"
+                android:background="@drawable/btnredondeado"
+                android:textColor="@color/white"
+                android:text="EDITAR" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
