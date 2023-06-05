@@ -5,6 +5,10 @@
         <item>Femenino</item>
         <item>Masculino</item>
     </string-array>
+    <string-array name="estado">
+        <item>Activo</item>
+        <item>Concluido</item>
+    </string-array>
     <string-array name="tipoDocumento">
         <item>DNI</item>
         <item>CARNET EXTRANJERIA</item>

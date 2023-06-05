@@ -71,7 +71,7 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
                     txtHabilidadOferta1.setText(gethab1);
                     txtHabilidadOferta2.setText(gethab2);
                     txtHabilidadOferta3.setText(gethab3);
-                    idpub = getusuario;
+                    String idpub = getusuario;
                     String videoUrl = urlvideo;
                     Uri videoUri = Uri.parse(videoUrl);
                     vidVideoOferta.setVideoURI(videoUri);
@@ -85,6 +85,12 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
                     }
                     else {
                         Picasso.get().load(urlfoto).fit().centerCrop().into(imgFotoOferta);
+                    }
+                    int y1 = Integer.parseInt(idpub);
+                    int y2 = Integer.parseInt(dniuser);
+                    if(y1!=y2)
+                    {
+                        btnEditarOferta.setVisibility(View.INVISIBLE);
                     }
                     mDatabaseusu.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -119,13 +125,20 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
             }
 
         });
-        int y1 = Integer.parseInt(idpub);
-        int y2 = Integer.parseInt(dniuser);
-        if(y1!=y2)
-        {
-            btnEditarOferta.setVisibility(View.INVISIBLE);
-        }
 
+        btnEditarOferta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String idanun = getIntent().getExtras().getString("idanun");
+                String dniuser1 = getIntent().getExtras().getString("dniuser");
+                Intent i = new Intent(VerMiAnuncioOfertaTrabajo.this, EditarMiAnuncioOferta.class);
+                i.putExtra("dniuser", dniuser1);
+                i.putExtra("idanun", idanun);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                //Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Vista otro perfil",Toast.LENGTH_SHORT).show();
+                startActivity(i);
+            }
+        });
         btnContactarOferta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,14 +152,14 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
                     j.putExtra("dniuser", dniuser1);
                     j.putExtra("idpubanun", idpubanun1);
                     j.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Vista mi perfil",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Vista mi perfil",Toast.LENGTH_SHORT).show();
                     startActivity(j);
                 } else {
                     Intent i = new Intent(VerMiAnuncioOfertaTrabajo.this, VerPerfilUsuario.class);
                     i.putExtra("dniuser", dniuser1);
                     i.putExtra("idpubanun", idpubanun1);
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Vista otro perfil",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Vista otro perfil",Toast.LENGTH_SHORT).show();
                     startActivity(i);
                 }
 
