@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.chambeape.R;
+import com.example.chambeape.ui.ListaOfertasTrabajo;
 import com.example.chambeape.ui.VerMiAnuncioOfertaTrabajo;
 
 import java.util.List;
@@ -22,11 +23,17 @@ public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
     private List<Anuncio> listAnuncio;
     private Context pcontext;
     private int resourcelayaout;
+    private String dniActiveUser;
+
+    public void setActiveUser(String dniActiveUser) {
+        this.dniActiveUser = dniActiveUser;
+    }
     public AnuncioAdapter(@NonNull Context context, int resource, List<Anuncio> objects){
         super(context, resource, objects);
         this.listAnuncio = objects;
         this.pcontext = context;
         this.resourcelayaout = resource;
+
 
     }
     @NonNull
@@ -55,22 +62,25 @@ public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
         //vidItem = view.findViewById(R.id.vidItem);
 
         txtIdAnun.setText(anuncio.getIdAnuncio());
-        txtDescripcionAnun.setText(anuncio.getDescrAnuncio());
-        txtHabilidad1.setText(anuncio.getHabilidad1());
-        txtHabilidad2.setText(anuncio.getHabilidad2());
-        txtHabilidad3.setText(anuncio.getHabilidad3());
+        txtDescripcionAnun.setText(anuncio.getTituloAnuncio());
+        txtHabilidad1.setText(anuncio.getHabilidad1Anuncio());
+        txtHabilidad2.setText(anuncio.getHabilidad2Anuncio());
+        txtHabilidad3.setText(anuncio.getHabilidad3Anuncio());
         txtEstadoAnun.setText(anuncio.getEstadoAnuncio());
-        txtFechaAnun.setText(anuncio.getFecAnuncio());
+        txtFechaAnun.setText(anuncio.getFecchaPublicacionAnuncio());
         //String url = anuncio.getIdFotoAnuncio().toString();
         //Picasso.get().load(url).fit().centerCrop().into(imgItem);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent i = new Intent(view.getContext(), VerMiAnuncioOfertaTrabajo.class);
-                String dniuser = anuncio.getIdUsuario().toString();
+                //String dniuser = anuncio.getIdPublicadorAnuncio().toString();
+                //String dniuser = i.getStringExtra("dniuser");
                 i.putExtra("idanun",txtIdAnun.getText().toString());
-                i.putExtra("dniuser",dniuser);
+                i.putExtra("dniuser",dniActiveUser);
+                //i.putExtra("dniuser",dniuser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 view.getContext().startActivity(i);
             }

@@ -1,27 +1,27 @@
 package com.example.chambeape.entidades;
 
 public class Anuncio {
-    private String idAnuncio, Habilidad1, Habilidad2, Habilidad3, idUsuario, descrAnuncio, estadoAnuncio,
-            ubiAnuncio, fecAnuncio, longitudAnuncio, latitudAnincio, idServicio,
-            idRespoAnuncio, idFotoAnuncio, idVideoAnuncio, puntEmpleAnuncio, puntTrabAnuncio;
+    private String idAnuncio, habilidad1Anuncio, habilidad2Anuncio, habilidad3Anuncio, idPublicadorAnuncio, tituloAnuncio, estadoAnuncio,
+            direccionAnuncio, fecchaPublicacionAnuncio, longitudAnuncio, latitudAnuncio, tipoAnuncio,
+            idResponsableAnuncio, idFotoAnuncio, idVideoAnuncio, puntEmpleAnuncio, puntTrabAnuncio;
 
     public Anuncio() {
     }
 
-    public Anuncio(String idAnuncio, String habilidad1, String habilidad2, String habilidad3, String idUsuario, String descrAnuncio, String estadoAnuncio, String ubiAnuncio, String fecAnuncio, String longitudAnuncio, String latitudAnincio, String idServicio, String idRespoAnuncio, String idFotoAnuncio, String idVideoAnuncio, String puntEmpleAnuncio, String puntTrabAnuncio) {
+    public Anuncio(String idAnuncio, String habilidad1Anuncio, String habilidad2Anuncio, String habilidad3Anuncio, String idPublicadorAnuncio, String tituloAnuncio, String estadoAnuncio, String direccionAnuncio, String fecchaPublicacionAnuncio, String longitudAnuncio, String latitudAnuncio, String tipoAnuncio, String idResponsableAnuncio, String idFotoAnuncio, String idVideoAnuncio, String puntEmpleAnuncio, String puntTrabAnuncio) {
         this.idAnuncio = idAnuncio;
-        Habilidad1 = habilidad1;
-        Habilidad2 = habilidad2;
-        Habilidad3 = habilidad3;
-        this.idUsuario = idUsuario;
-        this.descrAnuncio = descrAnuncio;
+        this.habilidad1Anuncio = habilidad1Anuncio;
+        this.habilidad2Anuncio = habilidad2Anuncio;
+        this.habilidad3Anuncio = habilidad3Anuncio;
+        this.idPublicadorAnuncio = idPublicadorAnuncio;
+        this.tituloAnuncio = tituloAnuncio;
         this.estadoAnuncio = estadoAnuncio;
-        this.ubiAnuncio = ubiAnuncio;
-        this.fecAnuncio = fecAnuncio;
+        this.direccionAnuncio = direccionAnuncio;
+        this.fecchaPublicacionAnuncio = fecchaPublicacionAnuncio;
         this.longitudAnuncio = longitudAnuncio;
-        this.latitudAnincio = latitudAnincio;
-        this.idServicio = idServicio;
-        this.idRespoAnuncio = idRespoAnuncio;
+        this.latitudAnuncio = latitudAnuncio;
+        this.tipoAnuncio = tipoAnuncio;
+        this.idResponsableAnuncio = idResponsableAnuncio;
         this.idFotoAnuncio = idFotoAnuncio;
         this.idVideoAnuncio = idVideoAnuncio;
         this.puntEmpleAnuncio = puntEmpleAnuncio;
@@ -36,44 +36,44 @@ public class Anuncio {
         this.idAnuncio = idAnuncio;
     }
 
-    public String getHabilidad1() {
-        return Habilidad1;
+    public String getHabilidad1Anuncio() {
+        return habilidad1Anuncio;
     }
 
-    public void setHabilidad1(String habilidad1) {
-        Habilidad1 = habilidad1;
+    public void setHabilidad1Anuncio(String habilidad1Anuncio) {
+        this.habilidad1Anuncio = habilidad1Anuncio;
     }
 
-    public String getHabilidad2() {
-        return Habilidad2;
+    public String getHabilidad2Anuncio() {
+        return habilidad2Anuncio;
     }
 
-    public void setHabilidad2(String habilidad2) {
-        Habilidad2 = habilidad2;
+    public void setHabilidad2Anuncio(String habilidad2Anuncio) {
+        this.habilidad2Anuncio = habilidad2Anuncio;
     }
 
-    public String getHabilidad3() {
-        return Habilidad3;
+    public String getHabilidad3Anuncio() {
+        return habilidad3Anuncio;
     }
 
-    public void setHabilidad3(String habilidad3) {
-        Habilidad3 = habilidad3;
+    public void setHabilidad3Anuncio(String habilidad3Anuncio) {
+        this.habilidad3Anuncio = habilidad3Anuncio;
     }
 
-    public String getIdUsuario() {
-        return idUsuario;
+    public String getIdPublicadorAnuncio() {
+        return idPublicadorAnuncio;
     }
 
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdPublicadorAnuncio(String idPublicadorAnuncio) {
+        this.idPublicadorAnuncio = idPublicadorAnuncio;
     }
 
-    public String getDescrAnuncio() {
-        return descrAnuncio;
+    public String getTituloAnuncio() {
+        return tituloAnuncio;
     }
 
-    public void setDescrAnuncio(String descrAnuncio) {
-        this.descrAnuncio = descrAnuncio;
+    public void setTituloAnuncio(String tituloAnuncio) {
+        this.tituloAnuncio = tituloAnuncio;
     }
 
     public String getEstadoAnuncio() {
@@ -84,20 +84,20 @@ public class Anuncio {
         this.estadoAnuncio = estadoAnuncio;
     }
 
-    public String getUbiAnuncio() {
-        return ubiAnuncio;
+    public String getDireccionAnuncio() {
+        return direccionAnuncio;
     }
 
-    public void setUbiAnuncio(String ubiAnuncio) {
-        this.ubiAnuncio = ubiAnuncio;
+    public void setDireccionAnuncio(String direccionAnuncio) {
+        this.direccionAnuncio = direccionAnuncio;
     }
 
-    public String getFecAnuncio() {
-        return fecAnuncio;
+    public String getFecchaPublicacionAnuncio() {
+        return fecchaPublicacionAnuncio;
     }
 
-    public void setFecAnuncio(String fecAnuncio) {
-        this.fecAnuncio = fecAnuncio;
+    public void setFecchaPublicacionAnuncio(String fecchaPublicacionAnuncio) {
+        this.fecchaPublicacionAnuncio = fecchaPublicacionAnuncio;
     }
 
     public String getLongitudAnuncio() {
@@ -108,28 +108,28 @@ public class Anuncio {
         this.longitudAnuncio = longitudAnuncio;
     }
 
-    public String getLatitudAnincio() {
-        return latitudAnincio;
+    public String getLatitudAnuncio() {
+        return latitudAnuncio;
     }
 
-    public void setLatitudAnincio(String latitudAnincio) {
-        this.latitudAnincio = latitudAnincio;
+    public void setLatitudAnuncio(String latitudAnuncio) {
+        this.latitudAnuncio = latitudAnuncio;
     }
 
-    public String getIdServicio() {
-        return idServicio;
+    public String getTipoAnuncio() {
+        return tipoAnuncio;
     }
 
-    public void setIdServicio(String idServicio) {
-        this.idServicio = idServicio;
+    public void setTipoAnuncio(String tipoAnuncio) {
+        this.tipoAnuncio = tipoAnuncio;
     }
 
-    public String getIdRespoAnuncio() {
-        return idRespoAnuncio;
+    public String getIdResponsableAnuncio() {
+        return idResponsableAnuncio;
     }
 
-    public void setIdRespoAnuncio(String idRespoAnuncio) {
-        this.idRespoAnuncio = idRespoAnuncio;
+    public void setIdResponsableAnuncio(String idResponsableAnuncio) {
+        this.idResponsableAnuncio = idResponsableAnuncio;
     }
 
     public String getIdFotoAnuncio() {
@@ -168,18 +168,18 @@ public class Anuncio {
     public String toString() {
         return "Anuncio{" +
                 "idAnuncio='" + idAnuncio + '\'' +
-                ", Habilidad1='" + Habilidad1 + '\'' +
-                ", Habilidad2='" + Habilidad2 + '\'' +
-                ", Habilidad3='" + Habilidad3 + '\'' +
-                ", idUsuario='" + idUsuario + '\'' +
-                ", descrAnuncio='" + descrAnuncio + '\'' +
+                ", habilidad1Anuncio='" + habilidad1Anuncio + '\'' +
+                ", habilidad2Anuncio='" + habilidad2Anuncio + '\'' +
+                ", habilidad3Anuncio='" + habilidad3Anuncio + '\'' +
+                ", idPublicadorAnuncio='" + idPublicadorAnuncio + '\'' +
+                ", tituloAnuncio='" + tituloAnuncio + '\'' +
                 ", estadoAnuncio='" + estadoAnuncio + '\'' +
-                ", ubiAnuncio='" + ubiAnuncio + '\'' +
-                ", fecAnuncio='" + fecAnuncio + '\'' +
+                ", direccionAnuncio='" + direccionAnuncio + '\'' +
+                ", fecchaPublicacionAnuncio='" + fecchaPublicacionAnuncio + '\'' +
                 ", longitudAnuncio='" + longitudAnuncio + '\'' +
-                ", latitudAnincio='" + latitudAnincio + '\'' +
-                ", idServicio='" + idServicio + '\'' +
-                ", idRespoAnuncio='" + idRespoAnuncio + '\'' +
+                ", latitudAnuncio='" + latitudAnuncio + '\'' +
+                ", tipoAnuncio='" + tipoAnuncio + '\'' +
+                ", idResponsableAnuncio='" + idResponsableAnuncio + '\'' +
                 ", idFotoAnuncio='" + idFotoAnuncio + '\'' +
                 ", idVideoAnuncio='" + idVideoAnuncio + '\'' +
                 ", puntEmpleAnuncio='" + puntEmpleAnuncio + '\'' +

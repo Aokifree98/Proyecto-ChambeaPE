@@ -34,6 +34,8 @@ public class ListaOfertasTrabajo extends AppCompatActivity {
     ArrayAdapter<Anuncio> arrayAdapterAnuncios;
     AnuncioAdapter anuncioAdapter;
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,16 +52,21 @@ public class ListaOfertasTrabajo extends AppCompatActivity {
                 anunciossxestado.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull @NotNull DataSnapshot resultados) {
+
+
                         for(DataSnapshot itemsdata: resultados.getChildren()){
+
                             Anuncio a = itemsdata.getValue(Anuncio.class);
                             if(a.getEstadoAnuncio().equals("Activo")){
                                 listAnuncio.add(a);
                                 anuncioAdapter = new AnuncioAdapter(ListaOfertasTrabajo.this, R.layout.itemanuncio,listAnuncio);
+                                anuncioAdapter.setActiveUser(dniuser);
                             }
                         }
                         arrayAdapterAnuncios = new ArrayAdapter<Anuncio>
                                 (ListaOfertasTrabajo.this, android.R.layout.simple_list_item_1,listAnuncio);
                         lstListarAnunciosOferta.setAdapter(anuncioAdapter);
+
                     }
 
                     @Override

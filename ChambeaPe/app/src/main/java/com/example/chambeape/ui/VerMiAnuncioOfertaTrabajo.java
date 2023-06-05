@@ -52,12 +52,12 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.hasChild(idanun)){
-                    String getusuario = snapshot.child(idanun).child("idUsuario").getValue(String.class);
-                    String gettipofer = snapshot.child(idanun).child("idServicio").getValue(String.class);
-                    String gettitulo = snapshot.child(idanun).child("descrAnuncio").getValue(String.class);
-                    String gethab1 = snapshot.child(idanun).child("habilidad1").getValue(String.class);
-                    String gethab2 = snapshot.child(idanun).child("habilidad2").getValue(String.class);
-                    String gethab3 = snapshot.child(idanun).child("habilidad3").getValue(String.class);
+                    String getusuario = snapshot.child(idanun).child("idPublicadorAnuncio").getValue(String.class);
+                    String gettipofer = snapshot.child(idanun).child("tipoAnuncio").getValue(String.class);
+                    String gettitulo = snapshot.child(idanun).child("tituloAnuncio").getValue(String.class);
+                    String gethab1 = snapshot.child(idanun).child("habilidad1Anuncio").getValue(String.class);
+                    String gethab2 = snapshot.child(idanun).child("habilidad2Anuncio").getValue(String.class);
+                    String gethab3 = snapshot.child(idanun).child("habilidad3Anuncio").getValue(String.class);
                     String urlfoto = snapshot.child(idanun).child("idFotoAnuncio").getValue(String.class);
                     String urlvideo = snapshot.child(idanun).child("idVideoAnuncio").getValue(String.class);
                     txtTipoOferta.setText(gettipofer);

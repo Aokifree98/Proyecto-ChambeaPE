@@ -88,7 +88,7 @@ public class MiPerfilUsuario extends AppCompatActivity {
                     public void onDataChange(@NonNull @NotNull DataSnapshot resultados) {
                         for(DataSnapshot itemsdata: resultados.getChildren()){
                             Anuncio a = itemsdata.getValue(Anuncio.class);
-                            if(a.getIdUsuario().equals(dniuser)){
+                            if(a.getIdResponsableAnuncio().equals(dniuser)){
                                 listAnuncio.add(a);
                                 anuncioAdapter = new AnuncioAdapter(MiPerfilUsuario.this, R.layout.itemanuncio,listAnuncio);
                             }
