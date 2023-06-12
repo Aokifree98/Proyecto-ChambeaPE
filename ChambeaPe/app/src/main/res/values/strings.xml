@@ -48,4 +48,5 @@
     <string name="title_activity_seleccionar_ubicacion_crear_anuncio_oferta">
         SeleccionarUbicacionCrearAnuncioOferta
     </string>
+    <string name="title_activity_ver_ubicacion_oferta">VerUbicacionOferta</string>
 </resources>

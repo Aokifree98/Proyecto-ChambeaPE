@@ -28,15 +28,17 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyC_apyb2RbIEVaygmiuWVvKTPRlN5c21eg" />
+            android:value="YOUR_API_KEY" />
 
+        <activity
+            android:name=".ui.VerUbicacionOferta"
+            android:exported="true"
+            android:label="@string/title_activity_ver_ubicacion_oferta" />
         <activity
             android:name=".ui.SeleccionarUbicacionCrearAnuncioOferta"
             android:exported="true"
             android:label="@string/title_activity_seleccionar_ubicacion_crear_anuncio_oferta"
-            android:theme="@style/ChambeaPetheme">
-
-        </activity>
+            android:theme="@style/ChambeaPetheme"></activity>
         <activity
             android:name=".ui.EditarMiAnuncioOferta"
             android:exported="true"

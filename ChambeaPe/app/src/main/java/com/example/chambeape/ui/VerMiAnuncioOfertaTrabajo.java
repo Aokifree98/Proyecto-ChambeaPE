@@ -1,8 +1,5 @@
 package com.example.chambeape.ui;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +10,9 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.chambeape.R;
 import com.google.firebase.database.DataSnapshot;
@@ -27,8 +27,8 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
     TextView txtUsuarioOferta,txtTipoOferta,txtTituloOferta,txtHabilidadOferta1,txtHabilidadOferta2,txtHabilidadOferta3;
     ImageView imgFotoOferta;
     VideoView vidVideoOferta;
-    Button btnContactarOferta,btnEditarOferta;
-
+    Button btnContactarOferta,btnEditarOferta,btnVerUbicacionOferta;
+    String lat, lon;
     DatabaseReference mDatabaseanu = FirebaseDatabase.getInstance().getReference();
     DatabaseReference mDatabaseusu = FirebaseDatabase.getInstance().getReference();
     @Override
@@ -46,6 +46,7 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
         vidVideoOferta= findViewById(R.id.vidVideoOferta);
         btnContactarOferta= findViewById(R.id.btnContactarOferta);
         btnEditarOferta= findViewById(R.id.btnEditarOferta);
+        btnVerUbicacionOferta = findViewById(R.id.btnVerUbicacionOferta);
 
         String idanun = getIntent().getExtras().getString("idanun");
 
@@ -66,6 +67,10 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
                     String gethab3 = snapshot.child(idanun).child("habilidad3Anuncio").getValue(String.class);
                     String urlfoto = snapshot.child(idanun).child("idFotoAnuncio").getValue(String.class);
                     String urlvideo = snapshot.child(idanun).child("idVideoAnuncio").getValue(String.class);
+                    String lat1 = snapshot.child(idanun).child("latitudAnuncio").getValue(String.class);
+                    String lon1 = snapshot.child(idanun).child("longitudAnuncio").getValue(String.class);
+                    lat = lat1;
+                    lon = lon1;
                     txtTipoOferta.setText(gettipofer);
                     txtTituloOferta.setText(gettitulo);
                     txtHabilidadOferta1.setText(gethab1);
@@ -165,5 +170,22 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
 
             }
         });
+
+        btnVerUbicacionOferta.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String idpubanun1 = getIntent().getExtras().getString("idpubanun");
+                String idanun1 = getIntent().getExtras().getString("idanun");
+                String dniuser1 = getIntent().getExtras().getString("dniuser");
+                Intent i = new Intent(VerMiAnuncioOfertaTrabajo.this, VerUbicacionOferta.class);
+                i.putExtra("dniuser", dniuser1);
+                i.putExtra("idpubanun", idpubanun1);
+                i.putExtra("idanun", idanun1);
+                i.putExtra("lat",lat);
+                i.putExtra("lon",lon);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }));
     }
 }
