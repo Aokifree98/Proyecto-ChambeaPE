@@ -45,4 +45,7 @@
         <item>Chilca</item>
         <item>Otro</item>
     </string-array>
+    <string name="title_activity_seleccionar_ubicacion_crear_anuncio_oferta">
+        SeleccionarUbicacionCrearAnuncioOferta
+    </string>
 </resources>

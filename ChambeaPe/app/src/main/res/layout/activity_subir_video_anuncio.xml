@@ -48,10 +48,10 @@
             ></Button>
 
         <Button
-            android:id="@+id/btnRegistrarVideoCA"
+            android:id="@+id/btnContinuarCA"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="ACEPTAR"
+            android:text="CONTINUAR"
             android:textColor="@color/white"
             android:layout_marginHorizontal="50dp"
             android:background="@drawable/btnredondeado"

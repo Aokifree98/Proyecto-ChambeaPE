@@ -1,7 +1,5 @@
 package com.example.chambeape.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -14,7 +12,8 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.chambeape.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.chambeape.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -26,16 +25,15 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.HashMap;
-
 public class SubirVideoAnuncio extends AppCompatActivity {
-    Button btnSubirVideoCA;
+    Button btnSubirVideoCA,btnConinuarCA;
     ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subir_video_anuncio);
         btnSubirVideoCA = findViewById(R.id.btnSubirVideoCA);
+        btnConinuarCA = findViewById(R.id.btnContinuarCA);
         btnSubirVideoCA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +42,20 @@ public class SubirVideoAnuncio extends AppCompatActivity {
                 choosevideo();
             }
         });
+        btnConinuarCA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String idanun = getIntent().getExtras().getString("idanun");
+                String dniuser= getIntent().getExtras().getString("dniuser");
+                Intent i = new Intent(SubirVideoAnuncio.this, SeleccionarUbicacionCrearAnuncioOferta.class);
+                String iduser = dniuser;
+                i.putExtra("dniuser", iduser);
+                i.putExtra("idanun", idanun);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        });
+
     }
     private void choosevideo() {
         Intent intent = new Intent();
@@ -95,12 +107,7 @@ public class SubirVideoAnuncio extends AppCompatActivity {
                     // Video uploaded successfully
                     // Dismiss dialog
                     progressDialog.dismiss();
-                    Toast.makeText(SubirVideoAnuncio.this, "Video Uploaded!!", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(SubirVideoAnuncio.this, MenuInicio.class);
-                    String iduser = dniuser;
-                    i.putExtra("dniuser", iduser);
-                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(i);
+                    Toast.makeText(SubirVideoAnuncio.this, "Video Subido Correctamente!!", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
