@@ -1,15 +1,14 @@
 package com.example.chambeape.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Anuncio;
@@ -69,7 +68,7 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
         Anuncio detalleAnuncio = new Anuncio(id,Habilidad1, Habilidad2, Habilidad3,
                 dniuser, descrAnuncio, "Activo", ubiAnuncio, fechaActual,"",
                 "",idServicio,"","",
-                "","","");
+                "","","","","");
 
         miDatabase.child("DetalleAnuncio").child(id).setValue(detalleAnuncio);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();

@@ -3,12 +3,12 @@ package com.example.chambeape.entidades;
 public class Anuncio {
     private String idAnuncio, habilidad1Anuncio, habilidad2Anuncio, habilidad3Anuncio, idPublicadorAnuncio, tituloAnuncio, estadoAnuncio,
             direccionAnuncio, fecchaPublicacionAnuncio, longitudAnuncio, latitudAnuncio, tipoAnuncio,
-            idResponsableAnuncio, idFotoAnuncio, idVideoAnuncio, puntEmpleAnuncio, puntTrabAnuncio;
+            idResponsableAnuncio, idFotoAnuncio, idVideoAnuncio, puntEmpleAnuncio, puntTrabAnuncio,comTraAnuncio,comEmpAnuncio;
 
     public Anuncio() {
     }
 
-    public Anuncio(String idAnuncio, String habilidad1Anuncio, String habilidad2Anuncio, String habilidad3Anuncio, String idPublicadorAnuncio, String tituloAnuncio, String estadoAnuncio, String direccionAnuncio, String fecchaPublicacionAnuncio, String longitudAnuncio, String latitudAnuncio, String tipoAnuncio, String idResponsableAnuncio, String idFotoAnuncio, String idVideoAnuncio, String puntEmpleAnuncio, String puntTrabAnuncio) {
+    public Anuncio(String idAnuncio, String habilidad1Anuncio, String habilidad2Anuncio, String habilidad3Anuncio, String idPublicadorAnuncio, String tituloAnuncio, String estadoAnuncio, String direccionAnuncio, String fecchaPublicacionAnuncio, String longitudAnuncio, String latitudAnuncio, String tipoAnuncio, String idResponsableAnuncio, String idFotoAnuncio, String idVideoAnuncio, String puntEmpleAnuncio, String puntTrabAnuncio, String comTraAnuncio, String comEmpAnuncio) {
         this.idAnuncio = idAnuncio;
         this.habilidad1Anuncio = habilidad1Anuncio;
         this.habilidad2Anuncio = habilidad2Anuncio;
@@ -26,6 +26,8 @@ public class Anuncio {
         this.idVideoAnuncio = idVideoAnuncio;
         this.puntEmpleAnuncio = puntEmpleAnuncio;
         this.puntTrabAnuncio = puntTrabAnuncio;
+        this.comTraAnuncio = comTraAnuncio;
+        this.comEmpAnuncio = comEmpAnuncio;
     }
 
     public String getIdAnuncio() {
@@ -164,6 +166,22 @@ public class Anuncio {
         this.puntTrabAnuncio = puntTrabAnuncio;
     }
 
+    public String getComTraAnuncio() {
+        return comTraAnuncio;
+    }
+
+    public void setComTraAnuncio(String comTraAnuncio) {
+        this.comTraAnuncio = comTraAnuncio;
+    }
+
+    public String getComEmpAnuncio() {
+        return comEmpAnuncio;
+    }
+
+    public void setComEmpAnuncio(String comEmpAnuncio) {
+        this.comEmpAnuncio = comEmpAnuncio;
+    }
+
     @Override
     public String toString() {
         return "Anuncio{" +
@@ -184,6 +202,8 @@ public class Anuncio {
                 ", idVideoAnuncio='" + idVideoAnuncio + '\'' +
                 ", puntEmpleAnuncio='" + puntEmpleAnuncio + '\'' +
                 ", puntTrabAnuncio='" + puntTrabAnuncio + '\'' +
+                ", comTraAnuncio='" + comTraAnuncio + '\'' +
+                ", comEmpAnuncio='" + comEmpAnuncio + '\'' +
                 '}';
     }
 }

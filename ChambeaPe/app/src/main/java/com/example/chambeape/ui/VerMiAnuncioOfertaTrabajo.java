@@ -27,7 +27,7 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
     TextView txtUsuarioOferta,txtTipoOferta,txtTituloOferta,txtHabilidadOferta1,txtHabilidadOferta2,txtHabilidadOferta3;
     ImageView imgFotoOferta;
     VideoView vidVideoOferta;
-    Button btnContactarOferta,btnEditarOferta,btnVerUbicacionOferta;
+    Button btnContactarOferta,btnEditarOferta,btnVerUbicacionOferta,btnConcluirOferta;
     String lat, lon;
     DatabaseReference mDatabaseanu = FirebaseDatabase.getInstance().getReference();
     DatabaseReference mDatabaseusu = FirebaseDatabase.getInstance().getReference();
@@ -47,6 +47,7 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
         btnContactarOferta= findViewById(R.id.btnContactarOferta);
         btnEditarOferta= findViewById(R.id.btnEditarOferta);
         btnVerUbicacionOferta = findViewById(R.id.btnVerUbicacionOferta);
+        btnConcluirOferta= findViewById(R.id.btnConcluirOferta);
 
         String idanun = getIntent().getExtras().getString("idanun");
 
@@ -96,6 +97,7 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
                     if(y1!=y2)
                     {
                         btnEditarOferta.setVisibility(View.INVISIBLE);
+                        btnConcluirOferta.setVisibility(View.INVISIBLE);
                     }
                     mDatabaseusu.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -149,10 +151,8 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
             public void onClick(View v) {
                 String idpubanun1 = getIntent().getExtras().getString("idpubanun");
                 String dniuser1 = getIntent().getExtras().getString("dniuser");
-                int x1 = Integer.parseInt(idpubanun1);
-                int x2 = Integer.parseInt(dniuser1);
                 Toast.makeText(VerMiAnuncioOfertaTrabajo.this,idpubanun1+"=="+dniuser1,Toast.LENGTH_SHORT).show();
-                if(x1==x2){
+                if(idpubanun1.equals(dniuser1)){
                     Intent j = new Intent(VerMiAnuncioOfertaTrabajo.this, MiPerfilUsuario.class);
                     j.putExtra("dniuser", dniuser1);
                     j.putExtra("idpubanun", idpubanun1);
@@ -187,5 +187,19 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
                 startActivity(i);
             }
         }));
+        btnConcluirOferta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String idpubanun1 = getIntent().getExtras().getString("idpubanun");
+                String idanun1 = getIntent().getExtras().getString("idanun");
+                String dniuser1 = getIntent().getExtras().getString("dniuser");
+                Intent i = new Intent(VerMiAnuncioOfertaTrabajo.this, ConcluirOferta.class);
+                i.putExtra("dniuser", dniuser1);
+                i.putExtra("idpubanun", idpubanun1);
+                i.putExtra("idanun", idanun1);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        });
     }
 }

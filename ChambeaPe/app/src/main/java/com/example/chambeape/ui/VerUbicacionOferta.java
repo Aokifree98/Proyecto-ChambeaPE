@@ -112,7 +112,7 @@ public class VerUbicacionOferta extends FragmentActivity implements OnMapReadyCa
                     k.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     //Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Vista mi perfil",Toast.LENGTH_SHORT).show();
                     startActivity(k);
-                } else {
+                }else{
                     Intent i = new Intent(VerUbicacionOferta.this, VerPerfilUsuario.class);
                     i.putExtra("dniuser", dniuser1);
                     i.putExtra("idpubanun", idpubanun1);
