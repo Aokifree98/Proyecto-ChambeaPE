@@ -1,10 +1,12 @@
 package com.example.chambeape.ui;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -53,7 +55,7 @@ public class VerUbicacionOferta extends FragmentActivity implements OnMapReadyCa
         btnVolverVUO=findViewById(R.id.btnVolverVUO);
         btnContactarVUO=findViewById(R.id.btnContactarVUO);
         btnVolverVUO.setOnClickListener(this);
-        btnVolverVUO.setOnClickListener(this);
+        btnContactarVUO.setOnClickListener(this);
     }
 
     /**
@@ -90,6 +92,37 @@ public class VerUbicacionOferta extends FragmentActivity implements OnMapReadyCa
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnVolverVUO:{
+                Intent j=new Intent(VerUbicacionOferta.this,VerMiAnuncioOfertaTrabajo.class);
+                j.putExtra("dniuser", dniuser1);
+                j.putExtra("idanun", idanun1);
+                startActivity(j);
 
+                break;
+            }
+            case R.id.btnContactarVUO:{
+                int x1 = Integer.parseInt(idpubanun1);
+                int x2 = Integer.parseInt(dniuser1);
+                Toast.makeText(VerUbicacionOferta.this,idpubanun1+"=="+dniuser1,Toast.LENGTH_SHORT).show();
+                if(x1==x2){
+                    Intent k = new Intent(VerUbicacionOferta.this, MiPerfilUsuario.class);
+                    k.putExtra("dniuser", dniuser1);
+                    k.putExtra("idpubanun", idpubanun1);
+                    k.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    //Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Vista mi perfil",Toast.LENGTH_SHORT).show();
+                    startActivity(k);
+                } else {
+                    Intent i = new Intent(VerUbicacionOferta.this, VerPerfilUsuario.class);
+                    i.putExtra("dniuser", dniuser1);
+                    i.putExtra("idpubanun", idpubanun1);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    //Toast.makeText(VerMiAnuncioOfertaTrabajo.this,"Vista otro perfil",Toast.LENGTH_SHORT).show();
+                    startActivity(i);
+                }
+                break;
+            }
+
+        }
     }
 }
