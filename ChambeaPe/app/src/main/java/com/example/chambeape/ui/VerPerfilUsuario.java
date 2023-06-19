@@ -1,10 +1,6 @@
 package com.example.chambeape.ui;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Anuncio;
@@ -37,8 +36,8 @@ public class VerPerfilUsuario extends AppCompatActivity {
     ArrayAdapter<Anuncio> arrayAdapterAnuncios;
     AnuncioAdapter anuncioAdapter;
     ImageView imgPerfilUser;
-    TextView txtNombreUser,txtDescripcionUser;
-    Button btnRedesSoci,btnContactarPU;
+    TextView txtNombreUser,txtDescripcionUser,txtPunEmpPU,txtPunTraPU;
+    Button btnRedesSoci,btnContactarPU,btnHistorialPU;
     String tel;
 
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -50,8 +49,11 @@ public class VerPerfilUsuario extends AppCompatActivity {
         imgPerfilUser=findViewById(R.id.imgFotoPU);
         txtNombreUser=findViewById(R.id.txtNombrePU);
         txtDescripcionUser=findViewById(R.id.txtDescripcionPU);
+        txtPunEmpPU=findViewById(R.id.txtPunEmpPU);
+        txtPunTraPU=findViewById(R.id.txtPunTraPU);
         btnRedesSoci=findViewById(R.id.btnRedesSociPU);
         btnContactarPU=findViewById(R.id.btnContactarPU);
+        btnHistorialPU=findViewById(R.id.btnHistorialPU);
         lstAnunciosOferta=findViewById(R.id.lstAnunciosOfertaPU);
         String dniuser = getIntent().getExtras().getString("dniuser");
         String idpubanun = getIntent().getExtras().getString("idpubanun");
@@ -67,10 +69,14 @@ public class VerPerfilUsuario extends AppCompatActivity {
                     String getdesc = snapshot.child(idpubanun).child("desUsuario").getValue(String.class);
                     String url = snapshot.child(idpubanun).child("fotUsuario").getValue(String.class);
                     String gettel = snapshot.child(idpubanun).child("telUsuario").getValue(String.class);
+                    String getpunemp = snapshot.child(idpubanun).child("calUsuarioEmp").getValue(String.class);
+                    String getpuntra = snapshot.child(idpubanun).child("calUsuarioTra").getValue(String.class);
                     tel = gettel;
                     String nombresperfil = getnombre+" "+getapepat+" "+getapemat;
                     txtNombreUser.setText(nombresperfil);
                     txtDescripcionUser.setText(getdesc);
+                    txtPunEmpPU.setText(getpunemp);
+                    txtPunTraPU.setText(getpuntra);
                     if(url.isEmpty())
                     {
                         Toast.makeText(VerPerfilUsuario.this,"No se encontro una foto de perfil",Toast.LENGTH_SHORT).show();
@@ -138,6 +144,19 @@ public class VerPerfilUsuario extends AppCompatActivity {
                 */
             }
         });
+        btnHistorialPU.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String idpubanun1 = getIntent().getExtras().getString("idpubanun");
+                String idanun1 = getIntent().getExtras().getString("idanun");
+                String dniuser1 = getIntent().getExtras().getString("dniuser");
+                Intent i = new Intent(VerPerfilUsuario.this, VerHistorialUsuario.class);
+                i.putExtra("dniuser", dniuser1);
+                i.putExtra("idpubanun", idpubanun1);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        }));
     }
     /*
     private boolean appInstalledOrNot(String url) {

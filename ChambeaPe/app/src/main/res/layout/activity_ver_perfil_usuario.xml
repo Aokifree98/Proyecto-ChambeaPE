@@ -48,52 +48,49 @@
                     android:id="@+id/txtDescripcionPU"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:text="Especialista"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
-
                 <LinearLayout
-                    android:id="@+id/lyPuntuación"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/igEstrella1"
+                    android:gravity="center">
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_star" />
-
-                    <ImageView
-                        android:id="@+id/igEstrella2"
+                        android:layout_gravity="center"
+                        android:text="Empleador: "
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/txtPunEmpPU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_star" />
-
-                    <ImageView
-                        android:id="@+id/igEstrella3"
+                        android:layout_gravity="center"
+                        android:text="0.0"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_star" />
-
-                    <ImageView
-                        android:id="@+id/igEstrella4"
+                        android:layout_gravity="center"
+                        android:text="Trabajador: "
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/txtPunTraPU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_star" />
-
-                    <ImageView
-                        android:id="@+id/igEstrella5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_star" />
+                        android:layout_gravity="center"
+                        android:text="0.0"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -129,10 +126,24 @@
             android:drawablePadding="5dp"
             android:layout_marginBottom="10dp"
             android:padding="10dp"
+            android:layout_marginEnd="10dp"
             android:drawableEnd="@drawable/ic_phone"
             android:background="@drawable/btnredondeado"
             android:textColor="@color/white"
             android:text="Contactar" />
+
+        <Button
+            android:id="@+id/btnHistorialPU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:drawableEnd="@drawable/ic_historial"
+            android:background="@drawable/btnredondeado"
+            android:textColor="@color/white"
+            android:text="HISTORIAL" />
 
 
     </LinearLayout>

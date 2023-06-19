@@ -49,9 +49,6 @@ public class ConcluirOferta extends AppCompatActivity {
             public void onClick(View v) {
                 String com = edtComentarioCO.getText().toString();
                 String punt = spCalificacionCO.getSelectedItem().toString();;
-
-
-
                 if(dniuser.equals(usuarioSeleccionado)){
                     Toast.makeText(ConcluirOferta.this, "No puedes seleccionarte a ti mismo como responsable", Toast.LENGTH_SHORT).show();
                 }
@@ -60,6 +57,27 @@ public class ConcluirOferta extends AppCompatActivity {
                     mDatabase.child("DetalleAnuncio").child(idanun).child("estadoAnuncio").setValue("Concluido");
                     mDatabase.child("DetalleAnuncio").child(idanun).child("comTraAnuncio").setValue(com);
                     mDatabase.child("DetalleAnuncio").child(idanun).child("puntTrabAnuncio").setValue(punt);
+                    //Falta obtener la cantidad de ofertas terminadas y sacar una formula para obtener el promedio de la calificacion como trabajador
+                    /*
+                    mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.hasChild(idpubanun)){
+
+                                String getpuntra = snapshot.child(idpubanun).child("calUsuarioTra").getValue(String.class);
+                                Float punttra = Float.parseFloat(getpuntra);
+                            }
+                            else {
+                                Toast.makeText(ConcluirOferta.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+
+                    });
+                     */
+                    mDatabase.child("Usuarios").child(usuarioSeleccionado).child("calUsuarioTra").setValue(punt);
                     String idpubanun1 = getIntent().getExtras().getString("idpubanun");
                     String idanun1 = getIntent().getExtras().getString("idanun");
                     String dniuser1 = getIntent().getExtras().getString("dniuser");
