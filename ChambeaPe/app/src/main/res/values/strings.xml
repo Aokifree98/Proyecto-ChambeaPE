@@ -1,35 +1,74 @@
 <resources>
     <string name="app_name">ChambeaPe</string>
-    <string name="title_activity_menu_desplegable">MenuDesplegable</string>
+    <string-array name="genero">
+        <item>Otro</item>
+        <item>Femenino</item>
+        <item>Masculino</item>
+    </string-array>
+    <string-array name="estado">
+        <item>Activo</item>
+        <item>Concluido</item>
+    </string-array>
+    <string-array name="tipoDocumento">
+        <item>DNI</item>
+        <item>CARNET EXTRANJERIA</item>
+    </string-array>
+    <string-array name="CategoriaServicio">
+        <item>Seleccione el tipo de servicio</item>
+        <item>Electricidad</item>
+        <item>Gasfiteria</item>
+        <item>Belleza y Salud</item>
+        <item>Construcción</item>
+        <item>Alimentos</item>
+    </string-array>
+
+    <string-array name="Plataformas">
+        <item>Facebook</item>
+        <item>Instagram</item>
+        <item>LinkedIn</item>
+        <item>Bumeran</item>
+        <item>YouTube</item>
+        <item>Tiktok</item>
+    </string-array>
+
+    <string-array name="Habilidades">
+        <item>Seleccione una habilidad</item>
+        <item>Resiliencia</item>
+        <item>Trabajo bajo presión</item>
+        <item>Flexibilidad</item>
+        <item>Multitarea</item>
+    </string-array>
+    <string-array name="Distritos">
+        <item>Seleccione un distrito</item>
+        <item>Huancayo</item>
+        <item>El Tambo</item>
+        <item>Chilca</item>
+        <item>Otro</item>
+    </string-array>
+    <string name="title_activity_seleccionar_ubicacion_crear_anuncio_oferta">
+        SeleccionarUbicacionCrearAnuncioOferta
+    </string>
+    <string name="title_activity_ver_ubicacion_oferta">VerUbicacionOferta</string>
+    <string name="title_activity_menu_principal">MenuPrincipal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title">Opciones</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_inicio">Inicio</string>
-    <string name="menu_historial">Historial</string>
-    <string name="menu_contactos">Contactos</string>
-    <string name="menu_configuracion">Configuración</string>
+    <string name="menu_home">Home</string>
     <string name="menu_ayuda">Ayuda</string>
-    <string name="menu_cerrarS">Cerrar Sesión</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-
-    <string name="habilidades">Habilidades</string>
+    <string name="menu_configuracion">Configuracion</string>
+    <string name="menu_historial">Historial</string>
+    <string name="menu_cerrarSesion">Cerrar Sesion</string>
+   
+    
+    <string name="title_ayuda">Ayuda</string>
+    <string name="ayuda_reportar_problema">Reportar Problema</string>
+    <string name="ayuda_solicitudes">Solicitudes</string>
+    <string name="ayuda_soporte_tecnico">Soporte Técnico</string>
+    <string name="ayuda_preguntas_frecuentes">Preguntas Frecuentes</string>
+    
+    
 </resources>

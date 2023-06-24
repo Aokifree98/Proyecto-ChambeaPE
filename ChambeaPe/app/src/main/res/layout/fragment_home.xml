@@ -5,83 +5,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/btnBackgraund"
+        android:background="@color/primaryDarkColor"
         android:layout_gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingLeft="120dp">
 
-            <ImageView
-                android:id="@+id/imgFHPerfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_perfil"
-                android:onClick="llamarPerfilUsuario"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgMIPerfil"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_user"/>
 
             <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:id="@+id/imgBtnNotificaciones"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@color/btnBackgraund"
-                android:src="@drawable/ic_notification_new_icon" />
+                android:background="@color/primaryDarkColor"
+                android:src="@drawable/ic_bell" />
         </LinearLayout>
 
+
         <TextView
-            android:id="@+id/txtMNombreUser"
+            android:id="@+id/txtMINombreUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:layout_gravity="center"
             android:textSize="25sp"
+            android:textColor="@color/white"
             android:text="Miguel Catillo Perez" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtBienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textColor="@color/primaryColor"
+        android:text="HOLA DE NUEVO...!"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtPregunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/primaryColor"
+        android:textSize="25sp"
+        android:text="¿Qué desea hacer hoy?"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:textColor="@color/textColor"
+        android:layout_marginVertical="10dp"
+        android:textColor="@color/primaryColor"
         android:textSize="20sp"
         android:text="Buscar" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnMBuscarTra"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/btnbackgraund1"
-            android:text="Trabajadores" />
-
-        <Button
-            android:id="@+id/btnMBuscarOfer"
+            android:id="@+id/btnMIBuscarTra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/btnbackgraund1"
+            android:paddingHorizontal="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btnredondeado"
+            android:text="Trabajadores" />
+
+        <Button
+            android:id="@+id/btnMIBuscarOfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/btnredondeado"
             android:text="Ofertas" />
     </LinearLayout>
 
@@ -90,35 +113,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/textColor"
+        android:textColor="@color/primaryColor"
+        android:layout_marginVertical="10dp"
         android:textSize="20sp"
         android:text="Crear Anuncio" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/MCreATrab"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/btnbackgraund1"
-            android:text="Trabajadores" />
-
-        <Button
-            android:id="@+id/MCreaAOfer"
+            android:id="@+id/btnMICreATrab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/btnbackgraund1"
-            android:onClick="llamarAnuncioOferta"
-            android:text="Ofertas" />
-    </LinearLayout>
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/white"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/btnredondeado"
+            android:text="COMO TRABAJADOR" />
 
+        <Button
+            android:id="@+id/btnMICreaAOfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btnredondeado"
+            android:text="DE TRABAJO" />
+    </LinearLayout>
 </LinearLayout>

@@ -7,7 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="textColor">#2EA2BE</color>
-    <color name="btnBackgraund">#17809B</color>
-    <color name="edtColorgris">#768083</color>
+
+    <color name="primaryColor">#2EA1BD</color>
+    <color name="secondaryColor">#2390AB</color>
+    <color name="primaryDarkColor">#005D77</color>
 </resources>

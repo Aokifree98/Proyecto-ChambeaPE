@@ -3,65 +3,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".ui.ayuda.AyudaFragment">
+    tools:context=".ui.Ayuda.AyudaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/btnBackgraund"
-        app:title="Servicio de Ayuda "
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Preguntas frecuentes"
-        android:textColor="@color/textColor"
-        android:textSize="20sp"/>
+        android:text="@string/title_ayuda"
+        android:textColor="@color/teal_700"
+        android:textSize="30sp" />
 
     <Button
-        android:id="@+id/btnPF1"
-        android:layout_width="match_parent"
+        android:id="@+id/btnARportarProblema"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/btnbackgraund2"
-        android:textColor="@color/textColor"
-        android:text="¿Cómo crear una oferta de trabajo?" />
+        android:background="@drawable/btnredondeado"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="@string/ayuda_reportar_problema"/>
 
     <Button
-        android:id="@+id/btnPF2"
-        android:layout_width="match_parent"
+        android:id="@+id/btnASolicitudes"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/btnbackgraund2"
-        android:textColor="@color/textColor"
-        android:text="¿Cómo crear mi perfil como trabajador?" />
+        android:background="@drawable/btnredondeado"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="@string/ayuda_solicitudes" />
 
     <Button
-        android:id="@+id/btnPF3"
-        android:layout_width="match_parent"
+        android:id="@+id/btnASoporteTecnico"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/btnbackgraund2"
-        android:textColor="@color/textColor"
-        android:text="¿Cómo editar mi oferta de trabajo?"/>
+        android:background="@drawable/btnredondeado"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="@string/ayuda_soporte_tecnico" />
 
+    <Button
+        android:id="@+id/btnAPreguntasFrecuentes"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btnredondeado"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="@string/ayuda_preguntas_frecuentes" />
 
 
 </LinearLayout>

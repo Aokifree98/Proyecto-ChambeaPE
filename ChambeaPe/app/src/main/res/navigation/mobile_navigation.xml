@@ -3,42 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navInicio">
+    app:startDestination="@+id/navHome">
 
     <fragment
-        android:id="@+id/navInicio"
-        android:name="com.chambeape.ui.home.HomeFragment"
-        android:label="@string/menu_inicio"
+        android:id="@+id/navHome"
+        android:name="com.example.chambeape.ui.home.HomeFragment"
+        android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navHistorial"
-        android:name="com.chambeape.ui.historial.HistorialFragment"
+        android:name="com.example.chambeape.ui.Historial.HistorialFragment"
         android:label="@string/menu_historial"
         tools:layout="@layout/fragment_historial" />
 
     <fragment
-        android:id="@+id/navContactos"
-        android:name="com.chambeape.ui.contactos.ContactosFragment"
-        android:label="@string/menu_contactos"
-        tools:layout="@layout/fragment_contactos" />
-
-    <fragment
-        android:id="@+id/navConfiguracion"
-        android:name="com.chambeape.ui.contactos.ContactosFragment"
-        android:label="@string/menu_contactos"
-        tools:layout="@layout/fragment_contactos" />
-
-    <fragment
         android:id="@+id/navAyuda"
-        android:name="com.chambeape.ui.ayuda.AyudaFragment"
+        android:name="com.example.chambeape.ui.Ayuda.AyudaFragment"
         android:label="@string/menu_ayuda"
         tools:layout="@layout/fragment_ayuda" />
 
     <fragment
-        android:id="@+id/navCerrarSesion"
-        android:name="com.chambeape.ui.cerrarSesion.CerrarSesionFragment"
-        android:label="@string/menu_cerrarS"
-        tools:layout="@layout/fragment_cerrar_sesion" />
+        android:id="@+id/navConfiguracion"
+        android:name="com.example.chambeape.ui.Configuracion.ConfiguracionFragment"
+        android:label="@string/menu_configuracion"
+        tools:layout="@layout/fragment_configuracion" />
 
+    <fragment
+        android:id="@+id/navCerrarSesion"
+        android:name="com.example.chambeape.ui.Configuracion.CerrarSesionFragment"
+        android:label="@string/menu_cerrarSesion"
+        tools:layout="@layout/fragment_cerrar_sesion" />
 </navigation>
