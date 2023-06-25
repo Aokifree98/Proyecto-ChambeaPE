@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ValidacionIdentidad"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtValiIdent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="VALIDA TU IDENTIDAD"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="#2EA2BE"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="0dp"
+            android:layout_marginBottom="50dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/txtValiIdent2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="SUBE UNA FOTO DE TU DNI"
+            android:textSize="20sp"
+            android:textColor="@color/primaryColor"
+            android:gravity="center"
+            android:layout_marginHorizontal="0dp"
+            android:layout_marginBottom="50dp"
+            ></TextView>
+        <ImageButton
+            android:id="@+id/imgFoto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_gravity="center"
+            tools:srcCompat="@tools:sample/avatars"
+            android:scaleType="fitCenter"
+            android:layout_marginVertical="20dp"
+            ></ImageButton>
+        <Button
+            android:id="@+id/btnSubirFoto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="SUBIR FOTO"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="50dp"
+            android:background="@drawable/btnredondeado"
+            android:layout_marginVertical="10dp"
+            ></Button>
+
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Registrar"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="50dp"
+            android:background="@drawable/btnredondeado"
+            android:layout_marginVertical="10dp"
+            ></Button>
+    </LinearLayout>
+</ScrollView>

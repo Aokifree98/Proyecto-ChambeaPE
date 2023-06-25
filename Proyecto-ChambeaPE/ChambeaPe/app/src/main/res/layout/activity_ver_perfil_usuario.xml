@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.VerPerfilUsuario">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btnredondeado"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgFotoPU"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_user" />
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="10dp"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtNombrePU"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Miguel Castillo Perez"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/txtDescripcionPU"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Especialista"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Empleador: "
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/txtPunEmpPU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="0.0"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Trabajador: "
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/txtPunTraPU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="0.0"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp">
+
+
+        <Button
+            android:id="@+id/btnRedesSociPU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:layout_marginEnd="10dp"
+            android:drawableEnd="@drawable/ic_social_networks"
+            android:background="@drawable/btnredondeado"
+            android:text="Mis redes"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/btnContactarPU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:layout_marginEnd="10dp"
+            android:drawableEnd="@drawable/ic_phone"
+            android:background="@drawable/btnredondeado"
+            android:textColor="@color/white"
+            android:text="Contactar" />
+
+        <Button
+            android:id="@+id/btnHistorialPU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:drawableEnd="@drawable/ic_historial"
+            android:background="@drawable/btnredondeado"
+            android:textColor="@color/white"
+            android:text="HISTORIAL" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Anuncios de trabajo"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"
+                android:textSize="25sp" />
+            <ListView
+                android:id="@+id/lstAnunciosOfertaPU"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Anuncios como trabajador"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"
+                android:textSize="25sp" />
+
+            <ListView
+                android:id="@+id/rclListaTrabajadorPU"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

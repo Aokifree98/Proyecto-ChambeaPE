@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.contactos.ContactosFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtSoliContacts"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="SOLICITUDES DE CONTACTO"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="#2EA2BE"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="0dp"
+            ></TextView>
+        <ListView
+            android:id="@+id/lstViewSoliContacts"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="25dp"
+            ></ListView>
+        <TextView
+            android:id="@+id/txtContacts"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="CONTACTOS"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="#2EA2BE"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="0dp"
+            ></TextView>
+        <ListView
+            android:id="@+id/lstViewContacts"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="25dp"
+            ></ListView>
+        <TextView
+            android:id="@+id/txtContactsAgend"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="CONTACTOS DE AGENDA"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="#2EA2BE"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="0dp"
+            ></TextView>
+        <ListView
+            android:id="@+id/lstViewContactsAgend"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="25dp"
+            ></ListView>
+
+    </LinearLayout>
+
+</FrameLayout>

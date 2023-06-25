@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navInicio">
+
+    <fragment
+        android:id="@+id/navInicio"
+        android:name="com.example.chambeape.ui.inicio.InicioFragment"
+        android:label="@string/menu_inicio"
+        tools:layout="@layout/fragment_inicio" />
+
+    <fragment
+        android:id="@+id/navHitorial"
+        android:name="com.example.chambeape.ui.historial.HistorialFragment"
+        android:label="@string/menu_historial"
+        tools:layout="@layout/fragment_historial" />
+
+    <fragment
+        android:id="@+id/navContactos"
+        android:name="com.example.chambeape.ui.contactos.ContactosFragment"
+        android:label="@string/menu_contactos"
+        tools:layout="@layout/fragment_contactos" />
+
+    <fragment
+        android:id="@+id/navAyuda"
+        android:name="com.example.chambeape.ui.ayuda.AyudaFragment"
+        android:label="@string/menu_ayuda"
+        tools:layout="@layout/fragment_ayuda" />
+
+    <fragment
+        android:id="@+id/navConfiguracion"
+        android:name="com.example.chambeape.ui.configuracion.ConfiguracionFragment"
+        android:label="@string/menu_configuracion"
+        tools:layout="@layout/fragment_configuracion" />
+    <fragment
+        android:id="@+id/navCerrarSesion"
+        android:name="com.example.chambeape.ui.cerrarSesion.CerrarSesionFragment"
+        android:label="@string/menu_cerrarSesion"
+        tools:layout="@layout/fragment_cerrar_sesion" />
+</navigation>
