@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.SubirVideoAnuncio">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Subir video de anuncio"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="#2EA2BE"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="0dp"
+            android:layout_marginBottom="50dp"
+            ></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="SUBE UN VIDEO"
+            android:textSize="20sp"
+            android:textColor="@color/primaryColor"
+            android:gravity="center"
+            android:layout_marginHorizontal="0dp"
+            android:layout_marginBottom="50dp"
+            ></TextView>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_photo"
+            ></de.hdodenhof.circleimageview.CircleImageView>
+        <Button
+            android:id="@+id/btnSubirVideoCA"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="BUSCAR VIDEO"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="50dp"
+            android:background="@drawable/btnredondeado"
+            android:layout_marginVertical="10dp"
+            ></Button>
+
+        <Button
+            android:id="@+id/btnContinuarCA"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="CONTINUAR"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="50dp"
+            android:background="@drawable/btnredondeado"
+            android:layout_marginVertical="10dp"
+            ></Button>
+    </LinearLayout>
+</LinearLayout>

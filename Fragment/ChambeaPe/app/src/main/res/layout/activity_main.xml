@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Menu provisional"
+        android:textSize="50sp"
+        android:gravity="center"
+        android:textColor="#2EA2BE"
+        ></TextView>
+    <Button
+        android:id="@+id/btnGesCon"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Gestionar contactos"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/btnredondeado"
+        android:layout_marginVertical="10dp"
+        ></Button>
+    <Button
+        android:id="@+id/btnNot"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Notificaciones"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/btnredondeado"
+        android:layout_marginVertical="10dp"
+        ></Button>
+    <Button
+        android:id="@+id/btnValDat"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Validacion Datos"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/btnredondeado"
+        android:layout_marginVertical="10dp"
+        ></Button>
+    <Button
+        android:id="@+id/btnValIde"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Validacion Identidad"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/btnredondeado"
+        android:layout_marginVertical="10dp"
+        ></Button>
+    <Button
+        android:id="@+id/btnVerAnuTra"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Ver Anuncio trabajador"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/btnredondeado"
+        android:layout_marginVertical="10dp"
+        ></Button>
+    <Button
+        android:id="@+id/btnVerOfeCer"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Ver ofertas cercanas"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/btnredondeado"
+        android:layout_marginVertical="10dp"
+        ></Button>
+    <Button
+        android:id="@+id/btnVerTraCer"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Ver trabajadores cercanos"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/btnredondeado"
+        android:layout_marginVertical="10dp"
+        ></Button>
+
+</LinearLayout>
