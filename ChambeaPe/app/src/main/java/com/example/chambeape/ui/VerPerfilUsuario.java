@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Anuncio;
 import com.example.chambeape.entidades.AnuncioAdapter;
+import com.example.chambeape.entidades.Contacto;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +38,7 @@ public class VerPerfilUsuario extends AppCompatActivity {
     AnuncioAdapter anuncioAdapter;
     ImageView imgPerfilUser;
     TextView txtNombreUser,txtDescripcionUser,txtPunEmpPU,txtPunTraPU;
-    Button btnRedesSoci,btnContactarPU,btnHistorialPU;
+    Button btnRedesSoci,btnContactarPU,btnHistorialPU,btnSeguirPU;
     String tel;
 
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -52,17 +53,18 @@ public class VerPerfilUsuario extends AppCompatActivity {
         txtPunEmpPU=findViewById(R.id.txtPunEmpPU);
         txtPunTraPU=findViewById(R.id.txtPunTraPU);
         btnRedesSoci=findViewById(R.id.btnRedesSociPU);
+        btnSeguirPU=findViewById(R.id.btnSeguirPU);
         btnContactarPU=findViewById(R.id.btnContactarPU);
         btnHistorialPU=findViewById(R.id.btnHistorialPU);
         lstAnunciosOferta=findViewById(R.id.lstAnunciosOfertaPU);
         String dniuser = getIntent().getExtras().getString("dniuser");
         String idpubanun = getIntent().getExtras().getString("idpubanun");
 
-
         mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.hasChild(idpubanun)){
+
                     String getnombre = snapshot.child(idpubanun).child("nomUsuario").getValue(String.class);
                     String getapepat = snapshot.child(idpubanun).child("apepatUsuario").getValue(String.class);
                     String getapemat = snapshot.child(idpubanun).child("apematUsuario").getValue(String.class);
@@ -77,6 +79,17 @@ public class VerPerfilUsuario extends AppCompatActivity {
                     txtDescripcionUser.setText(getdesc);
                     txtPunEmpPU.setText(getpunemp);
                     txtPunTraPU.setText(getpuntra);
+                    btnSeguirPU.setOnClickListener((new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String id = dniuser+"_"+idpubanun;
+                            String id1 = dniuser;
+                            String id2 = idpubanun;
+                            Contacto contacto = new Contacto(id1,id2);
+                            mDatabase.child("Contactos").child(id).setValue(contacto);
+                            Toast.makeText(VerPerfilUsuario.this,"Ahora sigues a este usuario", Toast.LENGTH_SHORT).show();
+                        }
+                    }));
                     if(url.isEmpty())
                     {
                         Toast.makeText(VerPerfilUsuario.this,"No se encontro una foto de perfil",Toast.LENGTH_SHORT).show();
@@ -157,6 +170,8 @@ public class VerPerfilUsuario extends AppCompatActivity {
                 startActivity(i);
             }
         }));
+
+
     }
     /*
     private boolean appInstalledOrNot(String url) {

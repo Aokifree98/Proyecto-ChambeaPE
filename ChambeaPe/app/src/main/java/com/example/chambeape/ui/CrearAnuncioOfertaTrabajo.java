@@ -3,21 +3,28 @@ package com.example.chambeape.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Anuncio;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
@@ -25,6 +32,7 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
     EditText tituloServ, direccion;
     Button crear;
 
+    String servicioSeleccionado="";
     private DatabaseReference miDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +49,8 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         miDatabase=database.getReference();
-
+        cargarServicios();
+        cargarHabilidades();
 
     }
     public void crearAOT(View view) {
@@ -72,6 +81,7 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
 
         miDatabase.child("DetalleAnuncio").child(id).setValue(detalleAnuncio);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
+
         Intent i = new Intent(this, SubirFotoAnuncio.class);
         String iduser = dniuser;
         String idanun = id;
@@ -80,5 +90,55 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
+    public void cargarServicios(){
+        List servicios = new ArrayList<>();
+        miDatabase.child("TipoServicio").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    for(DataSnapshot ds: snapshot.getChildren()){
+                        String id = ds.getKey();
+                        //String nom = ds.child("nomUsuario").getValue(String.class);
+                        //String apa = ds.child("apepatUsuario").getValue(String.class);
+                        //String ama = ds.child("apematUsuario").getValue(String.class);
+                        servicios.add(id);
 
+                    }
+                    ArrayAdapter arrayAdapter = new ArrayAdapter<>(CrearAnuncioOfertaTrabajo.this, android.R.layout.simple_dropdown_item_1line,servicios);
+                    servicio.setAdapter(arrayAdapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    public void cargarHabilidades(){
+        List habilidades = new ArrayList<>();
+        miDatabase.child("Habilidades").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    for(DataSnapshot ds: snapshot.getChildren()){
+                        String id = ds.getKey();
+                        //String nom = ds.child("nomUsuario").getValue(String.class);
+                        //String apa = ds.child("apepatUsuario").getValue(String.class);
+                        //String ama = ds.child("apematUsuario").getValue(String.class);
+                        habilidades.add(id);
+
+                    }
+                    ArrayAdapter arrayAdapter = new ArrayAdapter<>(CrearAnuncioOfertaTrabajo.this, android.R.layout.simple_dropdown_item_1line,habilidades);
+                    habilidad1.setAdapter(arrayAdapter);
+                    habilidad2.setAdapter(arrayAdapter);
+                    habilidad3.setAdapter(arrayAdapter);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }

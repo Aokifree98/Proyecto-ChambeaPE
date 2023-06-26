@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/primaryColor"
+    app:cardCornerRadius="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="20dp">
+        <ImageView
+            android:id="@+id/imgViewContacto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="10dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_bell"></ImageView>
+        <TextView
+            android:id="@+id/txtIdContacto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="0sp"
+            android:textColor="@color/primaryColor" />
+        <TextView
+            android:id="@+id/txtNomContacto"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Nombre"
+            android:padding="10dp"
+            android:textSize="23sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:foregroundGravity="center_vertical"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/txtApeContacto"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Apellido"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:foregroundGravity="center_vertical"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

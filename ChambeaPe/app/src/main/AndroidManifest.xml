@@ -15,11 +15,17 @@
         android:theme="@style/ChambeaPetheme"
         tools:targetApi="31">
         <activity
+            android:name=".ui.VerMisContactos"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme"/>
+        <activity
             android:name=".ui.VerHistorialUsuario"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme"/>
         <activity
             android:name=".ui.ConcluirOferta"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme"/>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

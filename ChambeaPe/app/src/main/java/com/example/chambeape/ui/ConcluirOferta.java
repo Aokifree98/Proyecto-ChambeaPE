@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +49,8 @@ public class ConcluirOferta extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String com = edtComentarioCO.getText().toString();
-                String punt = spCalificacionCO.getSelectedItem().toString();;
+                String punt = spCalificacionCO.getSelectedItem().toString();
+                Float punt1 = Float.parseFloat(punt);
                 if(dniuser.equals(usuarioSeleccionado)){
                     Toast.makeText(ConcluirOferta.this, "No puedes seleccionarte a ti mismo como responsable", Toast.LENGTH_SHORT).show();
                 }
@@ -58,14 +60,27 @@ public class ConcluirOferta extends AppCompatActivity {
                     mDatabase.child("DetalleAnuncio").child(idanun).child("comTraAnuncio").setValue(com);
                     mDatabase.child("DetalleAnuncio").child(idanun).child("puntTrabAnuncio").setValue(punt);
                     //Falta obtener la cantidad de ofertas terminadas y sacar una formula para obtener el promedio de la calificacion como trabajador
-                    /*
+
                     mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(idpubanun)){
+                            if(snapshot.hasChild(usuarioSeleccionado)){
 
-                                String getpuntra = snapshot.child(idpubanun).child("calUsuarioTra").getValue(String.class);
-                                Float punttra = Float.parseFloat(getpuntra);
+                                String getpuntra = snapshot.child(usuarioSeleccionado).child("calUsuarioTra").getValue(String.class);
+                                if (getpuntra.equals("0"))
+                                {
+                                    mDatabase.child("Usuarios").child(usuarioSeleccionado).child("calUsuarioTra").setValue(punt);
+                                }
+                                else {
+                                    Float punttra = Float.parseFloat(getpuntra);
+                                    Float prom = (punttra+punt1)/2;
+                                    DecimalFormat decimalFormat = new DecimalFormat("#.#");
+                                    Float prom1= Float.parseFloat(decimalFormat.format(prom));
+                                    String promf = String.valueOf(prom1);
+                                    Toast.makeText(ConcluirOferta.this, punttra+"+"+punt1+"="+prom, Toast.LENGTH_SHORT).show();
+                                    mDatabase.child("Usuarios").child(usuarioSeleccionado).child("calUsuarioTra").setValue(promf);
+                                }
+
                             }
                             else {
                                 Toast.makeText(ConcluirOferta.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
@@ -76,8 +91,6 @@ public class ConcluirOferta extends AppCompatActivity {
                         }
 
                     });
-                     */
-                    mDatabase.child("Usuarios").child(usuarioSeleccionado).child("calUsuarioTra").setValue(punt);
                     String idpubanun1 = getIntent().getExtras().getString("idpubanun");
                     String idanun1 = getIntent().getExtras().getString("idanun");
                     String dniuser1 = getIntent().getExtras().getString("dniuser");

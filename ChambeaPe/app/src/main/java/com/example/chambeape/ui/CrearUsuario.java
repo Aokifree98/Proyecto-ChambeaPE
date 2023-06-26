@@ -1,7 +1,5 @@
 package com.example.chambeape.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -14,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Usuario;
@@ -132,7 +132,6 @@ public class CrearUsuario extends AppCompatActivity {
         Usuario usuario = new Usuario(dni,nom,pass,tel,apep,apem,mail,dire,fecha,"","","","0","0","","Sin verificar",gen);
         miDatabase.child("Usuarios").child(dni).setValue(usuario);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
-
 
     }
 

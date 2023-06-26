@@ -1,8 +1,5 @@
 package com.example.chambeape.ui;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Anuncio;
@@ -36,7 +36,7 @@ public class MiPerfilUsuario extends AppCompatActivity {
     AnuncioAdapter anuncioAdapter;
     ImageView imgPerfilUser, imgNotiUser;
     TextView txtNombreUser,txtDescripcionUser;
-    Button btnEditPerfi, btnRedesSoci,btnAgregarOferta;
+    Button btnEditPerfi, btnRedesSoci,btnAgregarOferta, btnContactos;
 
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     @Override
@@ -51,6 +51,7 @@ public class MiPerfilUsuario extends AppCompatActivity {
         btnEditPerfi=findViewById(R.id.btnEditarMPU);
         btnRedesSoci=findViewById(R.id.btnRedesSociMPU);
         btnAgregarOferta=findViewById(R.id.btnAgregarOfertaMPU);
+        btnContactos=findViewById(R.id.btnContactosMPU);
         lstAnunciosOferta=findViewById(R.id.lstAnunciosOfertaMPU);
         String dniuser = getIntent().getExtras().getString("dniuser");
 
@@ -115,6 +116,16 @@ public class MiPerfilUsuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MiPerfilUsuario.this, EditarPerfilUsuario.class);
+                String iduser = dniuser;
+                i.putExtra("dniuser", iduser);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        });
+        btnContactos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MiPerfilUsuario.this, VerMisContactos.class);
                 String iduser = dniuser;
                 i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
