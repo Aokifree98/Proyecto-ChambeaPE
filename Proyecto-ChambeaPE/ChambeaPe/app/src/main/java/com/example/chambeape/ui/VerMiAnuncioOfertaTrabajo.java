@@ -14,7 +14,6 @@ import android.widget.VideoView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.chambeape.MenuPrincipal;
 import com.example.chambeape.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -154,7 +153,7 @@ public class VerMiAnuncioOfertaTrabajo extends AppCompatActivity {
                 String dniuser1 = getIntent().getExtras().getString("dniuser");
                 Toast.makeText(VerMiAnuncioOfertaTrabajo.this,idpubanun1+"=="+dniuser1,Toast.LENGTH_SHORT).show();
                 if(idpubanun1.equals(dniuser1)){
-                    Intent j = new Intent(VerMiAnuncioOfertaTrabajo.this, MenuPrincipal.class);
+                    Intent j = new Intent(VerMiAnuncioOfertaTrabajo.this, MiPerfilUsuario.class);
                     j.putExtra("dniuser", dniuser1);
                     j.putExtra("idpubanun", idpubanun1);
                     j.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.chambeape.MenuPrincipal;
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Anuncio;
 import com.example.chambeape.entidades.AnuncioAdapter;
@@ -86,7 +85,7 @@ public class ListaOfertasTrabajo extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ListaOfertasTrabajo.this, MenuPrincipal.class);
+                Intent i = new Intent(ListaOfertasTrabajo.this, MenuInicio.class);
                 String iduser = dniuser;
                 i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

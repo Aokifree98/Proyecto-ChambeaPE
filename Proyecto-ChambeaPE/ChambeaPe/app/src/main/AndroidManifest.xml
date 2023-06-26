@@ -32,6 +32,9 @@
             android:label="@string/title_activity_menu_principal"
             android:theme="@style/ChambeaPetheme.NoActionBar" />
         <activity
+            android:name=".ui.VerHistorialUsuario"
+            android:exported="true" />
+        <activity
             android:name=".ui.ConcluirOferta"
             android:exported="true" />
         <!--
@@ -91,10 +94,18 @@
             android:exported="true"
             android:theme="@style/ChambeaPetheme" />
         <activity
+            android:name=".ui.MenuInicio"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme" />
+        <activity
             android:name=".ui.CrearUsuario"
             android:exported="true" />
         <activity
             android:name=".ui.EditarPerfilUsuario"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme" />
+        <activity
+            android:name=".ui.MiPerfilUsuario"
             android:exported="true"
             android:theme="@style/ChambeaPetheme" />
         <activity
@@ -145,6 +156,10 @@
             android:theme="@style/ChambeaPetheme" />
         <activity
             android:name=".ui.Notificaciones"
+            android:exported="true"
+            android:theme="@style/ChambeaPetheme" />
+        <activity
+            android:name=".ui.GestionarContactos"
             android:exported="true"
             android:theme="@style/ChambeaPetheme" />
     </application>

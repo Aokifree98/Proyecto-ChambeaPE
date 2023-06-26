@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Anuncio;
 import com.example.chambeape.entidades.AnuncioAdapter;
-import com.example.chambeape.ui.historial.HistorialFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -151,7 +150,7 @@ public class VerPerfilUsuario extends AppCompatActivity {
                 String idpubanun1 = getIntent().getExtras().getString("idpubanun");
                 String idanun1 = getIntent().getExtras().getString("idanun");
                 String dniuser1 = getIntent().getExtras().getString("dniuser");
-                Intent i = new Intent(VerPerfilUsuario.this, HistorialFragment.class);
+                Intent i = new Intent(VerPerfilUsuario.this, VerHistorialUsuario.class);
                 i.putExtra("dniuser", dniuser1);
                 i.putExtra("idpubanun", idpubanun1);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

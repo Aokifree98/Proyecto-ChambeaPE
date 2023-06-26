@@ -15,7 +15,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.chambeape.MenuPrincipal;
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Usuario;
 import com.google.firebase.FirebaseApp;
@@ -71,7 +70,7 @@ public class CrearUsuario extends AppCompatActivity {
                 new Timer().schedule(new TimerTask() {
                     @Override
                     public void run() {
-                    Intent i = new Intent(CrearUsuario.this, MenuPrincipal.class);
+                    Intent i = new Intent(CrearUsuario.this, MiPerfilUsuario.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
                         }

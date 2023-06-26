@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import com.example.chambeape.MenuPrincipal;
 import com.example.chambeape.R;
 import com.example.chambeape.databinding.ActivityVerUbicacionOfertaBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -107,7 +106,7 @@ public class VerUbicacionOferta extends FragmentActivity implements OnMapReadyCa
                 int x2 = Integer.parseInt(dniuser1);
                 Toast.makeText(VerUbicacionOferta.this,idpubanun1+"=="+dniuser1,Toast.LENGTH_SHORT).show();
                 if(x1==x2){
-                    Intent k = new Intent(VerUbicacionOferta.this, MenuPrincipal.class);
+                    Intent k = new Intent(VerUbicacionOferta.this, MiPerfilUsuario.class);
                     k.putExtra("dniuser", dniuser1);
                     k.putExtra("idpubanun", idpubanun1);
                     k.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

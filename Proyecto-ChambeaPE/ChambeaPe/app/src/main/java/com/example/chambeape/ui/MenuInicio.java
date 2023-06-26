@@ -1,14 +1,11 @@
-package com.example.chambeape.ui.inicio;
+package com.example.chambeape.ui;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -16,9 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chambeape.R;
-import com.example.chambeape.ui.CrearAnuncioOfertaTrabajo;
-import com.example.chambeape.ui.ListaOfertasTrabajo;
-import com.example.chambeape.ui.MiPerfilUsuario;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,8 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class InicioFragment extends Fragment {
 
+public class MenuInicio extends AppCompatActivity {
     ImageView imgMIPerfil;
     ImageButton imgBtnNotificaciones;
     Button btnMIBuscarTra, btnMIBuscarOfer,btnMICreATrab,btnMICreAOfer;
@@ -35,24 +29,22 @@ public class InicioFragment extends Fragment {
     TextView txtMINombreUsuario;
 
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View vista;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu_inicio);
 
-        vista = inflater.inflate(R.layout.fragment_inicio, container, false);
+        imgMIPerfil = findViewById(R.id.imgMIPerfil);
+        imgBtnNotificaciones=findViewById(R.id.imgBtnNotificaciones);
+        btnMIBuscarTra= findViewById(R.id.btnMIBuscarTra);
+        btnMIBuscarOfer= findViewById(R.id.btnMIBuscarOfer);
+        btnMICreATrab= findViewById(R.id.btnMICreATrab);
+        btnMICreAOfer= findViewById(R.id.btnMICreaAOfer);
+        txtMINombreUsuario=findViewById(R.id.txtMINombreUsuario);
 
-        imgMIPerfil = vista.findViewById(R.id.imgMIPerfil);
-        imgBtnNotificaciones = vista.findViewById(R.id.imgBtnNotificaciones);
-        btnMIBuscarTra = vista.findViewById(R.id.btnMIBuscarTra);
-        btnMIBuscarOfer = vista.findViewById(R.id.btnMIBuscarOfer);
-        btnMICreATrab = vista.findViewById(R.id.btnMICreATrab);
-        btnMICreAOfer = vista.findViewById(R.id.btnMICreaAOfer);
-        txtMINombreUsuario = vista.findViewById(R.id.txtMINombreUsuario);
+        //Toast.makeText(this,dni,Toast.LENGTH_SHORT).show();
 
-        String dniuser = getActivity().getIntent().getExtras().getString("dniuser");
-
+        String dniuser = getIntent().getExtras().getString("dniuser");
         mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -65,7 +57,7 @@ public class InicioFragment extends Fragment {
                     txtMINombreUsuario.setText(nombresperfil);
                     if(url.isEmpty())
                     {
-                        Toast.makeText(getContext(),"No se encontro una foto de perfil",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MenuInicio.this,"No se encontro una foto de perfil",Toast.LENGTH_SHORT).show();
                     }
                     else {
                         Picasso.get().load(url).fit().centerCrop().into(imgMIPerfil);
@@ -73,7 +65,7 @@ public class InicioFragment extends Fragment {
 
                 }
                 else {
-                    Toast.makeText(getContext(),"Error al cargar información",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MenuInicio.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -87,8 +79,13 @@ public class InicioFragment extends Fragment {
         imgMIPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i = new Intent(getContext(), MiPerfilUsuario.class);
+                /*
+                Intent i = new Intent(MenuInicio.this, SubirFotoUsusario.class);
+                String id = dni;
+                i.putExtra("dni", id);
+                startActivity(i);
+                */
+                Intent i = new Intent(MenuInicio.this, MiPerfilUsuario.class);
                 String iduser = dniuser;
                 i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -98,7 +95,7 @@ public class InicioFragment extends Fragment {
         txtMINombreUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), MiPerfilUsuario.class);
+                Intent i = new Intent(MenuInicio.this, MiPerfilUsuario.class);
                 String iduser = dniuser;
                 i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -108,7 +105,7 @@ public class InicioFragment extends Fragment {
         btnMICreAOfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), CrearAnuncioOfertaTrabajo.class);
+                Intent i = new Intent(MenuInicio.this, CrearAnuncioOfertaTrabajo.class);
                 String iduser = dniuser;
                 i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -118,7 +115,7 @@ public class InicioFragment extends Fragment {
         btnMIBuscarOfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), ListaOfertasTrabajo.class);
+                Intent i = new Intent(MenuInicio.this, ListaOfertasTrabajo.class);
                 String iduser = dniuser;
                 i.putExtra("dniuser", iduser);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -126,6 +123,5 @@ public class InicioFragment extends Fragment {
             }
         });
 
-        return vista;
     }
 }

@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import com.example.chambeape.MenuPrincipal;
 import com.example.chambeape.R;
 import com.example.chambeape.databinding.ActivitySeleccionarUbicacionCrearAnuncioOfertaBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -124,7 +123,7 @@ public class SeleccionarUbicacionCrearAnuncioOferta extends FragmentActivity imp
                 break;
             }
             case R.id.btnContinuarUbi:{
-                Intent intent=new Intent(SeleccionarUbicacionCrearAnuncioOferta.this, MenuPrincipal.class);
+                Intent intent=new Intent(SeleccionarUbicacionCrearAnuncioOferta.this,MenuInicio.class);
                 intent.putExtra("dniuser", dniuser);
                 intent.putExtra("idanun", idanun);
                 startActivity(intent);
