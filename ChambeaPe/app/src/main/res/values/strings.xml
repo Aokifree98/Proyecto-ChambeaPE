@@ -57,4 +57,5 @@
         SeleccionarUbicacionCrearAnuncioOferta
     </string>
     <string name="title_activity_ver_ubicacion_oferta">VerUbicacionOferta</string>
+    <string name="msg_token_fmt" />
 </resources>

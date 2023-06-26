@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Anuncio;
+import com.example.chambeape.entidades.FCMSend;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -81,6 +82,18 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
 
         miDatabase.child("DetalleAnuncio").child(id).setValue(detalleAnuncio);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
+        //Buscar la forma para que se envie el mensaje no solo a un usuario en especifico sino a un grupo de usuarios, en especifico a los contactos seguidos.
+        String toDeviceToken = "d4Y6yhVKS-aySy875bLJjS:APA91bGRJ7KeRZBJiBxIzqIK565S1obbVc1KVsku_8cme9fiA1FXOScBsmUplpyF7FcSREixFPTwjzAwOdAefgBKbBM4T2_a1z-VwB46dU6Cue7ONEdxauL4GVbqUH-hNlUsTjbOfGLD";
+        String serverKey = "AAAAZK0vx0w:APA91bHgHH8lCbMnHNQhAfqwp1AJY74WtXFvaU5xo5hP2jUDIv-xXUvJgUCfmdDy34NN-UJGxY7lyBGto7uNMQzBkgvE8sI4VF0ULjTfHqZkPQLkmJgqQF_o0WacEPhc3Hhhu7geevRW";
+        String title ="Nueva oferta de trabajo";
+        String message = "Un contacto ha publicado una nueva oferta";
+        if (!title.equals("") && !message.equals("")){
+            FCMSend.SetServerKey(CrearAnuncioOfertaTrabajo.this, serverKey).pushNotification(
+                    toDeviceToken,
+                    title,
+                    message
+            );
+        }
 
         Intent i = new Intent(this, SubirFotoAnuncio.class);
         String iduser = dniuser;
