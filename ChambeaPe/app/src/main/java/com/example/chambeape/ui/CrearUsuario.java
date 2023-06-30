@@ -1,9 +1,12 @@
 package com.example.chambeape.ui;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -11,15 +14,18 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.chambeape.R;
 import com.example.chambeape.entidades.Usuario;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.Calendar;
 import java.util.Timer;
@@ -129,9 +135,27 @@ public class CrearUsuario extends AppCompatActivity {
         String fecha = txtCUFechaNacimiento.getText().toString();
         String pass = edtCUClave.getText().toString();
         String tel = edtCUCelular.getText().toString();
-        Usuario usuario = new Usuario(dni,nom,pass,tel,apep,apem,mail,dire,fecha,"","","","0","0","","Sin verificar",gen);
-        miDatabase.child("Usuarios").child(dni).setValue(usuario);
-        Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
+        //String tok;
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        String token = task.getResult();
+
+                        System.out.println("TOKEN "+token);
+                        Usuario usuario = new Usuario(dni,nom,pass,tel,apep,apem,mail,dire,fecha,"","","","0","0","","Sin verificar",gen,token);
+                        miDatabase.child("Usuarios").child(dni).setValue(usuario);
+                        //Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
 
     }
 

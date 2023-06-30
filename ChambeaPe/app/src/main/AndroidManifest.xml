@@ -122,10 +122,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.RegistrarUsuario"
-            android:exported="true"
-            android:theme="@style/ChambeaPetheme" />
-        <activity
             android:name=".ui.ValidarCodigoSMS"
             android:exported="true"
             android:screenOrientation="portrait"

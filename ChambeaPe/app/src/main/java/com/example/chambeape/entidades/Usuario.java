@@ -1,15 +1,13 @@
 package com.example.chambeape.entidades;
 
-import android.graphics.Bitmap;
-
 public class Usuario {
 
-    private String dniUsuario, nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,desUsuario,vidUsuario,fotUsuario,calUsuarioTra,calUsuarioEmp,fotValidacion,verTelefono,genUsuario;
+    private String dniUsuario, nomUsuario,passUsuario,telUsuario,apepatUsuario,apematUsuario,mailUsuario,dirUsuario,fecUsuario,desUsuario,vidUsuario,fotUsuario,calUsuarioTra,calUsuarioEmp,fotValidacion,verTelefono,genUsuario,tokenUsuario;
     public Usuario(){
 
     }
 
-    public Usuario(String dniUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String desUsuario, String vidUsuario, String fotUsuario, String calUsuarioTra, String calUsuarioEmp, String fotValidacion, String verTelefono, String genUsuario) {
+    public Usuario(String dniUsuario, String nomUsuario, String passUsuario, String telUsuario, String apepatUsuario, String apematUsuario, String mailUsuario, String dirUsuario, String fecUsuario, String desUsuario, String vidUsuario, String fotUsuario, String calUsuarioTra, String calUsuarioEmp, String fotValidacion, String verTelefono, String genUsuario, String tokenUsuario) {
         this.dniUsuario = dniUsuario;
         this.nomUsuario = nomUsuario;
         this.passUsuario = passUsuario;
@@ -27,6 +25,7 @@ public class Usuario {
         this.fotValidacion = fotValidacion;
         this.verTelefono = verTelefono;
         this.genUsuario = genUsuario;
+        this.tokenUsuario = tokenUsuario;
     }
 
     public String getDniUsuario() {
@@ -165,6 +164,14 @@ public class Usuario {
         this.genUsuario = genUsuario;
     }
 
+    public String getTokenUsuario() {
+        return tokenUsuario;
+    }
+
+    public void setTokenUsuario(String tokenUsuario) {
+        this.tokenUsuario = tokenUsuario;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -185,6 +192,7 @@ public class Usuario {
                 ", fotValidacion='" + fotValidacion + '\'' +
                 ", verTelefono='" + verTelefono + '\'' +
                 ", genUsuario='" + genUsuario + '\'' +
+                ", tokenUsuario='" + tokenUsuario + '\'' +
                 '}';
     }
 }

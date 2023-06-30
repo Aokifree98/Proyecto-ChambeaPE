@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
@@ -35,6 +36,7 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
 
     String servicioSeleccionado="";
     private DatabaseReference miDatabase;
+    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,19 +84,7 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
 
         miDatabase.child("DetalleAnuncio").child(id).setValue(detalleAnuncio);
         Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
-        //Buscar la forma para que se envie el mensaje no solo a un usuario en especifico sino a un grupo de usuarios, en especifico a los contactos seguidos.
-        String toDeviceToken = "d4Y6yhVKS-aySy875bLJjS:APA91bGRJ7KeRZBJiBxIzqIK565S1obbVc1KVsku_8cme9fiA1FXOScBsmUplpyF7FcSREixFPTwjzAwOdAefgBKbBM4T2_a1z-VwB46dU6Cue7ONEdxauL4GVbqUH-hNlUsTjbOfGLD";
-        String serverKey = "AAAAZK0vx0w:APA91bHgHH8lCbMnHNQhAfqwp1AJY74WtXFvaU5xo5hP2jUDIv-xXUvJgUCfmdDy34NN-UJGxY7lyBGto7uNMQzBkgvE8sI4VF0ULjTfHqZkPQLkmJgqQF_o0WacEPhc3Hhhu7geevRW";
-        String title ="Nueva oferta de trabajo";
-        String message = "Un contacto ha publicado una nueva oferta";
-        if (!title.equals("") && !message.equals("")){
-            FCMSend.SetServerKey(CrearAnuncioOfertaTrabajo.this, serverKey).pushNotification(
-                    toDeviceToken,
-                    title,
-                    message
-            );
-        }
-
+        notificar(descrAnuncio);
         Intent i = new Intent(this, SubirFotoAnuncio.class);
         String iduser = dniuser;
         String idanun = id;
@@ -153,5 +143,109 @@ public class CrearAnuncioOfertaTrabajo extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void notificar(String titulo){
+        String dniuser = getIntent().getExtras().getString("dniuser");
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference dbContactos = database.getReference("Contactos"); // Reemplaza "referencia1" con la referencia a tu primera tabla
+        DatabaseReference dbUsuarios = database.getReference("Usuarios");
+        Query contactos = dbContactos.orderByChild("idSeguido").equalTo(dniuser);
+
+        /*
+        mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String dniuser1 ="11111111";
+                if(snapshot.hasChild(dniuser1)){
+                    String getnombre = snapshot.child(dniuser).child("nomUsuario").getValue(String.class);
+                    String gettoken = snapshot.child(dniuser1).child("tokenUsuario").getValue(String.class);
+                    //String toDeviceToken = "d4Y6yhVKS-aySy875bLJjS:APA91bGRJ7KeRZBJiBxIzqIK565S1obbVc1KVsku_8cme9fiA1FXOScBsmUplpyF7FcSREixFPTwjzAwOdAefgBKbBM4T2_a1z-VwB46dU6Cue7ONEdxauL4GVbqUH-hNlUsTjbOfGLD";
+                    String serverKey = "AAAAZK0vx0w:APA91bHgHH8lCbMnHNQhAfqwp1AJY74WtXFvaU5xo5hP2jUDIv-xXUvJgUCfmdDy34NN-UJGxY7lyBGto7uNMQzBkgvE8sI4VF0ULjTfHqZkPQLkmJgqQF_o0WacEPhc3Hhhu7geevRW";
+                    String title ="Nueva oferta de trabajo: "+titulo;
+                    String message = "Tu contacto "+getnombre+" ha publicado una nueva oferta";
+                    if (!title.equals("") && !message.equals("")){
+                        FCMSend.SetServerKey(CrearAnuncioOfertaTrabajo.this, serverKey).pushNotification(
+                                gettoken,
+                                title,
+                                message
+                        );
+                    }
+                }
+                else {
+                    Toast.makeText(CrearAnuncioOfertaTrabajo.this,"Error al cargar información",Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+         */
+        contactos.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                List<String> contactosnoti= new ArrayList<>();
+
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                    //String dato = childSnapshot.getValue(String.class);
+                    String dato = childSnapshot.child("idSeguidor").getValue(String.class);
+                    Toast.makeText(CrearAnuncioOfertaTrabajo.this,dato,Toast.LENGTH_SHORT).show();
+                    contactosnoti.add(dato);
+                }
+
+                // Corroborar los datos en la segunda tabla y realizar una acción por cada dato
+                for (String dato : contactosnoti) {
+                    Query contactosXusuarios = dbUsuarios.orderByChild("dniUsuario").equalTo(dato); // Reemplaza "campo" con el campo que deseas verificar en la segunda tabla
+                    contactosXusuarios.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                // Realizar la acción deseada para el dato que coincide en la segunda tabla
+                                // Ejemplo: Imprimir el dato
+                                mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if(snapshot.hasChild(dniuser)){
+                                            String getnombre = snapshot.child(dniuser).child("nomUsuario").getValue(String.class);
+                                            String gettoken = dataSnapshot.child(dato).child("tokenUsuario").getValue(String.class);
+                                            //String toDeviceToken = "d4Y6yhVKS-aySy875bLJjS:APA91bGRJ7KeRZBJiBxIzqIK565S1obbVc1KVsku_8cme9fiA1FXOScBsmUplpyF7FcSREixFPTwjzAwOdAefgBKbBM4T2_a1z-VwB46dU6Cue7ONEdxauL4GVbqUH-hNlUsTjbOfGLD";
+                                            String serverKey = "AAAAZK0vx0w:APA91bHgHH8lCbMnHNQhAfqwp1AJY74WtXFvaU5xo5hP2jUDIv-xXUvJgUCfmdDy34NN-UJGxY7lyBGto7uNMQzBkgvE8sI4VF0ULjTfHqZkPQLkmJgqQF_o0WacEPhc3Hhhu7geevRW";
+                                            String title ="¡Nueva oferta!";
+                                            String message = getnombre+" publicó: "+titulo;
+                                            if (!title.equals("") && !message.equals("")){
+                                                FCMSend.SetServerKey(CrearAnuncioOfertaTrabajo.this, serverKey).pushNotification(
+                                                        gettoken,
+                                                        title,
+                                                        message
+                                                );
+                                            }
+                                            System.out.println("Dato encontrado en la segunda tabla: " + dato);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+
+                                });
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            // Manejar el error en caso de que la consulta sea cancelada o falle
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Manejar el error en caso de que la consulta sea cancelada o falle
+            }
+        });
+
     }
 }
